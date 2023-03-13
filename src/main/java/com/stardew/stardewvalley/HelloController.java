@@ -2,13 +2,15 @@ package com.stardew.stardewvalley;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 
 public class HelloController {
-    @FXML
-    private Label welcomeText;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    BorderPane borderPanel;
+
+    @FXML
+    private void initialize() {
+        this.borderPanel.setCenter(new Carte());
     }
 }
