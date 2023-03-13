@@ -12,10 +12,12 @@ public abstract class ObjetInteractif {
 
     private int posX;
     private int posY;
+    private boolean marchable;
 
-    public ObjetInteractif(int pfPosX, int pfPosY) {
+    public ObjetInteractif(int pfPosX, int pfPosY, boolean pfMarchable) {
         this.posX = pfPosX;
         this.posY = pfPosY;
+        this.marchable = pfMarchable;
     }
 
     /**
@@ -30,6 +32,13 @@ public abstract class ObjetInteractif {
      */
     public int getPosY() {
         return this.posY;
+    }
+
+    /**
+     * @return true si l'objet est marchable, sinon false
+     */
+    public boolean estMarchable() {
+        return this.marchable;
     }
 
     /**
@@ -48,6 +57,13 @@ public abstract class ObjetInteractif {
      */
     public void setPosY(int pfPosY) {
         this.posY = pfPosY;
+    }
+
+    /**
+     * @param pfMarchable
+     */
+    public void setMarchable(boolean pfMarchable) {
+        this.marchable = pfMarchable;
     }
 
 }
