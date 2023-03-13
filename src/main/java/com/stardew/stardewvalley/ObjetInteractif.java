@@ -15,7 +15,7 @@ public abstract class ObjetInteractif {
 
     public ObjetInteractif(int pfPosX, int pfPosY) {
         this.posX = pfPosX;
-        this.posX = pfPosY;
+        this.posY = pfPosY;
     }
 
     /**
