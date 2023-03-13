@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b143f2f1-d7ed-4b23-ab9d-e94571a5451b" name="Changes" comment="correction lancement application">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Carte.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/stardew/stardewvalley/application.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/AccessibleValleyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/AccessibleValleyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/HelloController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,11 +50,17 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/louis/IdeaProjects/3il-stardew-valley/src/main/resources/com/stardew/stardewvalley"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\louis\IdeaProjects\3il-stardew-valley\src\main\resources\com\stardew\stardewvalley" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\louis\IdeaProjects\3il-stardew-valley\src\main\resources\com\stardew\stardewvalley" />
+      <recent name="C:\Users\louis\IdeaProjects\3il-stardew-valley\Images" />
       <recent name="D:\Java3il\3il-stardew-valley" />
       <recent name="D:\Java3il\3il-stardew-valley\src\main\resources\com\stardew\stardewvalley" />
     </key>
