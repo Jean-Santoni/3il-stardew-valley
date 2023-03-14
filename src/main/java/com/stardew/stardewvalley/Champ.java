@@ -17,7 +17,7 @@ public class Champ extends ObjetInteractif {
     public Champ(int pfPosX, int pfPosY, boolean pfEstCultive) {
         super(pfPosX, pfPosY, true);
         this.estCultive = pfEstCultive;
-        this.setImage(new Image("file:Images/ChampsNonCultivé.jpg"));
+        this.setImage(new Image("file:Images/champ_non_cultive.png"));
     }
 
     /**
