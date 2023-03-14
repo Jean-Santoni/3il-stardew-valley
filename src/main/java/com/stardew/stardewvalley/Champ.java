@@ -14,9 +14,9 @@ public class Champ extends ObjetInteractif {
 
     private boolean estCultive; // Si le champ est cultivé ou non
 
-    public Champ(int pfPosX, int pfPosY, boolean pfEstCultive) {
+    public Champ(int pfPosX, int pfPosY) {
         super(pfPosX, pfPosY, true);
-        this.estCultive = pfEstCultive;
+        this.estCultive = false;
         this.setImage(new Image("file:Images/champ_non_cultive.png"));
     }
 
@@ -32,6 +32,12 @@ public class Champ extends ObjetInteractif {
      */
     public void setEstCultive(boolean pfEstCultive) {
         this.estCultive = pfEstCultive;
+
+        if(this.estCultive) {
+            this.setImage(new Image("file:Images/champ_cultive.png"));
+        } else {
+            this.setImage(new Image("file:Images/champ_non_cultive.png"));
+        }
     }
 
 
