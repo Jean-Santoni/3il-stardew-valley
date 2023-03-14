@@ -18,7 +18,7 @@ public class Pierre extends ObjetInteractif {
     public Pierre(int pfPosX, int pfPosY) throws FileNotFoundException {
         super(pfPosX, pfPosY, false);
 
-        Image image = new Image(new FileInputStream("monImage.png"));
+        Image image = new Image(new FileInputStream("file:Images/Stone.jpg"));
 
         setImage(image);
     }

@@ -88,4 +88,5 @@ public abstract class ObjetInteractif {
         this.marchable = pfMarchable;
     }
 
+
 }

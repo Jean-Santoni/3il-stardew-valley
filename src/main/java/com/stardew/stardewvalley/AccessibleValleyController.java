@@ -9,11 +9,8 @@ public class AccessibleValleyController {
     @FXML
     BorderPane borderPanel;
 
-
     @FXML
     private void initialize() {
         this.borderPanel.setCenter(new Menu());
     }
-
-
 }
