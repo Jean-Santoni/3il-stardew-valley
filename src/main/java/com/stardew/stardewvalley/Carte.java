@@ -7,16 +7,20 @@ import javafx.scene.layout.*;
 
 public class Carte extends GridPane {
     private final int MAX_WIDTH = 20;
-    private final int MAX_HEIGHT = 50;
+    private final int MAX_HEIGHT = 10;
+    private Image fondCarte = new Image("file:Images/Map.jpg");
 
     public Carte() {
         super();
         initialiserCarte();
-        this.setBackground(new Background(new BackgroundImage(new Image("file:Images/Map.jpg"),
+        this.add(new Personnage(),0,0);
+        this.setBackground(new Background(new BackgroundImage(fondCarte,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundPosition.CENTER,
-                BackgroundSize.DEFAULT)));
+                new BackgroundSize(100,100,
+                        true, true,true, true))));
+        //adapterObjets();
     }
 
     private void initialiserCarte() {
@@ -24,12 +28,16 @@ public class Carte extends GridPane {
         this.getRowConstraints().clear();
         for (int c = 0; c <= MAX_WIDTH; c++) {
             ColumnConstraints column = new ColumnConstraints();
-            column.setPercentWidth(100.0 / 2);
+            //column.setPercentWidth(100.0 / 2);
+            column.setMaxWidth(fondCarte.getWidth()/MAX_WIDTH);
+            column.setMinWidth(fondCarte.getWidth()/MAX_WIDTH);
             this.getColumnConstraints().add(column);
         }
         for (int r = 0; r <= MAX_HEIGHT; r++) {
             RowConstraints row = new RowConstraints();
-            row.setPercentHeight(100.0 / 3);
+            //row.setPercentHeight(100.0 / 4);
+            row.setMaxHeight(fondCarte.getHeight()/MAX_HEIGHT);
+            row.setMinHeight(fondCarte.getHeight()/MAX_HEIGHT);
             this.getRowConstraints().add(row);
         }
         this.setGridLinesVisible(true);
@@ -55,7 +63,18 @@ public class Carte extends GridPane {
             }
         }
         listeIndex=0;*/
-    }
+    }/*
+    private void adapterObjets(){
+        for (int i = 0 ;i<this.getRowCount();i++){
+            for (int y = 0 ;y<this.getRowCount();y++){
+                for (Node objet: this.getChildren()) {
+                    objet.maxHeight(fondCarte.getHeight()/MAX_HEIGHT);
+                    objet.maxWidth(fondCarte.getWidth()/MAX_WIDTH);
+                }
+            }
+
+        }
+    }*/
 
 
 }

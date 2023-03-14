@@ -8,16 +8,16 @@ public class Clavier implements EventHandler<KeyEvent> {
     public void handle(KeyEvent event) {
         switch (event.getCode()) {
             case RIGHT:
-                Personnage.deplacerX(1);
+                //Personnage.deplacerX(1);
                 break;
             case LEFT:
-                Personnage.deplacerX(-1);
+                //Personnage.deplacerX(-1);
                 break;
             case UP:
-                Personnage.deplacerY(1);
+                //Personnage.deplacerY(1);
                 break;
             case DOWN:
-                Personnage.deplacerY(-1);
+                //Personnage.deplacerY(-1);
                 break;
             default:
                 break;

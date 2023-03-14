@@ -1,28 +1,16 @@
 package com.stardew.stardewvalley;
 
-public class Personnage {
-    private static int posX;
-    private static int posY;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
-    public static void initialiserPersonnage() {
-        posX = 0;
-        posY = 0;
-    }
+public class Personnage extends ImageView {
+    private int posX;
+    private int posY;
 
-    public static int getPosX() {
-        return posX;
-    }
-
-    public static int getPosY() {
-        return posY;
-    }
-
-    public static void deplacerX(int x) {
-        posX += x;
-    }
-
-    public static void deplacerY(int y) {
-        posY += y;
+    public Personnage() {
+        this.posX = 0;
+        this.posY = 0;
+        this.setImage(new Image("file:Images/Personnage.png"));
     }
 
 }
