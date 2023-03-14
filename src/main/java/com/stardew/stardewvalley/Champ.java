@@ -14,6 +14,12 @@ public class Champ extends ObjetInteractif {
 
     private boolean estCultive; // Si le champ est cultivé ou non
 
+    /**
+     * Constructeur de Chamo
+     *
+     * @param pfPosX la position du carré champ sur les abscisses
+     * @param pfPosY la position du carré champ sur les ordonnées
+     */
     public Champ(int pfPosX, int pfPosY) {
         super(pfPosX, pfPosY, true);
         this.estCultive = false;
@@ -39,8 +45,6 @@ public class Champ extends ObjetInteractif {
             this.setImage(new Image("file:Images/champ_non_cultive.png"));
         }
     }
-
-
 
 
 }

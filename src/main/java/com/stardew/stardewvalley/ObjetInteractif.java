@@ -1,6 +1,5 @@
 package com.stardew.stardewvalley;
 
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 /**
@@ -11,7 +10,7 @@ import javafx.scene.image.ImageView;
  *
  * @author Nicolas Ferrayé, Jean Santoni - 3iL
  */
-public abstract class ObjetInteractif {
+public abstract class ObjetInteractif extends ImageView {
 
     private int posX;
     private int posY;
@@ -48,28 +47,12 @@ public abstract class ObjetInteractif {
     }
 
     /**
-     * @return l'ImageView associée à l'ObjetInteractif
-     */
-    public ImageView getImage() {
-        return this.image;
-    }
-
-    /**
      * Modifie l'abscisse de l'objet
      *
      * @param pfPosX la nouvelle abscisse
      */
     public void setPosX(int pfPosX) {
         this.posX = pfPosX;
-    }
-
-    /**
-     * Modifie l'image de l'ObjetInteractif
-     *
-     * @param pfImage l'Image associée à l'ObjetInteractif
-     */
-    public void setImage(Image pfImage ){
-        this.image = new ImageView(pfImage);
     }
 
     /**
