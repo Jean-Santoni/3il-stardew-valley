@@ -1,5 +1,7 @@
 package com.stardew.stardewvalley;
 
+import javafx.scene.image.Image;
+
 /**
  * Classe abstraite ObjetInteractif
  *
@@ -12,6 +14,7 @@ public abstract class ObjetInteractif {
 
     private int posX;
     private int posY;
+    private Image image;
     private boolean marchable;
 
     public ObjetInteractif(int pfPosX, int pfPosY, boolean pfMarchable) {
@@ -48,6 +51,9 @@ public abstract class ObjetInteractif {
      */
     public void setPosX(int pfPosX) {
         this.posX = pfPosX;
+    }
+    public void setImage(Image image ){
+        this.image = image;
     }
 
     /**

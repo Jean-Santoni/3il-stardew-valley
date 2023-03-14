@@ -1,5 +1,7 @@
 package com.stardew.stardewvalley;
 
+import javafx.scene.image.Image;
+
 /**
  * Classe Champ héritant d'ObjetInteractif
  *
@@ -15,6 +17,7 @@ public class Champ extends ObjetInteractif {
     public Champ(int pfPosX, int pfPosY, boolean pfEstCultive) {
         super(pfPosX, pfPosY, true);
         this.estCultive = pfEstCultive;
+        this.setImage(new Image("file:Images/Map.jpg"));
     }
 
     /**
