@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b143f2f1-d7ed-4b23-ab9d-e94571a5451b" name="Changes" comment="correction lancement application 3">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/AccessibleValleyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/AccessibleValleyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Carte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Carte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Champ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Champ.java" afterDir="false" />
+    <list default="true" id="b143f2f1-d7ed-4b23-ab9d-e94571a5451b" name="Changes" comment="Modification d'ObjetInteractif pour qu'il extends ImageView. Ajout de la javadoc">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Herbe.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,12 +107,20 @@
       <option name="project" value="LOCAL" />
       <updated>1678719694163</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Modification d'ObjetInteractif pour qu'il extends ImageView. Ajout de la javadoc">
+      <created>1678788074601</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678788074601</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit des fichier de Louis" />
     <MESSAGE value="correction lancement application" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction lancement application" />
+    <MESSAGE value="Modification d'ObjetInteractif pour qu'il extends ImageView. Ajout de la javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modification d'ObjetInteractif pour qu'il extends ImageView. Ajout de la javadoc" />
   </component>
 </project>
