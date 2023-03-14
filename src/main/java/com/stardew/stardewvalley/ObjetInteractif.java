@@ -1,26 +1,29 @@
 package com.stardew.stardewvalley;
 
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  * Classe abstraite ObjetInteractif
  *
  * @since le 13/03/2023
- * @version le 13/03/2023
+ * @version le 14/03/2023
  *
- * @author Nicolas Ferrayé - 3iL
+ * @author Nicolas Ferrayé, Jean Santoni - 3iL
  */
 public abstract class ObjetInteractif {
 
     private int posX;
     private int posY;
-    private Image image;
     private boolean marchable;
+
+    private ImageView image; // Image associée à l'ObjetInteractif
 
     public ObjetInteractif(int pfPosX, int pfPosY, boolean pfMarchable) {
         this.posX = pfPosX;
         this.posY = pfPosY;
         this.marchable = pfMarchable;
+        //this.image = new ImageView(pfImage);
     }
 
     /**
@@ -40,8 +43,15 @@ public abstract class ObjetInteractif {
     /**
      * @return true si l'objet est marchable, sinon false
      */
-    public boolean estMarchable() {
+    public boolean getEstMarchable() {
         return this.marchable;
+    }
+
+    /**
+     * @return l'ImageView associée à l'ObjetInteractif
+     */
+    public ImageView getImage() {
+        return this.image;
     }
 
     /**
@@ -52,8 +62,14 @@ public abstract class ObjetInteractif {
     public void setPosX(int pfPosX) {
         this.posX = pfPosX;
     }
-    public void setImage(Image image ){
-        this.image = image;
+
+    /**
+     * Modifie l'image de l'ObjetInteractif
+     *
+     * @param pfImage l'Image associée à l'ObjetInteractif
+     */
+    public void setImage(Image pfImage ){
+        this.image = new ImageView(pfImage);
     }
 
     /**

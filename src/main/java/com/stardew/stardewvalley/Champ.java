@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
  * Classe Champ héritant d'ObjetInteractif
  *
  * @since le 13/03/2023
- * @version le 13/03/2023
+ * @version le 14/03/2023
  *
  * @author Nicolas Ferrayé - 3iL
  */
