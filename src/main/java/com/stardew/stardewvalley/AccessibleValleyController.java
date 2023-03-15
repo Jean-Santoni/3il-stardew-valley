@@ -13,7 +13,6 @@ public class AccessibleValleyController {
 
     private Clavier clavier;
     private Carte carte;
-    private Node[][] tabCarte = null;
 
     @FXML
     BorderPane borderPanel;
@@ -26,7 +25,7 @@ public class AccessibleValleyController {
             this.borderPanel.setMaxWidth(1366);
             this.borderPanel.setCenter(this.carte);
             this.clavier = new Clavier(this.carte);
-            this.initialiserTabCarte();
+            //this.initialiserTabCarte();
 
 
 
@@ -40,20 +39,12 @@ public class AccessibleValleyController {
             //  this.borderPanel.setTop(p.getImage());
             System.out.println("Clavier :"+this.clavier);
 
-        }
+            Champ champ1 = new Champ(2, 1);
 
-    }
+            champ1.setFitWidth(carte.getCellWidth());
+            champ1.setFitHeight(carte.getCellHeight());
 
-    private void initialiserTabCarte() {
-
-        tabCarte = new Node[carte.getMAX_WIDTH()][carte.getMAX_HEIGHT()];
-
-        for(Node node : this.borderPanel.getChildren()) {
-            if(node != null) {
-                if(carte.getRowIndex(node) != null && carte.getColumnIndex(node) != null) {
-                    this.tabCarte[carte.getRowIndex(node)][carte.getColumnIndex(node)] = node;
-                }
-            }
+            carte.add(champ1, champ1.getPosX(), champ1.getPosY());
 
         }
 
