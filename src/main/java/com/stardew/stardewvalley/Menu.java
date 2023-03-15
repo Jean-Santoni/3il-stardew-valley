@@ -4,7 +4,7 @@ import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
-public class Menu extends Pane{
+public class Menu extends AnchorPane{
 
     public Menu() {
         super();
@@ -18,4 +18,5 @@ public class Menu extends Pane{
         super(arg0);
         // TODO Auto-generated constructor stub
     }
+
 }
