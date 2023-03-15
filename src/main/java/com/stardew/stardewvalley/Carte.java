@@ -6,6 +6,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 
 public class Carte extends GridPane {
+
     private final int MAX_WIDTH = 20;
     private final int MAX_HEIGHT = 10;
     private Image fondCarte = new Image("file:Images/Map.jpg");
@@ -75,6 +76,14 @@ public class Carte extends GridPane {
 
         }
     }*/
+
+    public int getMAX_WIDTH() {
+        return this.MAX_WIDTH;
+    }
+
+    public int getMAX_HEIGHT() {
+        return this.MAX_HEIGHT;
+    }
 
 
 }

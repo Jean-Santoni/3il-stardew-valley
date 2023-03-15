@@ -15,7 +15,7 @@ public class Champ extends ObjetInteractif {
     private boolean estCultive; // Si le champ est cultivé ou non
 
     /**
-     * Constructeur de Chamo
+     * Constructeur de Champ
      *
      * @param pfPosX la position du carré champ sur les abscisses
      * @param pfPosY la position du carré champ sur les ordonnées
