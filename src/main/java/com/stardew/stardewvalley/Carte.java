@@ -1,5 +1,6 @@
 package com.stardew.stardewvalley;
 
+import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -11,10 +12,14 @@ public class Carte extends GridPane {
     private final int MAX_HEIGHT = 10;
     private Image fondCarte = new Image("file:Images/Map.jpg");
 
+    private Personnage personnage;
+
     public Carte() {
         super();
+        this.setOnKeyPressed(new Clavier(this));
         initialiserCarte();
-        this.add(new Personnage(),0,0);
+        this.personnage = new Personnage();
+        this.add(this.personnage,0,0);
         this.setBackground(new Background(new BackgroundImage(fondCarte,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
@@ -86,4 +91,36 @@ public class Carte extends GridPane {
     }
 
 
+    public void deplacerJoueur(int i, int i1) {
+        if(joueurDeplacable(this.personnage.getPosY() +i,this.personnage.getPosX() + i1)){
+            this.getChildren().remove(this.personnage);
+            this.personnage.setPosX(this.personnage.getPosX() +i1);
+            this.personnage.setPosY(this.personnage.getPosY() +i);
+            this.add(this.personnage,this.personnage.getPosX(),this.personnage.getPosY());
+        }
+    }
+
+    private boolean joueurDeplacable(int i, int i1) {
+        if(getNodeByRowColumnIndex(i,i1) != null){
+            if(((ObjetInteractif)getNodeByRowColumnIndex(i,i1)).getEstMarchable()){
+                return true;
+            }
+            return false;
+        }
+        return true;
+    }
+    public Node getNodeByRowColumnIndex (final int row, final int column) {
+        Node result = null;
+        ObservableList<Node> childrens = this.getChildren();
+
+        for (Node node : childrens) {
+            if(this.getRowIndex(node) != null&& this.getColumnIndex(node) != null){
+                if(this.getRowIndex(node) == row && this.getColumnIndex(node) == column) {
+                    result = node;
+                    break;
+                }
+            }
+        }
+        return result;
+    }
 }
