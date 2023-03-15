@@ -19,6 +19,8 @@ public class Carte extends GridPane {
         this.setOnKeyPressed(new Clavier(this));
         initialiserCarte();
         this.personnage = new Personnage();
+        //this.personnage.setFitHeight(100);
+        //this.personnage.setFitWidth(70);
         this.add(this.personnage,0,0);
         this.setBackground(new Background(new BackgroundImage(fondCarte,
                 BackgroundRepeat.NO_REPEAT,
@@ -125,5 +127,13 @@ public class Carte extends GridPane {
             }
         }
         return result;
+    }
+
+    public double getCellWidth() {
+        return 1366/(MAX_WIDTH+1);
+    }
+
+    public double getCellHeight() {
+        return 768/(MAX_HEIGHT+1);
     }
 }
