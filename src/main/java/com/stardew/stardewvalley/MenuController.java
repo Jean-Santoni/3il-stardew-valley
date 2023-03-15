@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.*;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -64,6 +65,7 @@ public class MenuController {
         scene.onKeyPressedProperty().bind(root.onKeyPressedProperty());
         //stage. setFullScreen(true);
         stage.setScene(scene);
+        stage.initModality(Modality.APPLICATION_MODAL);
         stage.show();
     }
 
