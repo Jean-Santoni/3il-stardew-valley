@@ -101,6 +101,9 @@ public class Carte extends GridPane {
     }
 
     private boolean joueurDeplacable(int i, int i1) {
+        if(i<0||i1<0||i>MAX_HEIGHT-1||i1>MAX_WIDTH-1){
+            return false;
+        }
         if(getNodeByRowColumnIndex(i,i1) != null){
             if(((ObjetInteractif)getNodeByRowColumnIndex(i,i1)).getEstMarchable()){
                 return true;
