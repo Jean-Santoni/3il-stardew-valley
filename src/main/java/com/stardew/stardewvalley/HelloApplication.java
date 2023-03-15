@@ -22,11 +22,12 @@ public class HelloApplication extends Application {
             BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("AccessibleValley.fxml"));
         //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AccessibleValley.fxml"));
         //Scene scene = new Scene(fxmlLoader.load(),400,400);
-        Scene scene = new Scene(root,400,400);
+        Scene scene = new Scene(root,1366,768);
+        stage.setResizable(false);
         scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
         //scene.setOnKeyPressed(new Clavier(new Carte()));
         scene.onKeyPressedProperty().bind(root.onKeyPressedProperty());
-        stage. setFullScreen(true);
+        //stage. setFullScreen(true);
         stage.setScene(scene);
         stage.show();
 

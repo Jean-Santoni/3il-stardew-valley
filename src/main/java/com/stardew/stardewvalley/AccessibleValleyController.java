@@ -22,6 +22,8 @@ public class AccessibleValleyController {
     private void initialize() throws FileNotFoundException {
         if(clavier == null){
             this.carte = new Carte();
+            this.borderPanel.setMaxHeight(768);
+            this.borderPanel.setMaxWidth(1366);
             this.borderPanel.setCenter(this.carte);
             this.clavier = new Clavier(this.carte);
             this.initialiserTabCarte();

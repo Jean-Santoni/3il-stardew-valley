@@ -35,15 +35,15 @@ public class Carte extends GridPane {
         for (int c = 0; c <= MAX_WIDTH; c++) {
             ColumnConstraints column = new ColumnConstraints();
             //column.setPercentWidth(100.0 / 2);
-            column.setMaxWidth(fondCarte.getWidth()/MAX_WIDTH);
-            column.setMinWidth(fondCarte.getWidth()/MAX_WIDTH);
+            column.setMaxWidth(1366/(MAX_WIDTH+1));
+            column.setMinWidth(1366/(MAX_WIDTH+1));
             this.getColumnConstraints().add(column);
         }
         for (int r = 0; r <= MAX_HEIGHT; r++) {
             RowConstraints row = new RowConstraints();
             //row.setPercentHeight(100.0 / 4);
-            row.setMaxHeight(fondCarte.getHeight()/MAX_HEIGHT);
-            row.setMinHeight(fondCarte.getHeight()/MAX_HEIGHT);
+            row.setMaxHeight(768/(MAX_HEIGHT+1));
+            row.setMinHeight(768/(MAX_HEIGHT+1));
             this.getRowConstraints().add(row);
         }
         this.setGridLinesVisible(true);
@@ -101,7 +101,7 @@ public class Carte extends GridPane {
     }
 
     private boolean joueurDeplacable(int i, int i1) {
-        if(i<0||i1<0||i>MAX_HEIGHT-1||i1>MAX_WIDTH-1){
+        if(i<0||i1<0||i>MAX_HEIGHT||i1>MAX_WIDTH){
             return false;
         }
         if(getNodeByRowColumnIndex(i,i1) != null){
