@@ -18,10 +18,10 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         try {
-            //AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("Menu.fxml"));
-            BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("AccessibleValley.fxml"));
+            AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("Menu.fxml"));
+           // BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("AccessibleValley.fxml"));
         //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AccessibleValley.fxml"));
-        //Scene scene = new Scene(fxmlLoader.load(),400,400);
+       // Scene scene = new Scene(fxmlLoader.load(),400,400);
         Scene scene = new Scene(root,1366,768);
         stage.setResizable(false);
         scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
