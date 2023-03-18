@@ -14,8 +14,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MenuController {
+    private final int MAX_WIDTH = 4;
+    private final int MAX_HEIGHT = 4;
     @FXML
     private ImageView Play;
+    @FXML
+    private GridPane Grille_Menu;
 
     @FXML
     private ImageView Exit;
@@ -34,9 +38,9 @@ public class MenuController {
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundPosition.CENTER,
                 BackgroundSize.DEFAULT)));
+
         Play.setImage(new Image("file:Images/Play.jpg"));
-        Play.setX(300);
-        Play.setY(500);
+
         Play.setOnMouseClicked(event -> {
             try {
                 CarteAffichage();
@@ -45,9 +49,14 @@ public class MenuController {
             }
         });
         Exit.setImage(new Image("file:Images/Exit.jpg"));
-        Exit.setX(1000);
-        Exit.setY(490);
+
         Exit.setOnMouseClicked(even ->  ExitJeux());
+        initialiserMenu(Grille_Menu);
+        Play.setFitWidth(1366/(MAX_WIDTH+1));
+        Play.setFitHeight(768/(MAX_HEIGHT+1));
+
+        Exit.setFitWidth(1366/(MAX_WIDTH+1));
+        Exit.setFitHeight(768/(MAX_HEIGHT+1));
     }
     @FXML
     BorderPane borderPanel;
@@ -73,5 +82,27 @@ public class MenuController {
     @FXML
     public void ExitJeux (){
         System.exit(0);
+    }
+
+    private void initialiserMenu(GridPane grid) {
+
+        grid.getColumnConstraints().clear();
+        grid.getRowConstraints().clear();
+        for (int c = 0; c <= MAX_WIDTH; c++) {
+            ColumnConstraints column = new ColumnConstraints();
+            //column.setPercentWidth(100.0 / 2);
+            column.setMaxWidth(1366/(MAX_WIDTH+1));
+            column.setMinWidth(1366/(MAX_WIDTH+1));
+            grid.getColumnConstraints().add(column);
+        }
+        for (int r = 0; r <= MAX_HEIGHT; r++) {
+            RowConstraints row = new RowConstraints();
+            //row.setPercentHeight(100.0 / 4);
+            row.setMaxHeight(768/(MAX_HEIGHT+1));
+            row.setMinHeight(768/(MAX_HEIGHT+1));
+            grid.getRowConstraints().add(row);
+        }
+        grid.setGridLinesVisible(true);
+
     }
 }

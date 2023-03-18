@@ -12,7 +12,8 @@ public class Menu extends AnchorPane{
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundPosition.CENTER,
-                BackgroundSize.DEFAULT)));
+                new BackgroundSize(100,100,
+                        true, true,true, true))));
     }
     public Menu(Node... arg0) {
         super(arg0);
