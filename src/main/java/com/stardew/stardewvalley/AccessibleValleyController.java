@@ -105,7 +105,7 @@ public class AccessibleValleyController {
         ListePierres.add(new Pierre(15,6));
         ListePierres.add(new Pierre(4,2));
         ListePierres.add(new Pierre(5,2));
-        ListePierres.add(new Pierre(19,3));
+
 
 
         for(index=0  ; index< ListePierres.size();index++){
