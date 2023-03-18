@@ -28,6 +28,7 @@ public class HelloApplication extends Application {
         //scene.setOnKeyPressed(new Clavier(new Carte()));
         scene.onKeyPressedProperty().bind(root.onKeyPressedProperty());
         //stage. setFullScreen(true);
+            stage.getIcons().add(new Image("file:Images/Logo.png"));
         stage.setScene(scene);
         stage.setTitle("AccessibleValley");
         stage.show();
