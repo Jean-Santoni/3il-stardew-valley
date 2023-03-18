@@ -29,6 +29,7 @@ public class HelloApplication extends Application {
         scene.onKeyPressedProperty().bind(root.onKeyPressedProperty());
         //stage. setFullScreen(true);
         stage.setScene(scene);
+        stage.setTitle("AccessibleValley");
         stage.show();
 
         } catch(Exception e) {

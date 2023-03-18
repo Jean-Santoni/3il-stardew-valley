@@ -10,7 +10,7 @@ public class Carte extends GridPane {
 
     private final int MAX_WIDTH = 20;
     private final int MAX_HEIGHT = 10;
-    private Image fondCarte = new Image("file:Images/Map.jpg");
+    private Image fondCarte = new Image("file:Images/RPG-Maper.png");
 
     private Personnage personnage;
 
@@ -103,16 +103,18 @@ public class Carte extends GridPane {
     }
 
     private boolean joueurDeplacable(int i, int i1) {
+        boolean result = true;
         if(i<0||i1<0||i>MAX_HEIGHT||i1>MAX_WIDTH){
-            return false;
+            result = false;
         }
         if(getNodeByRowColumnIndex(i,i1) != null){
             if(((ObjetInteractif)getNodeByRowColumnIndex(i,i1)).getEstMarchable()){
-                return true;
-            }
-            return false;
+
+                result = true;
+            }else{
+            result = false;}
         }
-        return true;
+        return result ;
     }
     public Node getNodeByRowColumnIndex (final int row, final int column) {
         Node result = null;

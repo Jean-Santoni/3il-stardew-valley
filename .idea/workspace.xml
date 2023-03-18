@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b143f2f1-d7ed-4b23-ab9d-e94571a5451b" name="Changes" comment="Deplacement du personnage sur la carte">
+    <list default="true" id="16846712-fea2-4c7f-b8e1-d6dbc5f5490b" name="Changes" comment="Fenetre modal de jeu">
+      <change afterPath="$PROJECT_DIR$/Images/RPG-Maper.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/VOXScrm_Cri wilhelm (ID 0477)_LS.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Son/sonTest.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/AccessibleValleyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/AccessibleValleyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Carte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Carte.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/MenuController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,19 +47,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/louis/IdeaProjects/3il-stardew-valley/src/main/resources/com/stardew/stardewvalley&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/Java3ilv2/Images"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java3ilv2\Images" />
       <recent name="C:\Users\louis\IdeaProjects\3il-stardew-valley\src\main\resources\com\stardew\stardewvalley" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Java3ilv2\Images" />
       <recent name="C:\Users\louis\IdeaProjects\3il-stardew-valley\src\main\resources\com\stardew\stardewvalley" />
       <recent name="C:\Users\louis\IdeaProjects\3il-stardew-valley\Images" />
       <recent name="D:\Java3il\3il-stardew-valley" />
@@ -86,7 +94,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b143f2f1-d7ed-4b23-ab9d-e94571a5451b" name="Changes" comment="" />
+      <changelist id="16846712-fea2-4c7f-b8e1-d6dbc5f5490b" name="Changes" comment="Fenetre modal de jeu" />
       <created>1678716917196</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -134,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678870020708</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fenetre modal de jeu">
+      <created>1678877653697</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678877653697</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -144,6 +159,23 @@
     <MESSAGE value="fix: correction d'une erreur sur ObjetInterractif" />
     <MESSAGE value="Ajout d'un attribut marchable sur ObjetInteractif" />
     <MESSAGE value="Deplacement du personnage sur la carte" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deplacement du personnage sur la carte" />
+    <MESSAGE value="Fenetre modal de jeu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fenetre modal de jeu" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Carte.java</url>
+          <line>114</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Carte.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

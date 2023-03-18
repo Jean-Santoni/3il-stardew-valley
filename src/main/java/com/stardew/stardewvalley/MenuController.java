@@ -66,6 +66,7 @@ public class MenuController {
         //stage. setFullScreen(true);
         stage.setScene(scene);
         stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("AccessibleValley");
         stage.show();
     }
 
