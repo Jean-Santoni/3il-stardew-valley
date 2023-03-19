@@ -13,11 +13,19 @@ public class Clavier implements EventHandler<KeyEvent> {
 
     private Carte carte;
 
+    /**
+     * Constructeur de Clavier
+     * @param carte la carte chargée dans le jeu
+     */
     public Clavier(Carte carte) {
         super();
         this.carte = carte;
     }
 
+    /**
+     * Capture les différents enfoncement des touches, et déclenche les fonctions correspondantes
+     * @param event
+     */
     @Override
     public void handle(KeyEvent event) {
         switch (event.getCode()) {

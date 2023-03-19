@@ -36,6 +36,9 @@ public class MenuController {
     @FXML
     private AnchorPane Background_Menu;
 
+    /**
+     * Gère les différentes actions du menu, et ajoute l'image de fond de la fenêtre
+     */
     @FXML
     public void initialize(){
         Background_Menu.setBackground(new Background(new BackgroundImage(new Image("file:Images/Fond_menu.png"),
@@ -65,8 +68,13 @@ public class MenuController {
     }
     @FXML
     BorderPane borderPanel;
+
+    /**
+     * Affiche la carte
+     * @throws IOException
+     */
     @FXML
-    public void CarteAffichage ()throws IOException {
+    public void CarteAffichage () throws IOException {
         Stage stage = new Stage();
         //AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("Menu.fxml"));
         BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("AccessibleValley.fxml"));
@@ -85,11 +93,18 @@ public class MenuController {
         stage.show();
     }
 
+    /**
+     * Permet de quitter la partie
+     */
     @FXML
     public void ExitJeux (){
         System.exit(0);
     }
 
+    /**
+     * Initialise le menu
+     * @param grid
+     */
     private void initialiserMenu(GridPane grid) {
 
         grid.getColumnConstraints().clear();
