@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b143f2f1-d7ed-4b23-ab9d-e94571a5451b" name="Changes" comment="Ajout d'un attribut marchable sur ObjetInteractif">
-      <change afterPath="$PROJECT_DIR$/Images/Logo.png" afterDir="false" />
+    <list default="true" id="16846712-fea2-4c7f-b8e1-d6dbc5f5490b" name="Changes" comment="ajout de différentes fenetres de dialogues">
+      <change afterPath="$PROJECT_DIR$/Images/Corn_Stage_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/Hops_Stage_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/Potato_Stage_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/Tomato_Stage_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/Wheat_Stage_5.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Champ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Champ.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,11 +63,11 @@
       <recent name="C:\Users\louis\IdeaProjects\3il-stardew-valley\src\main\resources\com\stardew\stardewvalley" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Java3ilv2\Images" />
       <recent name="D:\Bureau\3IL\JAVA\Projet Java\3il-stardew-valley\Images" />
       <recent name="C:\Users\louis\IdeaProjects\3il-stardew-valley\src\main\resources\com\stardew\stardewvalley" />
       <recent name="C:\Users\louis\IdeaProjects\3il-stardew-valley\Images" />
       <recent name="D:\Java3il\3il-stardew-valley" />
-      <recent name="D:\Java3il\3il-stardew-valley\src\main\resources\com\stardew\stardewvalley" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -133,7 +137,28 @@
       <option name="project" value="LOCAL" />
       <updated>1678723408776</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Ajout de la fonctionnalité d'interaction avec les différents éléments">
+      <created>1679215382752</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679215382752</updated>
+    </task>
+    <task id="LOCAL-00007" summary="ajout d'une fenetre de dialogie pour les champs">
+      <created>1679216145632</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679216145632</updated>
+    </task>
+    <task id="LOCAL-00008" summary="ajout de différentes fenetres de dialogues">
+      <created>1679217335463</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679217335463</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,6 +178,9 @@
     <MESSAGE value="Création de la classe abstraite ObjetInteractif" />
     <MESSAGE value="fix: correction d'une erreur sur ObjetInterractif" />
     <MESSAGE value="Ajout d'un attribut marchable sur ObjetInteractif" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout d'un attribut marchable sur ObjetInteractif" />
+    <MESSAGE value="Ajout de la fonctionnalité d'interaction avec les différents éléments" />
+    <MESSAGE value="ajout d'une fenetre de dialogie pour les champs" />
+    <MESSAGE value="ajout de différentes fenetres de dialogues" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout de différentes fenetres de dialogues" />
   </component>
 </project>

@@ -46,8 +46,7 @@ public class Champ extends ObjetInteractif {
 
 
         if(!this.estCultive) {
-            this.estCultive = pfEstCultive;
-            this.setImage(new Image("file:Images/champ_cultive.png"));
+            validationCulture(pfEstCultive);
         } else {
             choixCulture();
             //this.setImage(new Image("file:Images/champ_non_cultive.png"));
@@ -55,15 +54,21 @@ public class Champ extends ObjetInteractif {
     }
     @Override
     public void interraction() {
+
+            super.interraction();
+            setEstCultive(true);
+
+
+    }
+    public void validationCulture(boolean b) {
         Alert dialogC = new Alert(Alert.AlertType.CONFIRMATION);
         dialogC.setTitle("Voulez vous cultivez ce champs");
         dialogC.setHeaderText(null);
         dialogC.setContentText("Voulez vous cultivez ce champs");
         Optional<ButtonType> answer = dialogC.showAndWait();
         if (answer.get() == ButtonType.OK) {
-            System.out.println("User chose OK");
-            super.interraction();
-            setEstCultive(true);
+            this.estCultive = b;
+            this.setImage(new Image("file:Images/champ_cultive.png"));
         }
         else {
             System.out.println("User chose Cancel or closed the dialog-box");
@@ -71,13 +76,37 @@ public class Champ extends ObjetInteractif {
 
     }
     public void choixCulture() {
-        String[] choices = {"Riz", "Blé", "Patate", "Tomate"};
+        String[] choices = {"Houblon", "Blé", "Patate", "Tomate","Maïs"};
         ChoiceDialog<String> cDial = new ChoiceDialog<>(choices[2], choices);
-        cDial.setTitle("A Choice Dialog");
+        cDial.setTitle("Choix de la culture");
         cDial.setHeaderText("Selectionner la culture voulu");
         cDial.setContentText("Culture:");
         Optional<String> selection = cDial.showAndWait();
-        selection.ifPresent(str -> System.out.println("Selection:" + str));
+        selection.ifPresent(str -> typeCulture(str));
+
+    }
+
+    public void typeCulture(String s) {
+        switch (s) {
+            case "Houblon":
+                this.setImage(new Image("file:Images/Hops_Stage_8.png"));
+                break;
+            case "Blé":
+                this.setImage(new Image("file:Images/Wheat_Stage_5.png"));
+                break;
+            case "Patate":
+                //Personnage.deplacerY(1);
+                this.setImage(new Image("file:Images/Potato_Stage_6.png"));
+                break;
+            case "Tomate":
+                this.setImage(new Image("file:Images/Tomato_Stage_6.png"));
+                break;
+            case "Maïs":
+                this.setImage(new Image("file:Images/Corn_Stage_6.png"));
+                break;
+            default:
+                break;
+        }
 
     }
 
