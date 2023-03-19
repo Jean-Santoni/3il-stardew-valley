@@ -13,6 +13,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Classe MenuController permettant de gérer le menu (Controleur MVC de la classe Menu)
+ *
+ * @version le 19/03/2023
+ */
 public class MenuController {
     private final int MAX_WIDTH = 4;
     private final int MAX_HEIGHT = 4;
@@ -103,7 +108,6 @@ public class MenuController {
             row.setMinHeight(768/(MAX_HEIGHT+1));
             grid.getRowConstraints().add(row);
         }
-
 
     }
 }

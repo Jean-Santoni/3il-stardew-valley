@@ -23,6 +23,10 @@ public class Herbe extends ObjetInteractif {
         Image image = new Image("file:Images/herbe.png");
         setImage(image);
     }
+
+    /**
+     * Gère l'interaction du joueur avec la l'herbe
+     */
     @Override
     public void interraction() {
         super.interraction();

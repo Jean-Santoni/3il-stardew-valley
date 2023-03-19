@@ -13,6 +13,11 @@ import javafx.scene.text.Text;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
+/**
+ * Classe AccessibleValleuController permettant de gérer la classe de lancement du jeu (controleur MVC de la classe HelloApplication)
+ *
+ * @version le 19/03/2023
+ */
 public class AccessibleValleyController {
 
     private Clavier clavier;
@@ -43,14 +48,14 @@ public class AccessibleValleyController {
 
     private void initializeChamps(Carte carte){
         int index = 0;
-        //Premier champ
+        // Premier champ
         for (int i = 0 ; i<8;i++){
             for (int j = 0 ; j<6;j++){
                 ListeChamps.add(new Champ(j,3+i));
 
             }
         }
-        //Deuxieme champ
+        // Deuxieme champ
         for (int i = 0 ; i<6;i++){
             for (int j = 0 ; j<4;j++){
                 ListeChamps.add(new Champ(8+j,5+i));
@@ -58,14 +63,14 @@ public class AccessibleValleyController {
             }
         }
 
-        //Troisieme champ
+        // Troisieme champ
         for (int i = 0 ; i<4;i++){
             for (int j = 0 ; j<2;j++){
                 ListeChamps.add(new Champ(17+j,7+i));
 
             }
         }
-        for(index=0  ; index< ListeChamps.size();index++){
+        for(index=0 ; index< ListeChamps.size() ; index++){
             ListeChamps.get(index).setFitWidth(carte.getCellWidth());
             ListeChamps.get(index).setFitHeight(carte.getCellHeight());
 
@@ -75,12 +80,13 @@ public class AccessibleValleyController {
     }
     private void initializePierre(Carte carte){
         int index = 0;
+
         //Premier champ
         for (int i = 0 ; i<4;i++){
                 ListePierres.add(new Pierre(6+i,0));
         }
-        //Deuxieme champ
 
+        //Deuxieme champ
         ListePierres.add(new Pierre(7,6));
         ListePierres.add(new Pierre(6,8));
         ListePierres.add(new Pierre(6,5));
@@ -99,6 +105,7 @@ public class AccessibleValleyController {
         }
 
     }
+
     private void initializeHerbes(Carte carte){
         int index = 0;
         //Premier champ

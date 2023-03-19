@@ -1,17 +1,12 @@
 package com.stardew.stardewvalley;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-
 import javafx.scene.image.Image;
 
 /**
  * Classe Pierre héritant d'ObjetInteractif
  *
  * @since le 14/03/2023
- * @version le 14/03/2023
- *
- * @author Nicolas Ferrayé - 3iL
+ * @version le 19/03/2023
  */
 public class Pierre extends ObjetInteractif {
 
@@ -27,6 +22,9 @@ public class Pierre extends ObjetInteractif {
         setImage(image);
     }
 
+    /**
+     * Gère l'interaction du joueur avec la Pierre
+     */
     @Override
     public void interraction() {
         super.interraction();

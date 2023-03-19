@@ -3,8 +3,16 @@ package com.stardew.stardewvalley;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
 
+/**
+ * Classe Clavier permettant de capturer la touche enfoncée par le joueur, et de déclencher les actions correspondantes
+ * (déplacement du joueur, interaction, quitter le jeu)
+ *
+ * @version le 19/03/2023
+ */
 public class Clavier implements EventHandler<KeyEvent> {
+
     private Carte carte;
+
     public Clavier(Carte carte) {
         super();
         this.carte = carte;

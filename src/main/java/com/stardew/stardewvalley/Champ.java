@@ -11,9 +11,7 @@ import java.util.Optional;
  * Classe Champ héritant d'ObjetInteractif
  *
  * @since le 13/03/2023
- * @version le 14/03/2023
- *
- * @author Nicolas Ferrayé - 3iL
+ * @version le 19/03/2023
  */
 public class Champ extends ObjetInteractif {
 
@@ -42,9 +40,6 @@ public class Champ extends ObjetInteractif {
      * @param pfEstCultive si le champ est cultivé ou non
      */
     public void setEstCultive(boolean pfEstCultive) {
-
-
-
         if(!this.estCultive) {
             validationCulture(pfEstCultive);
         } else {
@@ -52,29 +47,40 @@ public class Champ extends ObjetInteractif {
             //this.setImage(new Image("file:Images/champ_non_cultive.png"));
         }
     }
+
+    /**
+     * Permet de cultiver le champ
+     */
     @Override
     public void interraction() {
-
-            super.interraction();
-            setEstCultive(true);
-
-
+        super.interraction();
+        setEstCultive(true);
     }
+
+    /**
+     * Permet de cultiver ou non un champ
+     * @param b true pour le cultiver, sinon false
+     */
     public void validationCulture(boolean b) {
+
         Alert dialogC = new Alert(Alert.AlertType.CONFIRMATION);
-        dialogC.setTitle("Voulez vous cultivez ce champs");
+        dialogC.setTitle("Voulez vous cultivez ce champ");
         dialogC.setHeaderText(null);
-        dialogC.setContentText("Voulez vous cultivez ce champs");
+        dialogC.setContentText("Voulez vous cultivez ce champ");
         Optional<ButtonType> answer = dialogC.showAndWait();
+
         if (answer.get() == ButtonType.OK) {
             this.estCultive = b;
             this.setImage(new Image("file:Images/champ_cultive.png"));
-        }
-        else {
+        } else {
             System.out.println("User chose Cancel or closed the dialog-box");
         }
 
     }
+
+    /**
+     * Permet de choisir la culture du champ
+     */
     public void choixCulture() {
         String[] choices = {"Houblon", "Blé", "Patate", "Tomate","Maïs"};
         ChoiceDialog<String> cDial = new ChoiceDialog<>(choices[2], choices);
@@ -86,6 +92,10 @@ public class Champ extends ObjetInteractif {
 
     }
 
+    /**
+     * Modifie l'image du champ en fonction du type de culture
+     * @param s le type de champ
+     */
     public void typeCulture(String s) {
         switch (s) {
             case "Houblon":
@@ -109,7 +119,5 @@ public class Champ extends ObjetInteractif {
         }
 
     }
-
-
 
 }

@@ -6,7 +6,7 @@ import javafx.scene.image.ImageView;
  * Classe abstraite ObjetInteractif
  *
  * @since le 13/03/2023
- * @version le 14/03/2023
+ * @version le 19/03/2023
  *
  * @author Nicolas Ferrayé, Jean Santoni - 3iL
  */
@@ -70,7 +70,12 @@ public abstract class ObjetInteractif extends ImageView {
     public void setMarchable(boolean pfMarchable) {
         this.marchable = pfMarchable;
     }
-    public void interraction(){
+
+    /**
+     * Gère l'interaction du personnage avec l'ObjetInteractif
+     */
+    public void interraction() {
+
     }
 
 

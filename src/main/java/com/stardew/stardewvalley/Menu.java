@@ -4,6 +4,11 @@ import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
+/**
+ * Classe Menu s'affichant au lancement du jeu (boutons "Jouer" et "Quitter")
+ *
+ * @version le 19/03/2023
+ */
 public class Menu extends AnchorPane{
 
     public Menu() {
@@ -15,6 +20,7 @@ public class Menu extends AnchorPane{
                 new BackgroundSize(100,100,
                         true, true,true, true))));
     }
+
     public Menu(Node... arg0) {
         super(arg0);
         // TODO Auto-generated constructor stub
