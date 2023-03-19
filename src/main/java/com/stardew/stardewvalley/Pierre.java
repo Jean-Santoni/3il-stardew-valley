@@ -27,4 +27,10 @@ public class Pierre extends ObjetInteractif {
         setImage(image);
     }
 
+    @Override
+    public void interraction() {
+        super.interraction();
+        setImage(null);
+        setMarchable(true);
+    }
 }

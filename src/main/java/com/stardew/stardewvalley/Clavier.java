@@ -16,18 +16,26 @@ public class Clavier implements EventHandler<KeyEvent> {
             case RIGHT:
                 //Personnage.deplacerX(1);
                 this.carte.deplacerJoueur(0,1);
+                this.carte.setDeplacementPrecedent(event);
                 break;
             case LEFT:
                 //Personnage.deplacerX(-1);
                 this.carte.deplacerJoueur(0,-1);
+                this.carte.setDeplacementPrecedent(event);
                 break;
             case UP:
                 //Personnage.deplacerY(1);
                 this.carte.deplacerJoueur(-1,0);
+                this.carte.setDeplacementPrecedent(event);
                 break;
             case DOWN:
                 //Personnage.deplacerY(-1);
                 this.carte.deplacerJoueur(1,0);
+                this.carte.setDeplacementPrecedent(event);
+                break;
+            case SHIFT:
+                //Personnage.deplacerY(-1);
+                this.carte.interagir();
                 break;
             default:
                 break;

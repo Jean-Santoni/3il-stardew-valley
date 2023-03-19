@@ -35,23 +35,8 @@ public class AccessibleValleyController {
             initializeChamps(this.carte);
             initializePierre(this.carte);
             initializeHerbes(this.carte);
-
-
-            //this.initialiserTabCarte();
-
-
-
-           // carte.add(new Text("sidufhsdifh"),1,2);
-            //carte.add(new Champ(5,5).getImage(),1,3);
-
-
-
-
             this.borderPanel.setOnKeyPressed(this.clavier);
-            //  this.borderPanel.setTop(p.getImage());
             System.out.println("Clavier :"+this.clavier);
-
-
         }
 
     }
@@ -105,8 +90,6 @@ public class AccessibleValleyController {
         ListePierres.add(new Pierre(15,6));
         ListePierres.add(new Pierre(4,2));
         ListePierres.add(new Pierre(5,2));
-
-
 
         for(index=0  ; index< ListePierres.size();index++){
             ListePierres.get(index).setFitWidth(carte.getCellWidth());

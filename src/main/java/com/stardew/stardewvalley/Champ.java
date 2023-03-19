@@ -45,6 +45,10 @@ public class Champ extends ObjetInteractif {
             this.setImage(new Image("file:Images/champ_non_cultive.png"));
         }
     }
-
+    @Override
+    public void interraction() {
+        super.interraction();
+        setEstCultive(true);
+    }
 
 }

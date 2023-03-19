@@ -19,8 +19,14 @@ public class Herbe extends ObjetInteractif {
      * @param pfPosY la position du carré d'herbe sur les ordonnées
      */
     public Herbe(int pfPosX, int pfPosY) {
-        super(pfPosX, pfPosY, true);
+        super(pfPosX, pfPosY, false);
         Image image = new Image("file:Images/herbe.png");
         setImage(image);
+    }
+    @Override
+    public void interraction() {
+        super.interraction();
+        setImage(null);
+        setMarchable(true);
     }
 }

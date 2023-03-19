@@ -22,7 +22,7 @@ public abstract class ObjetInteractif extends ImageView {
         this.posX = pfPosX;
         this.posY = pfPosY;
         this.marchable = pfMarchable;
-        //this.image = new ImageView(pfImage);
+
     }
 
     /**
@@ -69,6 +69,8 @@ public abstract class ObjetInteractif extends ImageView {
      */
     public void setMarchable(boolean pfMarchable) {
         this.marchable = pfMarchable;
+    }
+    public void interraction(){
     }
 
 

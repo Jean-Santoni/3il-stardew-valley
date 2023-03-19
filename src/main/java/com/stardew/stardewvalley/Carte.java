@@ -4,12 +4,14 @@ import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 
 public class Carte extends GridPane {
 
     private final int MAX_WIDTH = 20;
     private final int MAX_HEIGHT = 10;
+    private KeyEvent deplacementPrecedent;
     private Image fondCarte = new Image("file:Images/RPG-Maper.png");
 
     private Personnage personnage;
@@ -49,40 +51,8 @@ public class Carte extends GridPane {
             this.getRowConstraints().add(row);
         }
         this.setGridLinesVisible(true);
-       /* int collIndex = 0;
-        int rowIndex = 0;
-        int listeIndex = 0;
-        for (collIndex = 0; collIndex <= 2; collIndex++) {
-            for (rowIndex = 0; rowIndex <= 3; rowIndex++) {
-                ImageView n = new ImageView();
-                if(ListeCarte.get(listeIndex).isClique()==false) {
-                    n.setImage(ListeCarte.get(listeIndex).getDos());
-                }else if(ListeCarte.get(listeIndex).isValide() && ListeCarte.get(listeIndex).isClique() ){
-                    n.setImage(ListeCarte.get(listeIndex).getValide());
-                }else {
-                    n.setImage(ListeCarte.get(listeIndex).getFace());
-                }
-                n.setFitWidth(100.0);
-                n.setFitHeight(100.0);
-                Carte carteTampon = ListeCarte.get(listeIndex);
-                n.setOnMouseClicked(event ->CliqueCase(carteTampon) );
-                this.add(n, collIndex, rowIndex);
-                listeIndex++;
-            }
-        }
-        listeIndex=0;*/
-    }/*
-    private void adapterObjets(){
-        for (int i = 0 ;i<this.getRowCount();i++){
-            for (int y = 0 ;y<this.getRowCount();y++){
-                for (Node objet: this.getChildren()) {
-                    objet.maxHeight(fondCarte.getHeight()/MAX_HEIGHT);
-                    objet.maxWidth(fondCarte.getWidth()/MAX_WIDTH);
-                }
-            }
 
-        }
-    }*/
+    }
 
     public int getMAX_WIDTH() {
         return this.MAX_WIDTH;
@@ -137,5 +107,43 @@ public class Carte extends GridPane {
 
     public double getCellHeight() {
         return 768/(MAX_HEIGHT+1);
+    }
+    public void setDeplacementPrecedent(KeyEvent k){
+        this.deplacementPrecedent=k;
+    }
+
+    public void interagir(){
+        int Xobjet=0;
+        int Yobjet=0;
+        switch (this.deplacementPrecedent.getCode()) {
+            case RIGHT:
+                //Personnage.deplacerX(1);
+                Xobjet=this.personnage.getPosX()+1;
+                Yobjet=this.personnage.getPosY();
+                break;
+            case LEFT:
+                //Personnage.deplacerX(-1);
+                Xobjet=this.personnage.getPosX()-1;
+                Yobjet=this.personnage.getPosY();
+                break;
+            case UP:
+                //Personnage.deplacerY(1);
+                Xobjet=this.personnage.getPosX();
+                Yobjet=this.personnage.getPosY()-1;
+                break;
+            case DOWN:
+                //Personnage.deplacerY(-1);
+                Xobjet=this.personnage.getPosX();
+                Yobjet=this.personnage.getPosY()+1;
+                break;
+            default:
+                break;
+        }
+        if(this.getNodeByRowColumnIndex(Yobjet,Xobjet) != null){
+           ObjetInteractif objet= (ObjetInteractif) getNodeByRowColumnIndex(Yobjet,Xobjet);
+           objet.interraction();
+
+        }
+
     }
 }

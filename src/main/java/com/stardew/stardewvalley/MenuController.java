@@ -75,6 +75,7 @@ public class MenuController {
         //stage. setFullScreen(true);
         stage.setScene(scene);
         stage.initModality(Modality.APPLICATION_MODAL);
+        stage.getIcons().add(new Image("file:Images/Logo.png"));
         stage.setTitle("AccessibleValley");
         stage.show();
     }
@@ -102,7 +103,7 @@ public class MenuController {
             row.setMinHeight(768/(MAX_HEIGHT+1));
             grid.getRowConstraints().add(row);
         }
-        grid.setGridLinesVisible(true);
+
 
     }
 }
