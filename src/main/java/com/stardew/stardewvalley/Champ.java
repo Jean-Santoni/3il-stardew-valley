@@ -2,6 +2,7 @@ package com.stardew.stardewvalley;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ChoiceDialog;
 import javafx.scene.image.Image;
 
 import java.util.Optional;
@@ -41,12 +42,15 @@ public class Champ extends ObjetInteractif {
      * @param pfEstCultive si le champ est cultivé ou non
      */
     public void setEstCultive(boolean pfEstCultive) {
-        this.estCultive = pfEstCultive;
 
-        if(this.estCultive) {
+
+
+        if(!this.estCultive) {
+            this.estCultive = pfEstCultive;
             this.setImage(new Image("file:Images/champ_cultive.png"));
         } else {
-            this.setImage(new Image("file:Images/champ_non_cultive.png"));
+            choixCulture();
+            //this.setImage(new Image("file:Images/champ_non_cultive.png"));
         }
     }
     @Override
@@ -66,5 +70,17 @@ public class Champ extends ObjetInteractif {
         }
 
     }
+    public void choixCulture() {
+        String[] choices = {"Riz", "Blé", "Patate", "Tomate"};
+        ChoiceDialog<String> cDial = new ChoiceDialog<>(choices[2], choices);
+        cDial.setTitle("A Choice Dialog");
+        cDial.setHeaderText("Selectionner la culture voulu");
+        cDial.setContentText("Culture:");
+        Optional<String> selection = cDial.showAndWait();
+        selection.ifPresent(str -> System.out.println("Selection:" + str));
+
+    }
+
+
 
 }

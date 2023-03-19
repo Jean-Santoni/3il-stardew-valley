@@ -2,10 +2,14 @@ package com.stardew.stardewvalley;
 
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
+
+import java.util.Optional;
 
 public class Carte extends GridPane {
 
@@ -145,5 +149,15 @@ public class Carte extends GridPane {
 
         }
 
+    }
+    public void quitterJeu() {
+        Alert dialogC = new Alert(Alert.AlertType.CONFIRMATION);
+        dialogC.setTitle("Voulez vous quitter le jeu");
+        dialogC.setHeaderText(null);
+        dialogC.setContentText("Voulez vous quitter le jeu ?");
+        Optional<ButtonType> answer = dialogC.showAndWait();
+        if (answer.get() == ButtonType.OK) {
+            System.exit(0);
+        }
     }
 }

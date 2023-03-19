@@ -37,6 +37,10 @@ public class Clavier implements EventHandler<KeyEvent> {
                 //Personnage.deplacerY(-1);
                 this.carte.interagir();
                 break;
+            case ESCAPE:
+                //Personnage.deplacerY(-1);
+                this.carte.quitterJeu();
+                break;
             default:
                 break;
         }
