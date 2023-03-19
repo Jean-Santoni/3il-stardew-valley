@@ -1,6 +1,10 @@
 package com.stardew.stardewvalley;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
+
+import java.util.Optional;
 
 /**
  * Classe Champ héritant d'ObjetInteractif
@@ -47,8 +51,20 @@ public class Champ extends ObjetInteractif {
     }
     @Override
     public void interraction() {
-        super.interraction();
-        setEstCultive(true);
+        Alert dialogC = new Alert(Alert.AlertType.CONFIRMATION);
+        dialogC.setTitle("Voulez vous cultivez ce champs");
+        dialogC.setHeaderText(null);
+        dialogC.setContentText("Voulez vous cultivez ce champs");
+        Optional<ButtonType> answer = dialogC.showAndWait();
+        if (answer.get() == ButtonType.OK) {
+            System.out.println("User chose OK");
+            super.interraction();
+            setEstCultive(true);
+        }
+        else {
+            System.out.println("User chose Cancel or closed the dialog-box");
+        }
+
     }
 
 }
