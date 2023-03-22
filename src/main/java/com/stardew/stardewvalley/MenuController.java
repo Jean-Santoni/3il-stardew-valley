@@ -50,7 +50,7 @@ public class MenuController {
                 BackgroundPosition.CENTER,
                 BackgroundSize.DEFAULT)));
 
-        Play.setImage(new Image("file:Images/Play.jpg"));
+        Play.setImage(new Image("file:Images/Play.png"));
 
         Play.setOnMouseClicked(event -> {
             try {
@@ -60,7 +60,7 @@ public class MenuController {
                 throw new RuntimeException(e);
             }
         });
-        Exit.setImage(new Image("file:Images/Exit.jpg"));
+        Exit.setImage(new Image("file:Images/Exit.png"));
 
         Exit.setOnMouseClicked(even ->  ExitJeux());
         initialiserMenu(Grille_Menu);
