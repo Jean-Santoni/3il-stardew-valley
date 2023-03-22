@@ -56,4 +56,28 @@ public class Inventaire {
     public static void retirerArgent(int debit){
         argent -= debit;
     }
+
+    public static int getNbCulture(Cultivations c) {
+        int result = 0;
+        switch (c){
+            case Houblon:
+                result = nbHoublon;
+                break;
+            case Blé:
+                result = nbBle;
+                break;
+            case PommeDeTerre:
+                result = nbPommeDeTerre;
+                break;
+            case Tomate:
+                result = nbTomate;
+                break;
+            case Maïs:
+                result = nbMais;
+                break;
+            default:
+                break;
+        }
+        return result;
+    }
 }

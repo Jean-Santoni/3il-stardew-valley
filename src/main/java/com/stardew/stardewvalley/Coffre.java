@@ -27,7 +27,32 @@ public class Coffre extends ObjetInteractif {
         cDial.setTitle("Marché");
         cDial.setHeaderText("Que voulez-vous vendre ?");
         Optional<Cultivations> selection = cDial.showAndWait();
-        selection.ifPresent(str -> System.out.println("Selection:" + str));
-
+        selection.ifPresent(str -> vendre(str));
+    }
+    private void vendre(Cultivations c){
+        int prix = 0;
+        switch (c){
+            case Houblon:
+                prix = 10;
+                break;
+            case Blé:
+                prix = 100;
+                break;
+            case PommeDeTerre:
+                prix = 1000;
+                break;
+            case Tomate:
+                prix = 10000;
+                break;
+            case Maïs:
+                prix = 100000;
+                break;
+            default:
+                break;
+        }
+        for(int i=0; i<Inventaire.getNbCulture(c);i++){
+            Inventaire.retirer(c);
+            Inventaire.ajouterArgent(prix);
+        }
     }
 }
