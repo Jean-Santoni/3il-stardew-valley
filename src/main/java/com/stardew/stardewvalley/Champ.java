@@ -65,6 +65,8 @@ public class Champ extends ObjetInteractif {
         setEstCultive(true);
     }
 
+
+
     /**
      * Permet de cultiver ou non un champ
      * @param b true pour le cultiver, sinon false
