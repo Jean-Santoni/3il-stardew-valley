@@ -18,7 +18,7 @@ public class Champ extends ObjetInteractif {
 
     private boolean estCultive; // Si le champ est cultivé ou non
     private boolean estPlante; // Si le champ est vide ou non
-    private String cultive;
+    private Cultivations cultive;
 
     /**
      * Constructeur de Champ
@@ -30,7 +30,7 @@ public class Champ extends ObjetInteractif {
         super(pfPosX, pfPosY, true);
         this.estCultive = false;
         this.estPlante = false;
-        this.cultive = "";
+        this.cultive = Cultivations.Vide;
         this.setImage(new Image("file:Images/champ_non_cultive.png"));
     }
 
@@ -102,7 +102,7 @@ public class Champ extends ObjetInteractif {
             this.estPlante = b;
             Inventaire.ajouter(this.cultive);
             this.setImage(new Image("file:Images/champ_cultive.png"));
-            this.cultive = "";
+            this.cultive = Cultivations.Vide;
         }
 
     }
@@ -111,12 +111,13 @@ public class Champ extends ObjetInteractif {
      * Permet de choisir la culture du champ
      */
     public void choixCulture() {
-        String[] choices = {"Houblon", "Blé", "Patate", "Tomate","Maïs"};
-        ChoiceDialog<String> cDial = new ChoiceDialog<>(choices[2], choices);
+        Cultivations[] choices = {Cultivations.Houblon, Cultivations.Blé, Cultivations.PommeDeTerre,
+                Cultivations.Tomate,Cultivations.Maïs};
+        ChoiceDialog<Cultivations> cDial = new ChoiceDialog<>(choices[0], choices);
         cDial.setTitle("Choix de la culture");
         cDial.setHeaderText("Selectionner la culture voulu");
         cDial.setContentText("Culture:");
-        Optional<String> selection = cDial.showAndWait();
+        Optional<Cultivations> selection = cDial.showAndWait();
         selection.ifPresent(str -> typeCulture(str));
 
     }
@@ -125,27 +126,27 @@ public class Champ extends ObjetInteractif {
      * Modifie l'image du champ en fonction du type de culture
      * @param s le type de champ
      */
-    public void typeCulture(String s) {
-        switch (s) {
-            case "Houblon":
+    public void typeCulture(Cultivations c) {
+        switch (c) {
+            case Houblon:
                 this.setImage(new Image("file:Images/Hops_Stage_8.png"));
                 break;
-            case "Blé":
+            case Blé:
                 this.setImage(new Image("file:Images/Wheat_Stage_5.png"));
                 break;
-            case "Patate":
+            case PommeDeTerre:
                 this.setImage(new Image("file:Images/Potato_Stage_6.png"));
                 break;
-            case "Tomate":
+            case Tomate:
                 this.setImage(new Image("file:Images/Tomato_Stage_6.png"));
                 break;
-            case "Maïs":
+            case Maïs:
                 this.setImage(new Image("file:Images/Corn_Stage_6.png"));
                 break;
             default:
                 break;
         }
-        this.cultive = s;
+        this.cultive = c;
         this.estPlante = true;
 
     }

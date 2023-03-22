@@ -8,30 +8,46 @@ public class Inventaire {
     private static int nbMais;
     private static int argent;
 
-    public static void ajouter(String ajout) {
+    public static void ajouter(Cultivations ajout) {
         switch (ajout){
-            case "Houblon":
+            case Houblon:
                 nbHoublon ++;
                 break;
-            case "Blé":
+            case Blé:
                 nbBle ++;
                 break;
-            case "Patate":
+            case PommeDeTerre:
                 nbPommeDeTerre ++;
                 break;
-            case "Tomate":
+            case Tomate:
                 nbTomate ++;
                 break;
-            case "Maïs":
+            case Maïs:
                 nbMais ++;
                 break;
             default:
                 break;
         }
-        System.out.println(nbHoublon);
-        System.out.println(nbBle);
-        System.out.println(nbPommeDeTerre);
-        System.out.println(nbTomate);
-        System.out.println(nbMais);
+    }
+    public static void retirer(Cultivations retirer) {
+        switch (retirer){
+            case Houblon:
+                nbHoublon --;
+                break;
+            case Blé:
+                nbBle --;
+                break;
+            case PommeDeTerre:
+                nbPommeDeTerre --;
+                break;
+            case Tomate:
+                nbTomate --;
+                break;
+            case Maïs:
+                nbMais --;
+                break;
+            default:
+                break;
+        }
     }
 }
