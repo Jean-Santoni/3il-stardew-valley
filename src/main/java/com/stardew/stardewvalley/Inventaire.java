@@ -50,4 +50,10 @@ public class Inventaire {
                 break;
         }
     }
+    public static void ajouterArgent(int credit){
+        argent += credit;
+    }
+    public static void retirerArgent(int debit){
+        argent -= debit;
+    }
 }
