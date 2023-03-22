@@ -1,7 +1,15 @@
 package com.stardew.stardewvalley;
 
-public class Maison extends ObjetInteractif{
+/**
+ * Classe Maison héritant d'ObjetInteractif
+ *
+ * @since le 22/03/2023
+ * @version le 22/03/2023
+ */
+public class Maison extends ObjetInteractif {
+
     private boolean porte;
+
     public Maison(int pfPosX, int pfPosY,boolean porte) {
         super(pfPosX, pfPosY, false);
         this.porte=porte;
@@ -13,4 +21,5 @@ public class Maison extends ObjetInteractif{
             System.out.println("C'est bon");
         }
     }
+
 }

@@ -11,7 +11,7 @@ import java.util.Optional;
  * Classe Champ héritant d'ObjetInteractif
  *
  * @since le 13/03/2023
- * @version le 19/03/2023
+ * @version le 22/03/2023
  */
 public class Champ extends ObjetInteractif {
 
@@ -78,8 +78,6 @@ public class Champ extends ObjetInteractif {
         if (answer.get() == ButtonType.OK) {
             this.estCultive = b;
             this.setImage(new Image("file:Images/champ_cultive.png"));
-        } else {
-            System.out.println("User chose Cancel or closed the dialog-box");
         }
 
     }
@@ -132,7 +130,6 @@ public class Champ extends ObjetInteractif {
                 this.setImage(new Image("file:Images/Wheat_Stage_5.png"));
                 break;
             case "Patate":
-                //Personnage.deplacerY(1);
                 this.setImage(new Image("file:Images/Potato_Stage_6.png"));
                 break;
             case "Tomate":
