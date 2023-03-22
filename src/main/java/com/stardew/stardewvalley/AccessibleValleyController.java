@@ -17,6 +17,9 @@ public class AccessibleValleyController {
     private ArrayList<Pierre> listePierres = new ArrayList<>();
     private ArrayList<Herbe> listeHerbes = new ArrayList<>();
     private ArrayList<Maison> listeMaison = new ArrayList<>();
+
+    private ArrayList<Coffre> listeCoffre = new ArrayList<>();
+
     private Carte carte;
 
     @FXML
@@ -38,6 +41,7 @@ public class AccessibleValleyController {
             initializePierre(this.carte);
             initializeHerbes(this.carte);
             initializeMaison(this.carte);
+            initializeCoffre(this.carte);
             this.borderPanel.setOnKeyPressed(this.clavier);
         }
 
@@ -176,6 +180,24 @@ public class AccessibleValleyController {
             listeMaison.get(index).setFitHeight(carte.getCellHeight());
 
             carte.add( listeMaison.get(index),  listeMaison.get(index).getPosX(),  listeMaison.get(index).getPosY());
+        }
+    }
+    /**
+     * Positionne la coffre sur la carte
+     *
+     * @param
+     */
+
+    private void initializeCoffre(Carte carte){
+        int index =0;
+
+        listeCoffre.add(new Coffre(17,2));
+
+        for(index=0  ; index< listeCoffre.size();index++){
+            listeCoffre.get(index).setFitWidth(carte.getCellWidth());
+            listeCoffre.get(index).setFitHeight(carte.getCellHeight());
+
+            carte.add( listeCoffre.get(index),  listeCoffre.get(index).getPosX(),  listeCoffre.get(index).getPosY());
         }
     }
 
