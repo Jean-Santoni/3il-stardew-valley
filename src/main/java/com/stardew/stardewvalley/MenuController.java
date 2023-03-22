@@ -8,9 +8,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -52,7 +55,8 @@ public class MenuController {
         Play.setOnMouseClicked(event -> {
             try {
                 CarteAffichage();
-            } catch (IOException e) {
+
+           } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         });

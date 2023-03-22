@@ -24,6 +24,7 @@ public class AccessibleValleyController {
     private ArrayList<Champ> ListeChamps = new ArrayList<>();
     private ArrayList<Pierre> ListePierres = new ArrayList<>();
     private ArrayList<Herbe> ListeHerbes = new ArrayList<>();
+    private ArrayList<Maison> ListeMaison = new ArrayList<>();
     private Carte carte;
 
     @FXML
@@ -40,6 +41,7 @@ public class AccessibleValleyController {
             initializeChamps(this.carte);
             initializePierre(this.carte);
             initializeHerbes(this.carte);
+            initializeMaison(this.carte);
             this.borderPanel.setOnKeyPressed(this.clavier);
             System.out.println("Clavier :"+this.clavier);
         }
@@ -129,6 +131,29 @@ public class AccessibleValleyController {
             carte.add( ListeHerbes.get(index),  ListeHerbes.get(index).getPosX(),  ListeHerbes.get(index).getPosY());
         }
 
+    }
+    private void initializeMaison(Carte carte){
+        int index = 0;
+        //Premier champ
+        for (int i = 0 ; i<3;i++){
+            for (int j = 0 ; j<3;j++){
+
+                    if (i == 2 && j == 1) {
+                        ListeMaison.add(new Maison(18 + j, 0 + i,true));
+                    }
+            else{
+                    ListeMaison.add(new Maison(18 + j, 0 + i,false));
+                }
+
+            }
+        }
+
+        for(index=0  ; index< ListeMaison.size();index++){
+            ListeMaison.get(index).setFitWidth(carte.getCellWidth());
+            ListeMaison.get(index).setFitHeight(carte.getCellHeight());
+
+            carte.add( ListeMaison.get(index),  ListeMaison.get(index).getPosX(),  ListeMaison.get(index).getPosY());
+        }
     }
 
 }
