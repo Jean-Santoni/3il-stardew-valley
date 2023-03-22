@@ -2,14 +2,20 @@ package com.stardew.stardewvalley;
 
 import javafx.collections.ObservableList;
 import javafx.geometry.HPos;
+import javafx.geometry.Pos;
 import javafx.geometry.VPos;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Optional;
 
 /**
@@ -25,7 +31,7 @@ public class Carte extends GridPane {
     private KeyEvent deplacementPrecedent;
     private Image fondCarte = new Image("file:Images/RPG-Maper-Maison.png");
 
-    private Personnage personnage;
+    protected Personnage personnage;
 
     /**
      * Constructeur de Carte
@@ -37,6 +43,8 @@ public class Carte extends GridPane {
         this.setOnKeyPressed(new Clavier(this));
         initialiserCarte();
         this.personnage = new Personnage();
+        //this.personnage.setFitHeight(100);
+        //this.personnage.setFitWidth(70);
         this.personnage.setPreserveRatio(true);
         this.personnage.setFitHeight(100);
         this.add(this.personnage,0,0);
@@ -46,6 +54,7 @@ public class Carte extends GridPane {
                 BackgroundPosition.CENTER,
                 new BackgroundSize(100,100,
                         true, true,true, true))));
+        //adapterObjets();
     }
 
     /**
@@ -58,6 +67,7 @@ public class Carte extends GridPane {
 
         for (int c = 0; c <= MAX_WIDTH; c++) {
             ColumnConstraints column = new ColumnConstraints();
+            //column.setPercentWidth(100.0 / 2);
             column.setMaxWidth(1366/(MAX_WIDTH+1));
             column.setMinWidth(1366/(MAX_WIDTH+1));
             column.setHalignment(HPos.CENTER);
@@ -66,6 +76,7 @@ public class Carte extends GridPane {
 
         for (int r = 0; r <= MAX_HEIGHT; r++) {
             RowConstraints row = new RowConstraints();
+            //row.setPercentHeight(100.0 / 4);
             row.setMaxHeight(768/(MAX_HEIGHT+1));
             row.setMinHeight(768/(MAX_HEIGHT+1));
             row.setValignment(VPos.BOTTOM);
@@ -141,9 +152,11 @@ public class Carte extends GridPane {
         ObservableList<Node> childrens = this.getChildren();
 
         for (Node node : childrens) {
-            if(this.getRowIndex(node) != null&& this.getColumnIndex(node) != null && this.getRowIndex(node) == row && this.getColumnIndex(node) == column){
-                result = node;
-                break;
+            if(this.getRowIndex(node) != null&& this.getColumnIndex(node) != null){
+                if(this.getRowIndex(node) == row && this.getColumnIndex(node) == column) {
+                    result = node;
+                    break;
+                }
             }
         }
         return result;
@@ -170,25 +183,29 @@ public class Carte extends GridPane {
     /**
      * Gère l'interaction du joueur sur la carte
      */
-    public void interagir() {
+    public void interagir() throws IOException {
 
         int Xobjet = 0;
         int Yobjet = 0;
 
         switch (this.deplacementPrecedent.getCode()) {
             case RIGHT:
+                //Personnage.deplacerX(1);
                 Xobjet=this.personnage.getPosX()+1;
                 Yobjet=this.personnage.getPosY();
                 break;
             case LEFT:
+                //Personnage.deplacerX(-1);
                 Xobjet=this.personnage.getPosX()-1;
                 Yobjet=this.personnage.getPosY();
                 break;
             case UP:
+                //Personnage.deplacerY(1);
                 Xobjet=this.personnage.getPosX();
                 Yobjet=this.personnage.getPosY()-1;
                 break;
             case DOWN:
+                //Personnage.deplacerY(-1);
                 Xobjet=this.personnage.getPosX();
                 Yobjet=this.personnage.getPosY()+1;
                 break;
@@ -216,6 +233,9 @@ public class Carte extends GridPane {
         if (answer.get() == ButtonType.OK) {
             System.exit(0);
         }
+    }
+    public Personnage getPersonnage(){
+        return this.personnage;
     }
 
 }

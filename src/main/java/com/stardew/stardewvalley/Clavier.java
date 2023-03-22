@@ -3,6 +3,8 @@ package com.stardew.stardewvalley;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
 
+import java.io.IOException;
+
 /**
  * Classe Clavier permettant de capturer la touche enfoncée par le joueur, et de déclencher les actions correspondantes
  * (déplacement du joueur, interaction, quitter le jeu)
@@ -46,7 +48,11 @@ public class Clavier implements EventHandler<KeyEvent> {
                 this.carte.setDeplacementPrecedent(event);
                 break;
             case SHIFT:
-                this.carte.interagir();
+                try {
+                    this.carte.interagir();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
                 break;
             case ESCAPE:
                 this.carte.quitterJeu();

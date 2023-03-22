@@ -2,6 +2,8 @@ package com.stardew.stardewvalley;
 
 import javafx.scene.image.ImageView;
 
+import java.io.IOException;
+
 /**
  * Classe abstraite ObjetInteractif
  *
@@ -74,7 +76,7 @@ public abstract class ObjetInteractif extends ImageView {
     /**
      * Gère l'interaction du personnage avec l'ObjetInteractif
      */
-    public void interraction() {
+    public void interraction() throws IOException {
 
     }
 

@@ -5,6 +5,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.image.Image;
 
+import java.io.IOException;
 import java.util.Optional;
 
 /**
@@ -60,7 +61,7 @@ public class Champ extends ObjetInteractif {
      * Permet de cultiver le champ
      */
     @Override
-    public void interraction() {
+    public void interraction() throws IOException {
         super.interraction();
         setEstCultive(true);
     }
