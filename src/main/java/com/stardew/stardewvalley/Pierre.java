@@ -2,6 +2,8 @@ package com.stardew.stardewvalley;
 
 import javafx.scene.image.Image;
 
+import java.io.IOException;
+
 /**
  * Classe Pierre héritant d'ObjetInteractif
  *
@@ -26,7 +28,7 @@ public class Pierre extends ObjetInteractif {
      * Gère l'interaction du joueur avec la Pierre
      */
     @Override
-    public void interraction() {
+    public void interraction() throws IOException {
         super.interraction();
         setImage(null);
         setMarchable(true);
