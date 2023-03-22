@@ -6,9 +6,12 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -53,7 +56,7 @@ public class MenuController {
         Play.setImage(new Image("file:Images/Play.png"));
 
         Play.setOnMouseClicked(event -> {
-            try {
+           try {
                 CarteAffichage();
 
            } catch (IOException e) {
