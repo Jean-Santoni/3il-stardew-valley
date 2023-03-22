@@ -8,7 +8,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
+import java.io.File;
 import java.util.Optional;
 
 /**
@@ -22,7 +25,7 @@ public class Carte extends GridPane {
     private final int MAX_WIDTH = 20;
     private final int MAX_HEIGHT = 10;
     private KeyEvent deplacementPrecedent;
-    private Image fondCarte = new Image("file:Images/RPG-Maper.png");
+    private Image fondCarte = new Image("file:Images/RPG-Maper-Maison.png");
 
     private Personnage personnage;
 
@@ -96,6 +99,7 @@ public class Carte extends GridPane {
             this.personnage.setPosX(this.personnage.getPosX() +i1);
             this.personnage.setPosY(this.personnage.getPosY() +i);
             this.add(this.personnage,this.personnage.getPosX(),this.personnage.getPosY());
+
         }
     }
 
