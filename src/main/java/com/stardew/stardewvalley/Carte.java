@@ -1,6 +1,9 @@
 package com.stardew.stardewvalley;
 
 import javafx.collections.ObservableList;
+import javafx.geometry.HPos;
+import javafx.geometry.Pos;
+import javafx.geometry.VPos;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -41,6 +44,8 @@ public class Carte extends GridPane {
         this.personnage = new Personnage();
         //this.personnage.setFitHeight(100);
         //this.personnage.setFitWidth(70);
+        this.personnage.setPreserveRatio(true);
+        this.personnage.setFitHeight(100);
         this.add(this.personnage,0,0);
         this.setBackground(new Background(new BackgroundImage(fondCarte,
                 BackgroundRepeat.NO_REPEAT,
@@ -64,6 +69,7 @@ public class Carte extends GridPane {
             //column.setPercentWidth(100.0 / 2);
             column.setMaxWidth(1366/(MAX_WIDTH+1));
             column.setMinWidth(1366/(MAX_WIDTH+1));
+            column.setHalignment(HPos.CENTER);
             this.getColumnConstraints().add(column);
         }
 
@@ -72,6 +78,7 @@ public class Carte extends GridPane {
             //row.setPercentHeight(100.0 / 4);
             row.setMaxHeight(768/(MAX_HEIGHT+1));
             row.setMinHeight(768/(MAX_HEIGHT+1));
+            row.setValignment(VPos.BOTTOM);
             this.getRowConstraints().add(row);
         }
 
