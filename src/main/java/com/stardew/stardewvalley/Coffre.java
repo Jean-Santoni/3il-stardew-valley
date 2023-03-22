@@ -21,7 +21,7 @@ public class Coffre extends ObjetInteractif {
 
     }
     public void validationVendre(boolean b) {
-        String[] choices = {"Houblon", "Blé", "Pattate", "Tomate","Maïs"};
+        String[] choices = {"Houblon", "Blé", "Patate", "Tomate","Maïs"};
         ChoiceDialog<String> cDial = new ChoiceDialog<>(choices[2], choices);
         cDial.setTitle("Marché");
         cDial.setHeaderText("Que voulez-vous vendre ?");
