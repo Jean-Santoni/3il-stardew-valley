@@ -18,7 +18,7 @@ import java.io.IOException;
 public class Maison extends ObjetInteractif {
 
     private boolean porte;
-    private Stage stage = new Stage();
+    private Stage stage;
      private BorderPane root ;
     private boolean exterieur;
 
@@ -35,25 +35,26 @@ public class Maison extends ObjetInteractif {
                entrerMaison();
            }else {
                sortirMaison();
-               System.out.println("coucou");
            }
         }
     }
     public void entrerMaison() throws IOException {
-
-       this.root= (BorderPane) FXMLLoader.load(getClass().getResource("InterieurMaison.fxml"));
-        Scene scene = new Scene(root,1366,768);
-        stage.setResizable(false);
-        scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-        scene.onKeyPressedProperty().bind(root.onKeyPressedProperty());
-        stage.setScene(scene);
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.getIcons().add(new Image("file:Images/Logo.png"));
-        stage.setTitle("AccessibleValley");
+        if(this.stage == null){
+            this.stage = new Stage();
+            this.root= (BorderPane) FXMLLoader.load(getClass().getResource("InterieurMaison.fxml"));
+            Scene scene = new Scene(root,1366,768);
+            stage.setResizable(false);
+            scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+            scene.onKeyPressedProperty().bind(root.onKeyPressedProperty());
+            stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.getIcons().add(new Image("file:Images/Logo.png"));
+            stage.setTitle("AccessibleValley");
+        }
         stage.show();
     }
     public void sortirMaison() throws IOException {
-        this.stage.getScene().getWindow().hide();
+        ((Stage)this.getScene().getWindow()).close();
     }
 
 }
