@@ -11,11 +11,12 @@ import java.util.Optional;
  * Classe Champ héritant d'ObjetInteractif
  *
  * @since le 13/03/2023
- * @version le 19/03/2023
+ * @version le 22/03/2023
  */
 public class Champ extends ObjetInteractif {
 
     private boolean estCultive; // Si le champ est cultivé ou non
+    private boolean estPlante; // Si le champ est vide ou non
 
     /**
      * Constructeur de Champ
@@ -26,6 +27,7 @@ public class Champ extends ObjetInteractif {
     public Champ(int pfPosX, int pfPosY) {
         super(pfPosX, pfPosY, true);
         this.estCultive = false;
+        this.estPlante = false;
         this.setImage(new Image("file:Images/champ_non_cultive.png"));
     }
 
@@ -43,7 +45,11 @@ public class Champ extends ObjetInteractif {
         if(!this.estCultive) {
             validationCulture(pfEstCultive);
         } else {
-            choixCulture();
+            if(this.estPlante){
+                validationRecolte(false);
+            }else {
+                choixCulture();
+            }
             //this.setImage(new Image("file:Images/champ_non_cultive.png"));
         }
     }
@@ -71,6 +77,25 @@ public class Champ extends ObjetInteractif {
 
         if (answer.get() == ButtonType.OK) {
             this.estCultive = b;
+            this.setImage(new Image("file:Images/champ_cultive.png"));
+        }
+
+    }
+
+    /**
+     * Permet de cultiver ou non un champ
+     * @param b true pour le cultiver, sinon false
+     */
+    public void validationRecolte(boolean b) {
+
+        Alert dialogC = new Alert(Alert.AlertType.CONFIRMATION);
+        dialogC.setTitle("Voulez vous récolter ce champ ?");
+        dialogC.setHeaderText(null);
+        dialogC.setContentText("Voulez vous récolter ce champ ?");
+        Optional<ButtonType> answer = dialogC.showAndWait();
+
+        if (answer.get() == ButtonType.OK) {
+            this.estPlante = b;
             this.setImage(new Image("file:Images/champ_cultive.png"));
         } else {
             System.out.println("User chose Cancel or closed the dialog-box");
@@ -105,7 +130,6 @@ public class Champ extends ObjetInteractif {
                 this.setImage(new Image("file:Images/Wheat_Stage_5.png"));
                 break;
             case "Patate":
-                //Personnage.deplacerY(1);
                 this.setImage(new Image("file:Images/Potato_Stage_6.png"));
                 break;
             case "Tomate":
@@ -117,6 +141,7 @@ public class Champ extends ObjetInteractif {
             default:
                 break;
         }
+        this.estPlante = true;
 
     }
 
