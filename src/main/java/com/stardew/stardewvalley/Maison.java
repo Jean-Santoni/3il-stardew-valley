@@ -53,7 +53,7 @@ public class Maison extends ObjetInteractif {
         stage.show();
     }
     public void sortirMaison() throws IOException {
-        this.stage.close();
+        this.stage.getScene().getWindow().hide();
     }
 
 }

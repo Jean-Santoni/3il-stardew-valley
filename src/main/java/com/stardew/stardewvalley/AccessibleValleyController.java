@@ -183,7 +183,7 @@ public class AccessibleValleyController {
         }
     }
     /**
-     * Positionne la coffre sur la carte
+     * Positionne le coffre sur la carte
      *
      * @param
      */
