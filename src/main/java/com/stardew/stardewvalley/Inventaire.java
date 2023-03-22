@@ -1,7 +1,5 @@
 package com.stardew.stardewvalley;
 
-import javafx.scene.image.Image;
-
 public class Inventaire {
     private static int nbHoublon;
     private static int nbBle;
