@@ -16,6 +16,7 @@ import java.util.Optional;
 public class Champ extends ObjetInteractif {
 
     private boolean estCultive; // Si le champ est cultivé ou non
+    private boolean estPlante; // Si le champ est vide ou non
 
     /**
      * Constructeur de Champ
@@ -26,6 +27,7 @@ public class Champ extends ObjetInteractif {
     public Champ(int pfPosX, int pfPosY) {
         super(pfPosX, pfPosY, true);
         this.estCultive = false;
+        this.estPlante = false;
         this.setImage(new Image("file:Images/champ_non_cultive.png"));
     }
 
