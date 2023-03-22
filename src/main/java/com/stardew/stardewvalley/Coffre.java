@@ -21,11 +21,12 @@ public class Coffre extends ObjetInteractif {
 
     }
     public void validationVendre(boolean b) {
-        String[] choices = {"Houblon", "Blé", "Patate", "Tomate","Maïs"};
-        ChoiceDialog<String> cDial = new ChoiceDialog<>(choices[2], choices);
+        Cultivations[] choices = {Cultivations.Houblon, Cultivations.Blé, Cultivations.PommeDeTerre,
+                Cultivations.Tomate,Cultivations.Maïs};
+        ChoiceDialog<Cultivations> cDial = new ChoiceDialog<>(choices[0], choices);
         cDial.setTitle("Marché");
         cDial.setHeaderText("Que voulez-vous vendre ?");
-        Optional<String> selection = cDial.showAndWait();
+        Optional<Cultivations> selection = cDial.showAndWait();
         selection.ifPresent(str -> System.out.println("Selection:" + str));
 
     }
