@@ -23,7 +23,6 @@ public class Menu extends AnchorPane{
 
     public Menu(Node... arg0) {
         super(arg0);
-        // TODO Auto-generated constructor stub
     }
 
 }

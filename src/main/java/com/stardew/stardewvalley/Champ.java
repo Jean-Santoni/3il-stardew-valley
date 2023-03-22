@@ -48,12 +48,11 @@ public class Champ extends ObjetInteractif {
         if(!this.estCultive) {
             validationCulture(pfEstCultive);
         } else {
-            if(this.estPlante){
+            if(this.estPlante) {
                 validationRecolte(false);
-            }else {
+            } else {
                 choixCulture();
             }
-            //this.setImage(new Image("file:Images/champ_non_cultive.png"));
         }
     }
 
@@ -78,7 +77,7 @@ public class Champ extends ObjetInteractif {
         dialogC.setContentText("Voulez vous cultivez ce champ");
         Optional<ButtonType> answer = dialogC.showAndWait();
 
-        if (answer.get() == ButtonType.OK) {
+        if (answer.isPresent() && answer.get() == ButtonType.OK) {
             this.estCultive = b;
             this.setImage(new Image("file:Images/champ_cultive.png"));
         }
@@ -97,13 +96,11 @@ public class Champ extends ObjetInteractif {
         dialogC.setContentText("Voulez vous récolter ce champ ?");
         Optional<ButtonType> answer = dialogC.showAndWait();
 
-        if (answer.get() == ButtonType.OK) {
+        if (answer.isPresent() && answer.get() == ButtonType.OK) {
             this.estPlante = b;
             Inventaire.ajouter(this.cultive);
             this.setImage(new Image("file:Images/champ_cultive.png"));
             this.cultive = "";
-        } else {
-            System.out.println("User chose Cancel or closed the dialog-box");
         }
 
     }
