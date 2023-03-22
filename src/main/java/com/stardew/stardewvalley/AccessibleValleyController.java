@@ -166,10 +166,10 @@ public class AccessibleValleyController {
             for (int j = 0 ; j<3;j++){
 
                     if (i == 2 && j == 1) {
-                        listeMaison.add(new Maison(18 + j, 0 + i,true));
+                        listeMaison.add(new Maison(18 + j, 0 + i,true,true));
                     }
             else{
-                    listeMaison.add(new Maison(18 + j, 0 + i,false));
+                    listeMaison.add(new Maison(18 + j, 0 + i,false,true));
                 }
 
             }
