@@ -17,6 +17,7 @@ public class Champ extends ObjetInteractif {
 
     private boolean estCultive; // Si le champ est cultivé ou non
     private boolean estPlante; // Si le champ est vide ou non
+    private String cultive;
 
     /**
      * Constructeur de Champ
@@ -28,6 +29,7 @@ public class Champ extends ObjetInteractif {
         super(pfPosX, pfPosY, true);
         this.estCultive = false;
         this.estPlante = false;
+        this.cultive = "";
         this.setImage(new Image("file:Images/champ_non_cultive.png"));
     }
 
@@ -96,7 +98,9 @@ public class Champ extends ObjetInteractif {
 
         if (answer.get() == ButtonType.OK) {
             this.estPlante = b;
+            Inventaire.ajouter(this.cultive);
             this.setImage(new Image("file:Images/champ_cultive.png"));
+            this.cultive = "";
         } else {
             System.out.println("User chose Cancel or closed the dialog-box");
         }
@@ -141,6 +145,7 @@ public class Champ extends ObjetInteractif {
             default:
                 break;
         }
+        this.cultive = s;
         this.estPlante = true;
 
     }
