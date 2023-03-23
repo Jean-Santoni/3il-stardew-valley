@@ -59,30 +59,22 @@ public class Carte extends GridPane {
 
         for (int c = 0; c <= MAX_WIDTH; c++) {
             ColumnConstraints column = new ColumnConstraints();
-            column.setMaxWidth(1366/(MAX_WIDTH+1));
-            column.setMinWidth(1366/(MAX_WIDTH+1));
+            column.setMaxWidth((double) 1366/(MAX_WIDTH+1));
+            column.setMinWidth((double) 1366/(MAX_WIDTH+1));
             column.setHalignment(HPos.CENTER);
             this.getColumnConstraints().add(column);
         }
 
         for (int r = 0; r <= MAX_HEIGHT; r++) {
             RowConstraints row = new RowConstraints();
-            row.setMaxHeight(768/(MAX_HEIGHT+1));
-            row.setMinHeight(768/(MAX_HEIGHT+1));
+            row.setMaxHeight((double) 768/(MAX_HEIGHT+1));
+            row.setMinHeight((double) 768/(MAX_HEIGHT+1));
             row.setValignment(VPos.BOTTOM);
             this.getRowConstraints().add(row);
         }
 
         this.setGridLinesVisible(true);
 
-    }
-
-    public int getMAX_WIDTH() {
-        return this.MAX_WIDTH;
-    }
-
-    public int getMAX_HEIGHT() {
-        return this.MAX_HEIGHT;
     }
 
     /**
@@ -154,14 +146,14 @@ public class Carte extends GridPane {
      * @return Renvoie la largeur en pixels d'une case du tableau
      */
     public double getCellWidth() {
-        return 1366/(MAX_WIDTH+1);
+        return (double) 1366/(MAX_WIDTH+1);
     }
 
     /**
      * @return Renvoie la hauteur en pixels d'une case du tableau
      */
     public double getCellHeight() {
-        return 768/(MAX_HEIGHT+1);
+        return (double) 768/(MAX_HEIGHT+1);
     }
 
     public void setDeplacementPrecedent(KeyEvent k){
