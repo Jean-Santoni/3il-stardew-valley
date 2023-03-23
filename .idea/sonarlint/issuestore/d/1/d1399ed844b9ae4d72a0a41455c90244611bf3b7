@@ -1,0 +1,28 @@
+
+Q	java:S110	"<This class has 7 parents which is greater than 5 authorized.(â©‹¹
+X
+java:S21846"BCast one of the operands of this division operation to a "double".(—¬òø
+]
+java:S21847"BCast one of the operands of this division operation to a "double".(ß¹™ñüÿÿÿÿ
+]
+java:S2184?"BCast one of the operands of this division operation to a "double".(Øş˜çşÿÿÿÿ
+]
+java:S2184@"BCast one of the operands of this division operation to a "double".(“ËËúÿÿÿÿ
+h	java:S116
+"TRename this field "MAX_WIDTH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡––\
+o	java:S116"URename this field "MAX_HEIGHT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ‹Œæüÿÿÿÿ
+6
+java:S1170
+"!Make this final field static too.(‡––\
+<
+java:S1170"!Make this final field static too.(ÿ‹Œæüÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(®èîúÿÿÿÿ
+Q	java:S125("<This block of commented-out lines of code should be removed.(â®üØ
+r
+java:S2177."WRename this method; there is a "private" method in the parent class with the same name.(§ğåÓøÿÿÿÿ
+V	java:S1255"<This block of commented-out lines of code should be removed.(’¦«­ıÿÿÿÿ
+Q	java:S125>"<This block of commented-out lines of code should be removed.(·Â µ
+S
+java:S1068"8Remove this unused "deplacementPrecedent" private field.(Á‡Ê–øÿÿÿÿ
+I
+java:S1068".Remove this unused "personnage" private field.(åÂ®‡úÿÿÿÿ

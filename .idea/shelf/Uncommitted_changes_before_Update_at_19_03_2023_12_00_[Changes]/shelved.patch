@@ -1,0 +1,724 @@
+Index: src/main/java/com/stardew/stardewvalley/MenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.stardew.stardewvalley;\n\nimport javafx.fxml.FXML;\nimport javafx.fxml.FXMLLoader;\nimport javafx.scene.Scene;\nimport javafx.scene.control.Button;\nimport javafx.scene.image.Image;\nimport javafx.scene.image.ImageView;\nimport javafx.scene.input.MouseButton;\nimport javafx.scene.layout.*;\nimport javafx.stage.Modality;\nimport javafx.stage.Stage;\n\nimport java.io.IOException;\n\npublic class MenuController {\n    private final int MAX_WIDTH = 4;\n    private final int MAX_HEIGHT = 4;\n    @FXML\n    private ImageView Play;\n    @FXML\n    private GridPane Grille_Menu;\n\n    @FXML\n    private ImageView Exit;\n    @FXML\n    private ImageView Fond_Menu;\n    @FXML\n    private ImageView ImageMenu;\n\n    @FXML\n    private AnchorPane Background_Menu;\n\n    @FXML\n    public void initialize(){\n        Background_Menu.setBackground(new Background(new BackgroundImage(new Image(\"file:Images/Fond_menu.png\"),\n                BackgroundRepeat.NO_REPEAT,\n                BackgroundRepeat.NO_REPEAT,\n                BackgroundPosition.CENTER,\n                BackgroundSize.DEFAULT)));\n\n        Play.setImage(new Image(\"file:Images/Play.jpg\"));\n\n        Play.setOnMouseClicked(event -> {\n            try {\n                CarteAffichage();\n            } catch (IOException e) {\n                throw new RuntimeException(e);\n            }\n        });\n        Exit.setImage(new Image(\"file:Images/Exit.jpg\"));\n\n        Exit.setOnMouseClicked(even ->  ExitJeux());\n        initialiserMenu(Grille_Menu);\n        Play.setFitWidth(1366/(MAX_WIDTH+1));\n        Play.setFitHeight(768/(MAX_HEIGHT+1));\n\n        Exit.setFitWidth(1366/(MAX_WIDTH+1));\n        Exit.setFitHeight(768/(MAX_HEIGHT+1));\n    }\n    @FXML\n    BorderPane borderPanel;\n    @FXML\n    public void CarteAffichage ()throws IOException {\n        Stage stage = new Stage();\n        //AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource(\"Menu.fxml\"));\n        BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource(\"AccessibleValley.fxml\"));\n        //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"AccessibleValley.fxml\"));\n        // Scene scene = new Scene(fxmlLoader.load(),400,400);\n        Scene scene = new Scene(root,1366,768);\n        stage.setResizable(false);\n        scene.getStylesheets().add(getClass().getResource(\"application.css\").toExternalForm());\n        //scene.setOnKeyPressed(new Clavier(new Carte()));\n        scene.onKeyPressedProperty().bind(root.onKeyPressedProperty());\n        //stage. setFullScreen(true);\n        stage.setScene(scene);\n        stage.initModality(Modality.APPLICATION_MODAL);\n        stage.getIcons().add(new Image(\"file:Images/Logo.png\"));\n        stage.setTitle(\"AccessibleValley\");\n        stage.show();\n    }\n\n    @FXML\n    public void ExitJeux (){\n        System.exit(0);\n    }\n\n    private void initialiserMenu(GridPane grid) {\n\n        grid.getColumnConstraints().clear();\n        grid.getRowConstraints().clear();\n        for (int c = 0; c <= MAX_WIDTH; c++) {\n            ColumnConstraints column = new ColumnConstraints();\n            //column.setPercentWidth(100.0 / 2);\n            column.setMaxWidth(1366/(MAX_WIDTH+1));\n            column.setMinWidth(1366/(MAX_WIDTH+1));\n            grid.getColumnConstraints().add(column);\n        }\n        for (int r = 0; r <= MAX_HEIGHT; r++) {\n            RowConstraints row = new RowConstraints();\n            //row.setPercentHeight(100.0 / 4);\n            row.setMaxHeight(768/(MAX_HEIGHT+1));\n            row.setMinHeight(768/(MAX_HEIGHT+1));\n            grid.getRowConstraints().add(row);\n        }\n\n\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/stardew/stardewvalley/MenuController.java b/src/main/java/com/stardew/stardewvalley/MenuController.java
+--- a/src/main/java/com/stardew/stardewvalley/MenuController.java	(revision 0c50817a9d70e3019985598203f6d32b716c6beb)
++++ b/src/main/java/com/stardew/stardewvalley/MenuController.java	(date 1679223459594)
+@@ -13,6 +13,11 @@
+ 
+ import java.io.IOException;
+ 
++/**
++ * Classe MenuController permettant de gérer le menu (Controleur MVC de la classe Menu)
++ *
++ * @version le 19/03/2023
++ */
+ public class MenuController {
+     private final int MAX_WIDTH = 4;
+     private final int MAX_HEIGHT = 4;
+@@ -104,6 +109,5 @@
+             grid.getRowConstraints().add(row);
+         }
+ 
+-
+     }
+ }
+Index: src/main/java/com/stardew/stardewvalley/Herbe.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.stardew.stardewvalley;\n\nimport javafx.scene.image.Image;\n\n/**\n * Classe Herbe héritant d'ObjetInteractif\n *\n * @since le 14/03/2023\n * @version le 14/03/2023\n *\n * @author Nicolas Ferrayé - 3iL\n */\npublic class Herbe extends ObjetInteractif {\n\n    /**\n     * Constructeur d'Herbe\n     *\n     * @param pfPosX la position du carré d'herbe sur les abscisses\n     * @param pfPosY la position du carré d'herbe sur les ordonnées\n     */\n    public Herbe(int pfPosX, int pfPosY) {\n        super(pfPosX, pfPosY, false);\n        Image image = new Image(\"file:Images/herbe.png\");\n        setImage(image);\n    }\n    @Override\n    public void interraction() {\n        super.interraction();\n        setImage(null);\n        setMarchable(true);\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/stardew/stardewvalley/Herbe.java b/src/main/java/com/stardew/stardewvalley/Herbe.java
+--- a/src/main/java/com/stardew/stardewvalley/Herbe.java	(revision 0c50817a9d70e3019985598203f6d32b716c6beb)
++++ b/src/main/java/com/stardew/stardewvalley/Herbe.java	(date 1679223588928)
+@@ -23,6 +23,10 @@
+         Image image = new Image("file:Images/herbe.png");
+         setImage(image);
+     }
++
++    /**
++     * Gère l'interaction du joueur avec la l'herbe
++     */
+     @Override
+     public void interraction() {
+         super.interraction();
+Index: src/main/java/com/stardew/stardewvalley/HelloApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.stardew.stardewvalley;\n\nimport javafx.application.Application;\nimport javafx.fxml.FXML;\nimport javafx.fxml.FXMLLoader;\nimport javafx.scene.Scene;\nimport javafx.scene.image.Image;\nimport javafx.scene.image.ImageView;\nimport javafx.scene.layout.AnchorPane;\nimport javafx.scene.layout.BorderPane;\nimport javafx.scene.layout.Pane;\nimport javafx.stage.Stage;\n\nimport java.io.IOException;\nimport java.net.URL;\n\npublic class HelloApplication extends Application {\n    @Override\n    public void start(Stage stage) throws IOException {\n        try {\n            AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource(\"Menu.fxml\"));\n           // BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource(\"AccessibleValley.fxml\"));\n        //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"AccessibleValley.fxml\"));\n       // Scene scene = new Scene(fxmlLoader.load(),400,400);\n        Scene scene = new Scene(root,1366,768);\n        stage.setResizable(false);\n        scene.getStylesheets().add(getClass().getResource(\"application.css\").toExternalForm());\n        //scene.setOnKeyPressed(new Clavier(new Carte()));\n        scene.onKeyPressedProperty().bind(root.onKeyPressedProperty());\n        //stage. setFullScreen(true);\n            stage.getIcons().add(new Image(\"file:Images/Logo.png\"));\n        stage.setScene(scene);\n        stage.setTitle(\"AccessibleValley\");\n        stage.show();\n\n        } catch(Exception e) {\n        e.printStackTrace();\n    }\n    }\n\n    public static void main(String[] args) {\n        launch();}\n    \n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/stardew/stardewvalley/HelloApplication.java b/src/main/java/com/stardew/stardewvalley/HelloApplication.java
+--- a/src/main/java/com/stardew/stardewvalley/HelloApplication.java	(revision 0c50817a9d70e3019985598203f6d32b716c6beb)
++++ b/src/main/java/com/stardew/stardewvalley/HelloApplication.java	(date 1679223459579)
+@@ -14,31 +14,40 @@
+ import java.io.IOException;
+ import java.net.URL;
+ 
++/**
++ * Classe permettant de lancer le jeu AccessibleValley
++ *
++ * @version le 19/03/2023
++ */
+ public class HelloApplication extends Application {
+     @Override
+     public void start(Stage stage) throws IOException {
+         try {
+             AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("Menu.fxml"));
+-           // BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("AccessibleValley.fxml"));
+-        //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AccessibleValley.fxml"));
+-       // Scene scene = new Scene(fxmlLoader.load(),400,400);
+-        Scene scene = new Scene(root,1366,768);
+-        stage.setResizable(false);
+-        scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+-        //scene.setOnKeyPressed(new Clavier(new Carte()));
+-        scene.onKeyPressedProperty().bind(root.onKeyPressedProperty());
+-        //stage. setFullScreen(true);
++            // BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("AccessibleValley.fxml"));
++            //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AccessibleValley.fxml"));
++            // Scene scene = new Scene(fxmlLoader.load(),400,400);
++            Scene scene = new Scene(root,1366,768);
++            stage.setResizable(false);
++            scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
++            //scene.setOnKeyPressed(new Clavier(new Carte()));
++            scene.onKeyPressedProperty().bind(root.onKeyPressedProperty());
++            //stage. setFullScreen(true);
+             stage.getIcons().add(new Image("file:Images/Logo.png"));
+-        stage.setScene(scene);
+-        stage.setTitle("AccessibleValley");
+-        stage.show();
++            stage.setScene(scene);
++            stage.setTitle("AccessibleValley");
++            stage.show();
+ 
+         } catch(Exception e) {
+-        e.printStackTrace();
+-    }
++            e.printStackTrace();
++        }
+     }
+ 
++    /**
++     * Main function
++     */
+     public static void main(String[] args) {
+-        launch();}
++        launch();
++    }
+     
+ }
+\ No newline at end of file
+Index: src/main/java/com/stardew/stardewvalley/AccessibleValleyController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.stardew.stardewvalley;\n\nimport javafx.fxml.FXML;\nimport javafx.scene.Node;\nimport javafx.scene.image.Image;\nimport javafx.scene.image.ImageView;\nimport javafx.scene.layout.*;\nimport javafx.scene.media.Media;\nimport javafx.scene.media.MediaPlayer;\nimport javafx.scene.media.MediaView;\nimport javafx.scene.text.Text;\n\nimport java.io.FileNotFoundException;\nimport java.util.ArrayList;\n\npublic class AccessibleValleyController {\n\n    private Clavier clavier;\n    private ArrayList<Champ> ListeChamps = new ArrayList<>();\n    private ArrayList<Pierre> ListePierres = new ArrayList<>();\n    private ArrayList<Herbe> ListeHerbes = new ArrayList<>();\n    private Carte carte;\n\n    @FXML\n    BorderPane borderPanel;\n\n    @FXML\n    private void initialize() throws FileNotFoundException {\n        if(clavier == null){\n            this.carte = new Carte();\n            this.borderPanel.setMaxHeight(768);\n            this.borderPanel.setMaxWidth(1366);\n            this.borderPanel.setCenter(this.carte);\n            this.clavier = new Clavier(this.carte);\n            initializeChamps(this.carte);\n            initializePierre(this.carte);\n            initializeHerbes(this.carte);\n            this.borderPanel.setOnKeyPressed(this.clavier);\n            System.out.println(\"Clavier :\"+this.clavier);\n        }\n\n    }\n\n    private void initializeChamps(Carte carte){\n        int index = 0;\n        //Premier champ\n        for (int i = 0 ; i<8;i++){\n            for (int j = 0 ; j<6;j++){\n                ListeChamps.add(new Champ(j,3+i));\n\n            }\n        }\n        //Deuxieme champ\n        for (int i = 0 ; i<6;i++){\n            for (int j = 0 ; j<4;j++){\n                ListeChamps.add(new Champ(8+j,5+i));\n\n            }\n        }\n\n        //Troisieme champ\n        for (int i = 0 ; i<4;i++){\n            for (int j = 0 ; j<2;j++){\n                ListeChamps.add(new Champ(17+j,7+i));\n\n            }\n        }\n        for(index=0  ; index< ListeChamps.size();index++){\n            ListeChamps.get(index).setFitWidth(carte.getCellWidth());\n            ListeChamps.get(index).setFitHeight(carte.getCellHeight());\n\n            carte.add( ListeChamps.get(index),  ListeChamps.get(index).getPosX(),  ListeChamps.get(index).getPosY());\n        }\n\n    }\n    private void initializePierre(Carte carte){\n        int index = 0;\n        //Premier champ\n        for (int i = 0 ; i<4;i++){\n                ListePierres.add(new Pierre(6+i,0));\n        }\n        //Deuxieme champ\n\n        ListePierres.add(new Pierre(7,6));\n        ListePierres.add(new Pierre(6,8));\n        ListePierres.add(new Pierre(6,5));\n        ListePierres.add(new Pierre(13,4));\n        ListePierres.add(new Pierre(13,7));\n        ListePierres.add(new Pierre(13,9));\n        ListePierres.add(new Pierre(15,6));\n        ListePierres.add(new Pierre(4,2));\n        ListePierres.add(new Pierre(5,2));\n\n        for(index=0  ; index< ListePierres.size();index++){\n            ListePierres.get(index).setFitWidth(carte.getCellWidth());\n            ListePierres.get(index).setFitHeight(carte.getCellHeight());\n\n            carte.add( ListePierres.get(index),  ListePierres.get(index).getPosX(),  ListePierres.get(index).getPosY());\n        }\n\n    }\n    private void initializeHerbes(Carte carte){\n        int index = 0;\n        //Premier champ\n        for (int i = 0 ; i<5;i++){\n            for (int j = 0 ; j<4;j++){\n                if(i>0) {\n                    if (j == 0 || j == 3) {\n                        ListeHerbes.add(new Herbe(16 + j, 6 + i));\n                    }\n                }else{\n                    ListeHerbes.add(new Herbe(16 + j, 6 + i));\n                }\n\n            }\n        }\n\n        for(index=0  ; index< ListeHerbes.size();index++){\n            ListeHerbes.get(index).setFitWidth(carte.getCellWidth());\n            ListeHerbes.get(index).setFitHeight(carte.getCellHeight());\n\n            carte.add( ListeHerbes.get(index),  ListeHerbes.get(index).getPosX(),  ListeHerbes.get(index).getPosY());\n        }\n\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/stardew/stardewvalley/AccessibleValleyController.java b/src/main/java/com/stardew/stardewvalley/AccessibleValleyController.java
+--- a/src/main/java/com/stardew/stardewvalley/AccessibleValleyController.java	(revision 0c50817a9d70e3019985598203f6d32b716c6beb)
++++ b/src/main/java/com/stardew/stardewvalley/AccessibleValleyController.java	(date 1679223588947)
+@@ -13,6 +13,11 @@
+ import java.io.FileNotFoundException;
+ import java.util.ArrayList;
+ 
++/**
++ * Classe AccessibleValleuController permettant de gérer la classe de lancement du jeu (controleur MVC de la classe HelloApplication)
++ *
++ * @version le 19/03/2023
++ */
+ public class AccessibleValleyController {
+ 
+     private Clavier clavier;
+@@ -43,14 +48,14 @@
+ 
+     private void initializeChamps(Carte carte){
+         int index = 0;
+-        //Premier champ
++        // Premier champ
+         for (int i = 0 ; i<8;i++){
+             for (int j = 0 ; j<6;j++){
+                 ListeChamps.add(new Champ(j,3+i));
+ 
+             }
+         }
+-        //Deuxieme champ
++        // Deuxieme champ
+         for (int i = 0 ; i<6;i++){
+             for (int j = 0 ; j<4;j++){
+                 ListeChamps.add(new Champ(8+j,5+i));
+@@ -58,14 +63,14 @@
+             }
+         }
+ 
+-        //Troisieme champ
++        // Troisieme champ
+         for (int i = 0 ; i<4;i++){
+             for (int j = 0 ; j<2;j++){
+                 ListeChamps.add(new Champ(17+j,7+i));
+ 
+             }
+         }
+-        for(index=0  ; index< ListeChamps.size();index++){
++        for(index=0 ; index< ListeChamps.size() ; index++){
+             ListeChamps.get(index).setFitWidth(carte.getCellWidth());
+             ListeChamps.get(index).setFitHeight(carte.getCellHeight());
+ 
+@@ -75,12 +80,13 @@
+     }
+     private void initializePierre(Carte carte){
+         int index = 0;
++
+         //Premier champ
+         for (int i = 0 ; i<4;i++){
+                 ListePierres.add(new Pierre(6+i,0));
+         }
++
+         //Deuxieme champ
+-
+         ListePierres.add(new Pierre(7,6));
+         ListePierres.add(new Pierre(6,8));
+         ListePierres.add(new Pierre(6,5));
+@@ -99,6 +105,7 @@
+         }
+ 
+     }
++
+     private void initializeHerbes(Carte carte){
+         int index = 0;
+         //Premier champ
+Index: src/main/java/com/stardew/stardewvalley/Pierre.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.stardew.stardewvalley;\n\nimport java.io.FileInputStream;\nimport java.io.FileNotFoundException;\n\nimport javafx.scene.image.Image;\n\n/**\n * Classe Pierre héritant d'ObjetInteractif\n *\n * @since le 14/03/2023\n * @version le 14/03/2023\n *\n * @author Nicolas Ferrayé - 3iL\n */\npublic class Pierre extends ObjetInteractif {\n\n    /**\n     * Constructeur de Pierre\n     *\n     * @param pfPosX la position du carré pierre sur les abscisses\n     * @param pfPosY la position du carré pierre sur les ordonnées\n     */\n    public Pierre(int pfPosX, int pfPosY) {\n        super(pfPosX, pfPosY, false);\n        Image image = new Image(\"file:Images/pierre.png\");\n        setImage(image);\n    }\n\n    @Override\n    public void interraction() {\n        super.interraction();\n        setImage(null);\n        setMarchable(true);\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/stardew/stardewvalley/Pierre.java b/src/main/java/com/stardew/stardewvalley/Pierre.java
+--- a/src/main/java/com/stardew/stardewvalley/Pierre.java	(revision 0c50817a9d70e3019985598203f6d32b716c6beb)
++++ b/src/main/java/com/stardew/stardewvalley/Pierre.java	(date 1679223588909)
+@@ -1,17 +1,12 @@
+ package com.stardew.stardewvalley;
+ 
+-import java.io.FileInputStream;
+-import java.io.FileNotFoundException;
+-
+ import javafx.scene.image.Image;
+ 
+ /**
+  * Classe Pierre héritant d'ObjetInteractif
+  *
+  * @since le 14/03/2023
+- * @version le 14/03/2023
+- *
+- * @author Nicolas Ferrayé - 3iL
++ * @version le 19/03/2023
+  */
+ public class Pierre extends ObjetInteractif {
+ 
+@@ -27,6 +22,9 @@
+         setImage(image);
+     }
+ 
++    /**
++     * Gère l'interaction du joueur avec la Pierre
++     */
+     @Override
+     public void interraction() {
+         super.interraction();
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"16846712-fea2-4c7f-b8e1-d6dbc5f5490b\" name=\"Changes\" comment=\"ajout de différentes fenetres de dialogues\">\n      <change afterPath=\"$PROJECT_DIR$/Images/Corn_Stage_6.png\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Images/Hops_Stage_8.png\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Images/Potato_Stage_6.png\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Images/Tomato_Stage_6.png\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Images/Wheat_Stage_5.png\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Champ.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Champ.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"FxmlFile\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"MavenImportPreferences\">\n    <option name=\"importingSettings\">\n      <MavenImportingSettings>\n        <option name=\"workspaceImportEnabled\" value=\"true\" />\n      </MavenImportingSettings>\n    </option>\n  </component>\n  <component name=\"ProjectId\" id=\"2Mxl3RPiaovRDQMwVDMvcihMTAo\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;last_opened_file_path&quot;: &quot;D:/Téléchargement/javafx.media.jar&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"C:\\Users\\louis\\IdeaProjects\\3il-stardew-valley\\src\\main\\resources\\com\\stardew\\stardewvalley\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"D:\\Java3ilv2\\Images\" />\n      <recent name=\"D:\\Bureau\\3IL\\JAVA\\Projet Java\\3il-stardew-valley\\Images\" />\n      <recent name=\"C:\\Users\\louis\\IdeaProjects\\3il-stardew-valley\\src\\main\\resources\\com\\stardew\\stardewvalley\" />\n      <recent name=\"C:\\Users\\louis\\IdeaProjects\\3il-stardew-valley\\Images\" />\n      <recent name=\"D:\\Java3il\\3il-stardew-valley\" />\n    </key>\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\n      <recent name=\"\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"com.stardew.stardewvalley.HelloApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.stardew.stardewvalley.HelloApplication\" />\n      <module name=\"stardew-valley\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"stardewvalley.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.com.stardew.stardewvalley.HelloApplication\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"b143f2f1-d7ed-4b23-ab9d-e94571a5451b\" name=\"Changes\" comment=\"\" />\n      <created>1678716917196</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1678716917196</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"commit des fichier de Louis\">\n      <created>1678718013886</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678718013887</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"correction lancement application\">\n      <created>1678719694163</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678719694163</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Création de la classe abstraite ObjetInteractif\">\n      <created>1678722013686</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678722013686</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"fix: correction d'une erreur sur ObjetInterractif\">\n      <created>1678722318598</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678722318598</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Ajout d'un attribut marchable sur ObjetInteractif\">\n      <created>1678723408776</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678723408776</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Ajout de la fonctionnalité d'interaction avec les différents éléments\">\n      <created>1679215382752</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1679215382752</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"ajout d'une fenetre de dialogie pour les champs\">\n      <created>1679216145632</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1679216145632</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"ajout de différentes fenetres de dialogues\">\n      <created>1679217335463</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1679217335463</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"9\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"commit des fichier de Louis\" />\n    <MESSAGE value=\"correction lancement application\" />\n    <MESSAGE value=\"Création de la classe abstraite ObjetInteractif\" />\n    <MESSAGE value=\"fix: correction d'une erreur sur ObjetInterractif\" />\n    <MESSAGE value=\"Ajout d'un attribut marchable sur ObjetInteractif\" />\n    <MESSAGE value=\"Ajout de la fonctionnalité d'interaction avec les différents éléments\" />\n    <MESSAGE value=\"ajout d'une fenetre de dialogie pour les champs\" />\n    <MESSAGE value=\"ajout de différentes fenetres de dialogues\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"ajout de différentes fenetres de dialogues\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 0c50817a9d70e3019985598203f6d32b716c6beb)
++++ b/.idea/workspace.xml	(date 1679223623030)
+@@ -5,13 +5,18 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="16846712-fea2-4c7f-b8e1-d6dbc5f5490b" name="Changes" comment="ajout de différentes fenetres de dialogues">
+-      <change afterPath="$PROJECT_DIR$/Images/Corn_Stage_6.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Images/Hops_Stage_8.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Images/Potato_Stage_6.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Images/Tomato_Stage_6.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Images/Wheat_Stage_5.png" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/AccessibleValleyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/AccessibleValleyController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Carte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Carte.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Champ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Champ.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Clavier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Clavier.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/HelloApplication.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Herbe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Herbe.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Menu.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/MenuController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/ObjetInteractif.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/ObjetInteractif.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Personnage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Personnage.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Pierre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Pierre.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+Index: src/main/java/com/stardew/stardewvalley/Champ.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.stardew.stardewvalley;\n\nimport javafx.scene.control.Alert;\nimport javafx.scene.control.ButtonType;\nimport javafx.scene.control.ChoiceDialog;\nimport javafx.scene.image.Image;\n\nimport java.util.Optional;\n\n/**\n * Classe Champ héritant d'ObjetInteractif\n *\n * @since le 13/03/2023\n * @version le 14/03/2023\n *\n * @author Nicolas Ferrayé - 3iL\n */\npublic class Champ extends ObjetInteractif {\n\n    private boolean estCultive; // Si le champ est cultivé ou non\n\n    /**\n     * Constructeur de Champ\n     *\n     * @param pfPosX la position du carré champ sur les abscisses\n     * @param pfPosY la position du carré champ sur les ordonnées\n     */\n    public Champ(int pfPosX, int pfPosY) {\n        super(pfPosX, pfPosY, true);\n        this.estCultive = false;\n        this.setImage(new Image(\"file:Images/champ_non_cultive.png\"));\n    }\n\n    /**\n     * @return true si le champ est cultivé, sinon false\n     */\n    public boolean getEstCultive() {\n        return this.estCultive;\n    }\n\n    /**\n     * @param pfEstCultive si le champ est cultivé ou non\n     */\n    public void setEstCultive(boolean pfEstCultive) {\n\n\n\n        if(!this.estCultive) {\n            validationCulture(pfEstCultive);\n        } else {\n            choixCulture();\n            //this.setImage(new Image(\"file:Images/champ_non_cultive.png\"));\n        }\n    }\n    @Override\n    public void interraction() {\n\n            super.interraction();\n            setEstCultive(true);\n\n\n    }\n    public void validationCulture(boolean b) {\n        Alert dialogC = new Alert(Alert.AlertType.CONFIRMATION);\n        dialogC.setTitle(\"Voulez vous cultivez ce champs\");\n        dialogC.setHeaderText(null);\n        dialogC.setContentText(\"Voulez vous cultivez ce champs\");\n        Optional<ButtonType> answer = dialogC.showAndWait();\n        if (answer.get() == ButtonType.OK) {\n            this.estCultive = b;\n            this.setImage(new Image(\"file:Images/champ_cultive.png\"));\n        }\n        else {\n            System.out.println(\"User chose Cancel or closed the dialog-box\");\n        }\n\n    }\n    public void choixCulture() {\n        String[] choices = {\"Houblon\", \"Blé\", \"Patate\", \"Tomate\",\"Maïs\"};\n        ChoiceDialog<String> cDial = new ChoiceDialog<>(choices[2], choices);\n        cDial.setTitle(\"Choix de la culture\");\n        cDial.setHeaderText(\"Selectionner la culture voulu\");\n        cDial.setContentText(\"Culture:\");\n        Optional<String> selection = cDial.showAndWait();\n        selection.ifPresent(str -> typeCulture(str));\n\n    }\n\n    public void typeCulture(String s) {\n        switch (s) {\n            case \"Houblon\":\n                this.setImage(new Image(\"file:Images/Hops_Stage_8.png\"));\n                break;\n            case \"Blé\":\n                this.setImage(new Image(\"file:Images/Wheat_Stage_5.png\"));\n                break;\n            case \"Patate\":\n                //Personnage.deplacerY(1);\n                this.setImage(new Image(\"file:Images/Potato_Stage_6.png\"));\n                break;\n            case \"Tomate\":\n                this.setImage(new Image(\"file:Images/Tomato_Stage_6.png\"));\n                break;\n            case \"Maïs\":\n                this.setImage(new Image(\"file:Images/Corn_Stage_6.png\"));\n                break;\n            default:\n                break;\n        }\n\n    }\n\n\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/stardew/stardewvalley/Champ.java b/src/main/java/com/stardew/stardewvalley/Champ.java
+--- a/src/main/java/com/stardew/stardewvalley/Champ.java	(revision 0c50817a9d70e3019985598203f6d32b716c6beb)
++++ b/src/main/java/com/stardew/stardewvalley/Champ.java	(date 1679223309558)
+@@ -11,9 +11,7 @@
+  * Classe Champ héritant d'ObjetInteractif
+  *
+  * @since le 13/03/2023
+- * @version le 14/03/2023
+- *
+- * @author Nicolas Ferrayé - 3iL
++ * @version le 19/03/2023
+  */
+ public class Champ extends ObjetInteractif {
+ 
+@@ -42,9 +40,6 @@
+      * @param pfEstCultive si le champ est cultivé ou non
+      */
+     public void setEstCultive(boolean pfEstCultive) {
+-
+-
+-
+         if(!this.estCultive) {
+             validationCulture(pfEstCultive);
+         } else {
+@@ -52,29 +47,40 @@
+             //this.setImage(new Image("file:Images/champ_non_cultive.png"));
+         }
+     }
++
++    /**
++     * Permet de cultiver le champ
++     */
+     @Override
+     public void interraction() {
+-
+-            super.interraction();
+-            setEstCultive(true);
+-
++        super.interraction();
++        setEstCultive(true);
++    }
+ 
+-    }
++    /**
++     * Permet de cultiver ou non un champ
++     * @param b true pour le cultiver, sinon false
++     */
+     public void validationCulture(boolean b) {
++
+         Alert dialogC = new Alert(Alert.AlertType.CONFIRMATION);
+-        dialogC.setTitle("Voulez vous cultivez ce champs");
++        dialogC.setTitle("Voulez vous cultivez ce champ");
+         dialogC.setHeaderText(null);
+-        dialogC.setContentText("Voulez vous cultivez ce champs");
++        dialogC.setContentText("Voulez vous cultivez ce champ");
+         Optional<ButtonType> answer = dialogC.showAndWait();
++
+         if (answer.get() == ButtonType.OK) {
+             this.estCultive = b;
+             this.setImage(new Image("file:Images/champ_cultive.png"));
+-        }
+-        else {
++        } else {
+             System.out.println("User chose Cancel or closed the dialog-box");
+         }
+ 
+     }
++
++    /**
++     * Permet de choisir la culture du champ
++     */
+     public void choixCulture() {
+         String[] choices = {"Houblon", "Blé", "Patate", "Tomate","Maïs"};
+         ChoiceDialog<String> cDial = new ChoiceDialog<>(choices[2], choices);
+@@ -86,6 +92,10 @@
+ 
+     }
+ 
++    /**
++     * Modifie l'image du champ en fonction du type de culture
++     * @param s le type de champ
++     */
+     public void typeCulture(String s) {
+         switch (s) {
+             case "Houblon":
+@@ -110,6 +120,4 @@
+ 
+     }
+ 
+-
+-
+ }
+Index: src/main/java/com/stardew/stardewvalley/Personnage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.stardew.stardewvalley;\n\nimport javafx.scene.image.Image;\nimport javafx.scene.image.ImageView;\n\npublic class Personnage extends ImageView {\n    private int posX;\n    private int posY;\n\n    public Personnage() {\n        this.posX = 0;\n        this.posY = 0;\n        this.setImage(new Image(\"file:Images/Personnage.png\"));\n    }\n\n    public int getPosX() {\n        return posX;\n    }\n\n    public void setPosX(int posX) {\n        this.posX = posX;\n    }\n\n    public int getPosY() {\n        return posY;\n    }\n\n    public void setPosY(int posY) {\n        this.posY = posY;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/stardew/stardewvalley/Personnage.java b/src/main/java/com/stardew/stardewvalley/Personnage.java
+--- a/src/main/java/com/stardew/stardewvalley/Personnage.java	(revision 0c50817a9d70e3019985598203f6d32b716c6beb)
++++ b/src/main/java/com/stardew/stardewvalley/Personnage.java	(date 1679223080182)
+@@ -3,29 +3,54 @@
+ import javafx.scene.image.Image;
+ import javafx.scene.image.ImageView;
+ 
++/**
++ * Classe Personnage héritant d'une Image
++ * Retourne et modifie la position du personnage
++ *
++ * @version le 19/03/2023
++ */
+ public class Personnage extends ImageView {
++
+     private int posX;
+     private int posY;
+ 
++    /**
++     * Constructeur Personnage
++     */
+     public Personnage() {
+         this.posX = 0;
+         this.posY = 0;
+         this.setImage(new Image("file:Images/Personnage.png"));
+     }
+ 
++    /**
++     * @return l'abscisse du personnage
++     */
+     public int getPosX() {
+         return posX;
+     }
+ 
++    /**
++     * Modifie l'abscisse du personnage
++     * @param posX l'abscisse du personnage
++     */
+     public void setPosX(int posX) {
+         this.posX = posX;
+     }
+ 
++    /**
++     * @return l'ordonnée du personnage
++     */
+     public int getPosY() {
+         return posY;
+     }
+ 
++    /**
++     * Modifie l'ordonnée du personnage
++     * @param posY l'ordonnée du personnage
++     */
+     public void setPosY(int posY) {
+         this.posY = posY;
+     }
++
+ }
+Index: src/main/java/com/stardew/stardewvalley/Clavier.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.stardew.stardewvalley;\n\nimport javafx.event.EventHandler;\nimport javafx.scene.input.KeyEvent;\n\npublic class Clavier implements EventHandler<KeyEvent> {\n    private Carte carte;\n    public Clavier(Carte carte) {\n        super();\n        this.carte = carte;\n    }\n\n    @Override\n    public void handle(KeyEvent event) {\n        switch (event.getCode()) {\n            case RIGHT:\n                //Personnage.deplacerX(1);\n                this.carte.deplacerJoueur(0,1);\n                this.carte.setDeplacementPrecedent(event);\n                break;\n            case LEFT:\n                //Personnage.deplacerX(-1);\n                this.carte.deplacerJoueur(0,-1);\n                this.carte.setDeplacementPrecedent(event);\n                break;\n            case UP:\n                //Personnage.deplacerY(1);\n                this.carte.deplacerJoueur(-1,0);\n                this.carte.setDeplacementPrecedent(event);\n                break;\n            case DOWN:\n                //Personnage.deplacerY(-1);\n                this.carte.deplacerJoueur(1,0);\n                this.carte.setDeplacementPrecedent(event);\n                break;\n            case SHIFT:\n                //Personnage.deplacerY(-1);\n                this.carte.interagir();\n                break;\n            case ESCAPE:\n                //Personnage.deplacerY(-1);\n                this.carte.quitterJeu();\n                break;\n            default:\n                break;\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/stardew/stardewvalley/Clavier.java b/src/main/java/com/stardew/stardewvalley/Clavier.java
+--- a/src/main/java/com/stardew/stardewvalley/Clavier.java	(revision 0c50817a9d70e3019985598203f6d32b716c6beb)
++++ b/src/main/java/com/stardew/stardewvalley/Clavier.java	(date 1679223309550)
+@@ -3,8 +3,16 @@
+ import javafx.event.EventHandler;
+ import javafx.scene.input.KeyEvent;
+ 
++/**
++ * Classe Clavier permettant de capturer la touche enfoncée par le joueur, et de déclencher les actions correspondantes
++ * (déplacement du joueur, interaction, quitter le jeu)
++ *
++ * @version le 19/03/2023
++ */
+ public class Clavier implements EventHandler<KeyEvent> {
++
+     private Carte carte;
++
+     public Clavier(Carte carte) {
+         super();
+         this.carte = carte;
+Index: src/main/java/com/stardew/stardewvalley/ObjetInteractif.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.stardew.stardewvalley;\n\nimport javafx.scene.image.ImageView;\n\n/**\n * Classe abstraite ObjetInteractif\n *\n * @since le 13/03/2023\n * @version le 14/03/2023\n *\n * @author Nicolas Ferrayé, Jean Santoni - 3iL\n */\npublic abstract class ObjetInteractif extends ImageView {\n\n    private int posX;\n    private int posY;\n    private boolean marchable;\n\n    private ImageView image; // Image associée à l'ObjetInteractif\n\n    public ObjetInteractif(int pfPosX, int pfPosY, boolean pfMarchable) {\n        this.posX = pfPosX;\n        this.posY = pfPosY;\n        this.marchable = pfMarchable;\n\n    }\n\n    /**\n     * @return l'abscisse de l'objet\n     */\n    public int getPosX() {\n        return this.posX;\n    }\n\n    /**\n     * @return l'ordonnée de l'objet\n     */\n    public int getPosY() {\n        return this.posY;\n    }\n\n    /**\n     * @return true si l'objet est marchable, sinon false\n     */\n    public boolean getEstMarchable() {\n        return this.marchable;\n    }\n\n    /**\n     * Modifie l'abscisse de l'objet\n     *\n     * @param pfPosX la nouvelle abscisse\n     */\n    public void setPosX(int pfPosX) {\n        this.posX = pfPosX;\n    }\n\n    /**\n     * Modifie l'ordonnée de l'objet\n     *\n     * @param pfPosY la nouvelle ordonnée\n     */\n    public void setPosY(int pfPosY) {\n        this.posY = pfPosY;\n    }\n\n    /**\n     * @param pfMarchable\n     */\n    public void setMarchable(boolean pfMarchable) {\n        this.marchable = pfMarchable;\n    }\n    public void interraction(){\n    }\n\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/stardew/stardewvalley/ObjetInteractif.java b/src/main/java/com/stardew/stardewvalley/ObjetInteractif.java
+--- a/src/main/java/com/stardew/stardewvalley/ObjetInteractif.java	(revision 0c50817a9d70e3019985598203f6d32b716c6beb)
++++ b/src/main/java/com/stardew/stardewvalley/ObjetInteractif.java	(date 1679223459539)
+@@ -6,7 +6,7 @@
+  * Classe abstraite ObjetInteractif
+  *
+  * @since le 13/03/2023
+- * @version le 14/03/2023
++ * @version le 19/03/2023
+  *
+  * @author Nicolas Ferrayé, Jean Santoni - 3iL
+  */
+@@ -70,7 +70,12 @@
+     public void setMarchable(boolean pfMarchable) {
+         this.marchable = pfMarchable;
+     }
+-    public void interraction(){
++
++    /**
++     * Gère l'interaction du personnage avec l'ObjetInteractif
++     */
++    public void interraction() {
++
+     }
+ 
+ 
+Index: src/main/java/com/stardew/stardewvalley/Menu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.stardew.stardewvalley;\n\nimport javafx.scene.Node;\nimport javafx.scene.image.Image;\nimport javafx.scene.layout.*;\n\npublic class Menu extends AnchorPane{\n\n    public Menu() {\n        super();\n        this.setBackground(new Background(new BackgroundImage(new Image(\"file:Images/Fond_menu.png\"),\n                BackgroundRepeat.NO_REPEAT,\n                BackgroundRepeat.NO_REPEAT,\n                BackgroundPosition.CENTER,\n                new BackgroundSize(100,100,\n                        true, true,true, true))));\n    }\n    public Menu(Node... arg0) {\n        super(arg0);\n        // TODO Auto-generated constructor stub\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/stardew/stardewvalley/Menu.java b/src/main/java/com/stardew/stardewvalley/Menu.java
+--- a/src/main/java/com/stardew/stardewvalley/Menu.java	(revision 0c50817a9d70e3019985598203f6d32b716c6beb)
++++ b/src/main/java/com/stardew/stardewvalley/Menu.java	(date 1679223309518)
+@@ -4,6 +4,11 @@
+ import javafx.scene.image.Image;
+ import javafx.scene.layout.*;
+ 
++/**
++ * Classe Menu s'affichant au lancement du jeu (boutons "Jouer" et "Quitter")
++ *
++ * @version le 19/03/2023
++ */
+ public class Menu extends AnchorPane{
+ 
+     public Menu() {
+@@ -15,6 +20,7 @@
+                 new BackgroundSize(100,100,
+                         true, true,true, true))));
+     }
++
+     public Menu(Node... arg0) {
+         super(arg0);
+         // TODO Auto-generated constructor stub
+Index: src/main/java/com/stardew/stardewvalley/Carte.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.stardew.stardewvalley;\n\nimport javafx.collections.ObservableList;\nimport javafx.scene.Node;\nimport javafx.scene.control.Alert;\nimport javafx.scene.control.ButtonType;\nimport javafx.scene.image.Image;\nimport javafx.scene.image.ImageView;\nimport javafx.scene.input.KeyEvent;\nimport javafx.scene.layout.*;\n\nimport java.util.Optional;\n\npublic class Carte extends GridPane {\n\n    private final int MAX_WIDTH = 20;\n    private final int MAX_HEIGHT = 10;\n    private KeyEvent deplacementPrecedent;\n    private Image fondCarte = new Image(\"file:Images/RPG-Maper.png\");\n\n    private Personnage personnage;\n\n    public Carte() {\n        super();\n        this.setOnKeyPressed(new Clavier(this));\n        initialiserCarte();\n        this.personnage = new Personnage();\n        //this.personnage.setFitHeight(100);\n        //this.personnage.setFitWidth(70);\n        this.add(this.personnage,0,0);\n        this.setBackground(new Background(new BackgroundImage(fondCarte,\n                BackgroundRepeat.NO_REPEAT,\n                BackgroundRepeat.NO_REPEAT,\n                BackgroundPosition.CENTER,\n                new BackgroundSize(100,100,\n                        true, true,true, true))));\n        //adapterObjets();\n    }\n\n    private void initialiserCarte() {\n        this.getColumnConstraints().clear();\n        this.getRowConstraints().clear();\n        for (int c = 0; c <= MAX_WIDTH; c++) {\n            ColumnConstraints column = new ColumnConstraints();\n            //column.setPercentWidth(100.0 / 2);\n            column.setMaxWidth(1366/(MAX_WIDTH+1));\n            column.setMinWidth(1366/(MAX_WIDTH+1));\n            this.getColumnConstraints().add(column);\n        }\n        for (int r = 0; r <= MAX_HEIGHT; r++) {\n            RowConstraints row = new RowConstraints();\n            //row.setPercentHeight(100.0 / 4);\n            row.setMaxHeight(768/(MAX_HEIGHT+1));\n            row.setMinHeight(768/(MAX_HEIGHT+1));\n            this.getRowConstraints().add(row);\n        }\n        this.setGridLinesVisible(true);\n\n    }\n\n    public int getMAX_WIDTH() {\n        return this.MAX_WIDTH;\n    }\n\n    public int getMAX_HEIGHT() {\n        return this.MAX_HEIGHT;\n    }\n\n\n    public void deplacerJoueur(int i, int i1) {\n        if(joueurDeplacable(this.personnage.getPosY() +i,this.personnage.getPosX() + i1)){\n            this.getChildren().remove(this.personnage);\n            this.personnage.setPosX(this.personnage.getPosX() +i1);\n            this.personnage.setPosY(this.personnage.getPosY() +i);\n            this.add(this.personnage,this.personnage.getPosX(),this.personnage.getPosY());\n        }\n    }\n\n    private boolean joueurDeplacable(int i, int i1) {\n        boolean result = true;\n        if(i<0||i1<0||i>MAX_HEIGHT||i1>MAX_WIDTH){\n            result = false;\n        }\n        if(getNodeByRowColumnIndex(i,i1) != null){\n            if(((ObjetInteractif)getNodeByRowColumnIndex(i,i1)).getEstMarchable()){\n\n                result = true;\n            }else{\n            result = false;}\n        }\n        return result ;\n    }\n    public Node getNodeByRowColumnIndex (final int row, final int column) {\n        Node result = null;\n        ObservableList<Node> childrens = this.getChildren();\n\n        for (Node node : childrens) {\n            if(this.getRowIndex(node) != null&& this.getColumnIndex(node) != null){\n                if(this.getRowIndex(node) == row && this.getColumnIndex(node) == column) {\n                    result = node;\n                    break;\n                }\n            }\n        }\n        return result;\n    }\n\n    public double getCellWidth() {\n        return 1366/(MAX_WIDTH+1);\n    }\n\n    public double getCellHeight() {\n        return 768/(MAX_HEIGHT+1);\n    }\n    public void setDeplacementPrecedent(KeyEvent k){\n        this.deplacementPrecedent=k;\n    }\n\n    public void interagir(){\n        int Xobjet=0;\n        int Yobjet=0;\n        switch (this.deplacementPrecedent.getCode()) {\n            case RIGHT:\n                //Personnage.deplacerX(1);\n                Xobjet=this.personnage.getPosX()+1;\n                Yobjet=this.personnage.getPosY();\n                break;\n            case LEFT:\n                //Personnage.deplacerX(-1);\n                Xobjet=this.personnage.getPosX()-1;\n                Yobjet=this.personnage.getPosY();\n                break;\n            case UP:\n                //Personnage.deplacerY(1);\n                Xobjet=this.personnage.getPosX();\n                Yobjet=this.personnage.getPosY()-1;\n                break;\n            case DOWN:\n                //Personnage.deplacerY(-1);\n                Xobjet=this.personnage.getPosX();\n                Yobjet=this.personnage.getPosY()+1;\n                break;\n            default:\n                break;\n        }\n        if(this.getNodeByRowColumnIndex(Yobjet,Xobjet) != null){\n           ObjetInteractif objet= (ObjetInteractif) getNodeByRowColumnIndex(Yobjet,Xobjet);\n           objet.interraction();\n\n        }\n\n    }\n    public void quitterJeu() {\n        Alert dialogC = new Alert(Alert.AlertType.CONFIRMATION);\n        dialogC.setTitle(\"Voulez vous quitter le jeu\");\n        dialogC.setHeaderText(null);\n        dialogC.setContentText(\"Voulez vous quitter le jeu ?\");\n        Optional<ButtonType> answer = dialogC.showAndWait();\n        if (answer.get() == ButtonType.OK) {\n            System.exit(0);\n        }\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/stardew/stardewvalley/Carte.java b/src/main/java/com/stardew/stardewvalley/Carte.java
+--- a/src/main/java/com/stardew/stardewvalley/Carte.java	(revision 0c50817a9d70e3019985598203f6d32b716c6beb)
++++ b/src/main/java/com/stardew/stardewvalley/Carte.java	(date 1679223309537)
+@@ -11,6 +11,12 @@
+ 
+ import java.util.Optional;
+ 
++/**
++ * Classe Carte héritant d'une Grille
++ * Contient les fonctions permettant de déplacer le joueur, initialiser la carte, interagir et quitter le jeu
++ *
++ * @version le 19/03/2023
++ */
+ public class Carte extends GridPane {
+ 
+     private final int MAX_WIDTH = 20;
+@@ -20,8 +26,13 @@
+ 
+     private Personnage personnage;
+ 
++    /**
++     * Constructeur de Carte
++     */
+     public Carte() {
++
+         super();
++
+         this.setOnKeyPressed(new Clavier(this));
+         initialiserCarte();
+         this.personnage = new Personnage();
+@@ -37,9 +48,14 @@
+         //adapterObjets();
+     }
+ 
++    /**
++     * Permet d'initialiser la Carte
++     */
+     private void initialiserCarte() {
++
+         this.getColumnConstraints().clear();
+         this.getRowConstraints().clear();
++
+         for (int c = 0; c <= MAX_WIDTH; c++) {
+             ColumnConstraints column = new ColumnConstraints();
+             //column.setPercentWidth(100.0 / 2);
+@@ -47,6 +63,7 @@
+             column.setMinWidth(1366/(MAX_WIDTH+1));
+             this.getColumnConstraints().add(column);
+         }
++
+         for (int r = 0; r <= MAX_HEIGHT; r++) {
+             RowConstraints row = new RowConstraints();
+             //row.setPercentHeight(100.0 / 4);
+@@ -54,6 +71,7 @@
+             row.setMinHeight(768/(MAX_HEIGHT+1));
+             this.getRowConstraints().add(row);
+         }
++
+         this.setGridLinesVisible(true);
+ 
+     }
+@@ -66,7 +84,12 @@
+         return this.MAX_HEIGHT;
+     }
+ 
+-
++    /**
++     * Permet de déplacer le joueur s'il est déplacable sur la case souhaitée
++     *
++     * @param i l'abscisse de la case sur laquelle le joueur doit se déplacer
++     * @param i1 l'ordonnée de la case sur laquelle le joueur doit se déplacer
++     */
+     public void deplacerJoueur(int i, int i1) {
+         if(joueurDeplacable(this.personnage.getPosY() +i,this.personnage.getPosX() + i1)){
+             this.getChildren().remove(this.personnage);
+@@ -76,20 +99,42 @@
+         }
+     }
+ 
++    /**
++     * Détermine si le joueur est déplacable aux coordonnées envoyées
++     *
++     * @param i l'abscisse de la case à tester
++     * @param i1 l'ordonnée de la case à tester
++     *
++     * @return true si le joueur peut se déplacer sur cette case, sinon false
++     */
+     private boolean joueurDeplacable(int i, int i1) {
++
+         boolean result = true;
+-        if(i<0||i1<0||i>MAX_HEIGHT||i1>MAX_WIDTH){
++
++        if(i<0||i1<0||i>MAX_HEIGHT||i1>MAX_WIDTH) {
+             result = false;
+         }
+-        if(getNodeByRowColumnIndex(i,i1) != null){
+-            if(((ObjetInteractif)getNodeByRowColumnIndex(i,i1)).getEstMarchable()){
+-
++
++        if(getNodeByRowColumnIndex(i, i1) != null){
++            if(((ObjetInteractif)getNodeByRowColumnIndex(i,i1)).getEstMarchable()) {
+                 result = true;
+-            }else{
+-            result = false;}
++            } else{
++                result = false;
++            }
+         }
+-        return result ;
++
++        return result;
++
+     }
++
++    /**
++     * Permet de retourner l'élément présent sur la case du tableau)
++     *
++     * @param row l'abscisse de la case
++     * @param column l'ordonnée de la case
++     *
++     * @return l'élément présent sur cette case
++     */
+     public Node getNodeByRowColumnIndex (final int row, final int column) {
+         Node result = null;
+         ObservableList<Node> childrens = this.getChildren();
+@@ -105,20 +150,32 @@
+         return result;
+     }
+ 
++    /**
++     * @return Renvoie la largeur en pixels d'une case du tableau
++     */
+     public double getCellWidth() {
+         return 1366/(MAX_WIDTH+1);
+     }
+ 
++    /**
++     * @return Renvoie la hauteur en pixels d'une case du tableau
++     */
+     public double getCellHeight() {
+         return 768/(MAX_HEIGHT+1);
+     }
++
+     public void setDeplacementPrecedent(KeyEvent k){
+         this.deplacementPrecedent=k;
+     }
+ 
+-    public void interagir(){
+-        int Xobjet=0;
+-        int Yobjet=0;
++    /**
++     * Gère l'interaction du joueur sur la carte
++     */
++    public void interagir() {
++
++        int Xobjet = 0;
++        int Yobjet = 0;
++
+         switch (this.deplacementPrecedent.getCode()) {
+             case RIGHT:
+                 //Personnage.deplacerX(1);
+@@ -143,21 +200,27 @@
+             default:
+                 break;
+         }
+-        if(this.getNodeByRowColumnIndex(Yobjet,Xobjet) != null){
++
++        if(this.getNodeByRowColumnIndex(Yobjet,Xobjet) != null) {
+            ObjetInteractif objet= (ObjetInteractif) getNodeByRowColumnIndex(Yobjet,Xobjet);
+            objet.interraction();
+-
+         }
+ 
+     }
++
++    /**
++     * Permet de quitter le jeu (affiche un prompt à l'utilisateur)
++     */
+     public void quitterJeu() {
+         Alert dialogC = new Alert(Alert.AlertType.CONFIRMATION);
+-        dialogC.setTitle("Voulez vous quitter le jeu");
++        dialogC.setTitle("Voulez-vous quitter le jeu");
+         dialogC.setHeaderText(null);
+-        dialogC.setContentText("Voulez vous quitter le jeu ?");
++        dialogC.setContentText("Voulez-vous quitter le jeu ?");
+         Optional<ButtonType> answer = dialogC.showAndWait();
++
+         if (answer.get() == ButtonType.OK) {
+             System.exit(0);
+         }
+     }
++
+ }
+\ No newline at end of file

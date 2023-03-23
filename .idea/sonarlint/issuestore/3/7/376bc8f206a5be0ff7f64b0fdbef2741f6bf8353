@@ -1,0 +1,32 @@
+
+g	java:S112<"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8è³¨Äğ0
+_
+java:S2184C"BCast one of the operands of this division operation to a "double".(ŞÌ8Ïò›Äğ0
+d
+java:S2184D"BCast one of the operands of this division operation to a "double".(–Àéèşÿÿÿÿ8ù¤Äğ0
+d
+java:S2184F"BCast one of the operands of this division operation to a "double".(Ş°Ãÿÿÿÿÿ8é³¨Äğ0
+_
+java:S2184G"BCast one of the operands of this division operation to a "double".(Í‹Ò8é³¨Äğ0
+_
+java:S2184q"BCast one of the operands of this division operation to a "double".(—¬òø8é³¨Äğ0
+d
+java:S2184r"BCast one of the operands of this division operation to a "double".(ß¹™ñüÿÿÿÿ8é³¨Äğ0
+d
+java:S2184w"BCast one of the operands of this division operation to a "double".(Øş˜çşÿÿÿÿ8é³¨Äğ0
+d
+java:S2184x"BCast one of the operands of this division operation to a "double".(“ËËúÿÿÿÿ8é³¨Äğ0
+u	java:S116"TRename this field "MAX_WIDTH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»™™¬ûÿÿÿÿ8ı³¨Äğ0
+v	java:S116"URename this field "MAX_HEIGHT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²šôôúÿÿÿÿ8ı³¨Äğ0
+j	java:S116"ORename this field "Play" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şÀå^8ı³¨Äğ0
+r	java:S116"VRename this field "Grille_Menu" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖÚœ©8ı³¨Äğ0
+p	java:S116"ORename this field "Exit" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µ¯ğÏúÿÿÿÿ8ı³¨Äğ0
+p	java:S116""TRename this field "Fond_Menu" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€ÿß8ı³¨Äğ0
+u	java:S116%"TRename this field "ImageMenu" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷ªÿ¨şÿÿÿÿ8ı³¨Äğ0
+{	java:S116("ZRename this field "Background_Menu" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×Å‹¤ûÿÿÿÿ8ı³¨Äğ0
+C
+java:S1170"!Make this final field static too.(»™™¬ûÿÿÿÿ8ı³¨Äğ0
+C
+java:S1170"!Make this final field static too.(²šôôúÿÿÿÿ8ı³¨Äğ0
+o	java:S100Q"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ƒ²•üÿÿÿÿ8ƒ´¨Äğ0
+o	java:S100c"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûîíœùÿÿÿÿ8‰´¨Äğ0
