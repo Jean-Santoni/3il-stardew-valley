@@ -6,19 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="b143f2f1-d7ed-4b23-ab9d-e94571a5451b" name="Changes" comment="Rajout son Play/Menu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/AccessibleValleyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/AccessibleValleyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Carte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Carte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Champ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Champ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Coffre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Coffre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Herbe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Herbe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Inventaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Inventaire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Maison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Maison.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/MaisonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/MaisonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/MaisonInterieur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/MaisonInterieur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Pierre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Pierre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/PlayerSon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/PlayerSon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Ble.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Caillou.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/CasserPierre.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Champs.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Coffre.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Exit.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Herbes.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Houblon.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Mais.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Mur.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/PlanterCulture.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Play.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Play.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Son/Play.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/PommeDeTerre.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Porte.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/RecolterCulture.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Tomate.mp3" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +94,7 @@
       <recent name="com.stardew.stardewvalley" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.com.stardew.stardewvalley.HelloApplication">
+  <component name="RunManager" selected="JUnit.MaisonInterieurTest">
     <configuration name="com.stardew.stardewvalley.HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.stardew.stardewvalley.HelloApplication" />
       <module name="stardew-valley" />
@@ -152,10 +156,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.com.stardew.stardewvalley.HelloApplication" />
         <item itemvalue="JUnit.MaisonInterieurTest" />
         <item itemvalue="JUnit.MaisonInterieurTest.testDeplacementPersonnage" />
         <item itemvalue="JUnit.HerbeTest" />
+        <item itemvalue="Application.com.stardew.stardewvalley.HelloApplication" />
       </list>
     </recent_temporary>
   </component>

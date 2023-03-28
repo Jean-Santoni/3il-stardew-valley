@@ -9,7 +9,7 @@ import java.io.File;
  * Permet de lire un fichier son .waw
  */
 public class PlayerSon {
-    private static MediaPlayer m;
+    static MediaPlayer m;
     public static void playSon(String str){
 
         File f = new File(str);
