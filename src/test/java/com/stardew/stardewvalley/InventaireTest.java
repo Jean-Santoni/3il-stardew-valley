@@ -19,20 +19,20 @@ class InventaireTest {
     @Test
     void testAjouter() {
         // On ajoute 2 houblons à l'inventaire
-        Inventaire.ajouter(Cultivations.Houblon);
-        Inventaire.ajouter(Cultivations.Houblon);
+        Inventaire.ajouter(Cultures.Houblon);
+        Inventaire.ajouter(Cultures.Houblon);
 
         // On vérifie que le nombre de houblons est bien de 2
-        assertEquals(2,  Inventaire.getNbCulture(Cultivations.Houblon));
+        assertEquals(2,  Inventaire.getNbCulture(Cultures.Houblon));
     }
 
     @Test
     void testRetirer() {
         // On retire 1 blé de l'inventaire
-        Inventaire.retirer(Cultivations.Blé);
+        Inventaire.retirer(Cultures.Blé);
 
         // On vérifie que le nombre de blés est bien de 0
-        assertEquals(-1,  Inventaire.getNbCulture(Cultivations.Blé));
+        assertEquals(0,  Inventaire.getNbCulture(Cultures.Blé));
     }
 
     @Test

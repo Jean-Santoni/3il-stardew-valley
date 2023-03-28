@@ -18,7 +18,7 @@ public class Champ extends ObjetInteractif {
 
     private boolean estCultive; // Si le champ est cultivé ou non
     private boolean estPlante; // Si le champ est vide ou non
-    private Cultivations cultive;
+    private Cultures cultive;
 
     /**
      * Constructeur de Champ
@@ -30,7 +30,7 @@ public class Champ extends ObjetInteractif {
         super(pfPosX, pfPosY, true);
         this.estCultive = false;
         this.estPlante = false;
-        this.cultive = Cultivations.Vide;
+        this.cultive = Cultures.Vide;
         this.setImage(new Image("file:Images/champ_non_cultive.png"));
     }
 
@@ -102,7 +102,7 @@ public class Champ extends ObjetInteractif {
             this.estPlante = b;
             Inventaire.ajouter(this.cultive);
             this.setImage(new Image("file:Images/champ_cultive.png"));
-            this.cultive = Cultivations.Vide;
+            this.cultive = Cultures.Vide;
         }
 
     }
@@ -111,13 +111,13 @@ public class Champ extends ObjetInteractif {
      * Permet de choisir la culture du champ
      */
     public void choixCulture() {
-        Cultivations[] choices = {Cultivations.Houblon, Cultivations.Blé, Cultivations.PommeDeTerre,
-                Cultivations.Tomate,Cultivations.Maïs};
-        ChoiceDialog<Cultivations> cDial = new ChoiceDialog<>(choices[0], choices);
+        Cultures[] choices = {Cultures.Houblon, Cultures.Blé, Cultures.PommeDeTerre,
+                Cultures.Tomate, Cultures.Maïs};
+        ChoiceDialog<Cultures> cDial = new ChoiceDialog<>(choices[0], choices);
         cDial.setTitle("Choix de la culture");
         cDial.setHeaderText("Selectionner la culture voulu");
         cDial.setContentText("Culture:");
-        Optional<Cultivations> selection = cDial.showAndWait();
+        Optional<Cultures> selection = cDial.showAndWait();
         selection.ifPresent(str -> typeCulture(str));
 
     }
@@ -126,7 +126,7 @@ public class Champ extends ObjetInteractif {
      * Modifie l'image du champ en fonction du type de culture
      * @param s le type de champ
      */
-    public void typeCulture(Cultivations c) {
+    public void typeCulture(Cultures c) {
         switch (c) {
             case Houblon:
                 this.setImage(new Image("file:Images/Hops_Stage_8.png"));

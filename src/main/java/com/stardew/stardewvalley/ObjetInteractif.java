@@ -12,7 +12,7 @@ import java.io.IOException;
  *
  * @author Nicolas Ferrayé, Jean Santoni - 3iL
  */
-public abstract class ObjetInteractif extends ImageView {
+public class ObjetInteractif extends ImageView {
 
     private int posX;
     private int posY;

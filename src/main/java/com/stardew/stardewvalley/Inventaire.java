@@ -8,7 +8,7 @@ public class Inventaire {
     private static int nbMais;
     private static int argent;
 
-    public static void ajouter(Cultivations ajout) {
+    public static void ajouter(Cultures ajout) {
         switch (ajout){
             case Houblon:
                 nbHoublon ++;
@@ -29,7 +29,7 @@ public class Inventaire {
                 break;
         }
     }
-    public static void retirer(Cultivations retirer) {
+    public static void retirer(Cultures retirer) {
         switch (retirer){
             case Houblon:
                 if(nbHoublon > 0){
@@ -68,7 +68,7 @@ public class Inventaire {
     }
     public static int getArgent(){return argent;}
 
-    public static int getNbCulture(Cultivations c) {
+    public static int getNbCulture(Cultures c) {
         int result = 0;
         switch (c){
             case Houblon:

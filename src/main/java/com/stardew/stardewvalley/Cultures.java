@@ -1,6 +1,6 @@
 package com.stardew.stardewvalley;
 
-public enum Cultivations {
+public enum Cultures {
     Houblon,
     Blé,
     PommeDeTerre,
