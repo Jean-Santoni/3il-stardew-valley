@@ -10,7 +10,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.BeforeClass;
+
 import javafx.application.Application;
 
 

@@ -14,13 +14,13 @@ public class Coffre extends ObjetInteractif {
         Image image = new Image("file:Images/Chest.png");
         setImage(image);
     }
-    @Override
-    public void interraction() throws IOException {
-        super.interraction();
-        validationVendre(true);
+        @Override
+        public void interraction() throws IOException {
+            super.interraction();
+            validationVendre(true);
 
-    }
-    public void validationVendre(boolean b) {
+        }
+        public void validationVendre(boolean b) {
         Cultivations[] choices = {Cultivations.Houblon, Cultivations.Blé, Cultivations.PommeDeTerre,
                 Cultivations.Tomate,Cultivations.Maïs};
         ChoiceDialog<Cultivations> cDial = new ChoiceDialog<>(choices[0], choices);

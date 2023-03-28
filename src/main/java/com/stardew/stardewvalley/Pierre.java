@@ -1,7 +1,10 @@
 package com.stardew.stardewvalley;
 
 import javafx.scene.image.Image;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -32,5 +35,10 @@ public class Pierre extends ObjetInteractif {
         super.interraction();
         setImage(null);
         setMarchable(true);
+        File f = new File("Son/CasserPierre.wav");
+        System.out.println(f.exists());
+        Media a = new Media(f.toURI().toString());
+        MediaPlayer m = new MediaPlayer(a);
+        m.play();
     }
 }
