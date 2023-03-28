@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b143f2f1-d7ed-4b23-ab9d-e94571a5451b" name="Changes" comment="Test Unitaire MaisonInterieurTest">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Son/Ble.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Son/Caillou.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Son/CasserPierre.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Son/Champs.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Son/Coffre.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Son/DOOR.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Son/Exit.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Son/Herbes.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Son/Houblon.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Son/Mais.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Son/Mur.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Son/PlanterCulture.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Son/Play.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Son/PommeDeTerre.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Son/Porte.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Son/Tomate.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Son/recolterCulture.wav" beforeDir="false" />
-    </list>
+    <list default="true" id="b143f2f1-d7ed-4b23-ab9d-e94571a5451b" name="Changes" comment="Nouveau son" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,6 +59,7 @@
       <recent name="C:\Users\louis\IdeaProjects\3il-stardew-valley\src\main\resources\com\stardew\stardewvalley" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aulas\IdeaProjects\3il-stardew-valley\Son" />
       <recent name="C:\Users\louis\IdeaProjects\3il-stardew-valley\Images" />
       <recent name="C:\Users\louis\IdeaProjects\3il-stardew-valley\src\main\resources\com\stardew\stardewvalley" />
       <recent name="D:\Java3il\3il-stardew-valley" />
@@ -248,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680030677928</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Nouveau son">
+      <created>1680032036782</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1680032036782</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -274,6 +263,7 @@
     <MESSAGE value="Ajout coffre" />
     <MESSAGE value="Choix du Coffre" />
     <MESSAGE value="Test Unitaire MaisonInterieurTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test Unitaire MaisonInterieurTest" />
+    <MESSAGE value="Nouveau son" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nouveau son" />
   </component>
 </project>
