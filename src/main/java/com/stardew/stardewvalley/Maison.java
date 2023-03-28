@@ -36,6 +36,7 @@ public class Maison extends ObjetInteractif {
            }else {
                sortirMaison();
            }
+           PlayerSon.playSon("Son/DOOR.wav");
         }
     }
     public void entrerMaison() throws IOException {
