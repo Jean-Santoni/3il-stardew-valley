@@ -69,8 +69,8 @@ public class MenuController {
         initialiserMenu(Grille_Menu);
         Play.setFitWidth(1366/(MAX_WIDTH+1));
         Play.setFitHeight(768/(MAX_HEIGHT+1));
-        Exit.setOnMouseEntered(event -> soundMenu(false));
-        Play.setOnMouseEntered(event -> soundMenu(true));
+        Exit.setOnMouseEntered(event -> PlayerSon.playSon("Son/Exit.wav"));
+        Play.setOnMouseEntered(event -> PlayerSon.playSon("Son/Play.wav"));
 
         Exit.setFitWidth(1366/(MAX_WIDTH+1));
         Exit.setFitHeight(768/(MAX_HEIGHT+1));
@@ -126,18 +126,5 @@ public class MenuController {
             grid.getRowConstraints().add(row);
         }
 
-    }
-    private void soundMenu(boolean b){
-        File f = null;
-        if(b){
-             f = new File("Son/Play.wav");
-        }else{
-            f = new File("Son/Exit.wav");
-        }
-
-        System.out.println(f.exists());
-        Media a = new Media(f.toURI().toString());
-        MediaPlayer m = new MediaPlayer(a);
-        m.play();
     }
 }

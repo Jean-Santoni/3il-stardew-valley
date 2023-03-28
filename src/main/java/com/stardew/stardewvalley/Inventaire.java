@@ -8,7 +8,7 @@ public class Inventaire {
     private static int nbMais;
     private static int argent;
 
-    public static void ajouter(Cultivations ajout) {
+    public static void ajouter(Cultures ajout) {
         switch (ajout){
             case Houblon:
                 nbHoublon ++;
@@ -29,22 +29,32 @@ public class Inventaire {
                 break;
         }
     }
-    public static void retirer(Cultivations retirer) {
+    public static void retirer(Cultures retirer) {
         switch (retirer){
             case Houblon:
-                nbHoublon --;
+                if(nbHoublon > 0){
+                    nbHoublon --;
+                }
                 break;
             case Blé:
-                nbBle --;
+                if(nbBle >0){
+                    nbBle --;
+                }
                 break;
             case PommeDeTerre:
-                nbPommeDeTerre --;
+                if(nbPommeDeTerre >0){
+                    nbPommeDeTerre --;
+                }
                 break;
             case Tomate:
-                nbTomate --;
+                if(nbTomate >0){
+                    nbTomate --;
+                }
                 break;
             case Maïs:
-                nbMais --;
+                if(nbMais >0){
+                    nbMais --;
+                }
                 break;
             default:
                 break;
@@ -58,7 +68,7 @@ public class Inventaire {
     }
     public static int getArgent(){return argent;}
 
-    public static int getNbCulture(Cultivations c) {
+    public static int getNbCulture(Cultures c) {
         int result = 0;
         switch (c){
             case Houblon:

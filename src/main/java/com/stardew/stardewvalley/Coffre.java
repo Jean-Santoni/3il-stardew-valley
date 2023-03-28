@@ -1,7 +1,5 @@
 package com.stardew.stardewvalley;
 
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.image.Image;
 
@@ -21,15 +19,15 @@ public class Coffre extends ObjetInteractif {
 
         }
         public void validationVendre(boolean b) {
-        Cultivations[] choices = {Cultivations.Houblon, Cultivations.Blé, Cultivations.PommeDeTerre,
-                Cultivations.Tomate,Cultivations.Maïs};
-        ChoiceDialog<Cultivations> cDial = new ChoiceDialog<>(choices[0], choices);
+        Cultures[] choices = {Cultures.Houblon, Cultures.Blé, Cultures.PommeDeTerre,
+                Cultures.Tomate, Cultures.Maïs};
+        ChoiceDialog<Cultures> cDial = new ChoiceDialog<>(choices[0], choices);
         cDial.setTitle("Marché");
         cDial.setHeaderText("Que voulez-vous vendre ?");
-        Optional<Cultivations> selection = cDial.showAndWait();
+        Optional<Cultures> selection = cDial.showAndWait();
         selection.ifPresent(str -> vendre(str));
     }
-    private void vendre(Cultivations c){
+    private void vendre(Cultures c){
         int prix = 0;
         switch (c){
             case Houblon:

@@ -35,10 +35,6 @@ public class Pierre extends ObjetInteractif {
         super.interraction();
         setImage(null);
         setMarchable(true);
-        File f = new File("Son/CasserPierre.wav");
-        System.out.println(f.exists());
-        Media a = new Media(f.toURI().toString());
-        MediaPlayer m = new MediaPlayer(a);
-        m.play();
+        PlayerSon.playSon("Son/CasserPierre.wav");
     }
 }
