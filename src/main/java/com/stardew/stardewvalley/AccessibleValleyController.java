@@ -168,8 +168,8 @@ public class AccessibleValleyController {
                     if (i == 2 && j == 1) {
                         listeMaison.add(new Maison(18 + j, 0 + i,true,true));
                     }
-            else{
-                    listeMaison.add(new Maison(18 + j, 0 + i,false,true));
+                    else{
+                        listeMaison.add(new Maison(18 + j, 0 + i,false,true));
                 }
 
             }
