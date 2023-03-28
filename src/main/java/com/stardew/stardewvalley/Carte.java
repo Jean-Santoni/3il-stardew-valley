@@ -73,7 +73,7 @@ public class Carte extends GridPane {
             this.getRowConstraints().add(row);
         }
 
-        this.setGridLinesVisible(true);
+       // this.setGridLinesVisible(true);
 
     }
 
