@@ -75,9 +75,10 @@ public class Champ extends ObjetInteractif {
     public void validationCulture(boolean b) {
 
         Alert dialogC = new Alert(Alert.AlertType.CONFIRMATION);
-        dialogC.setTitle("Voulez vous cultivez ce champ");
+        dialogC.setTitle("Voulez-vous cultivez ce champ");
         dialogC.setHeaderText(null);
-        dialogC.setContentText("Voulez vous cultivez ce champ");
+        dialogC.setContentText("Voulez-vous cultivez ce champ");
+        PlayerSon.playSon("Son/CultiverChamp.wav");
         Optional<ButtonType> answer = dialogC.showAndWait();
 
         if (answer.isPresent() && answer.get() == ButtonType.OK) {
@@ -95,9 +96,10 @@ public class Champ extends ObjetInteractif {
     public void validationRecolte(boolean b) {
 
         Alert dialogC = new Alert(Alert.AlertType.CONFIRMATION);
-        dialogC.setTitle("Voulez vous récolter ce champ ?");
+        dialogC.setTitle("Voulez-vous récolter ce champ ?");
         dialogC.setHeaderText(null);
-        dialogC.setContentText("Voulez vous récolter ce champ ?");
+        dialogC.setContentText("Voulez-vous récolter ce champ ?");
+        PlayerSon.playSon("Son/RecolterChamp.wav");
         Optional<ButtonType> answer = dialogC.showAndWait();
 
         if (answer.isPresent() && answer.get() == ButtonType.OK) {
@@ -119,8 +121,9 @@ public class Champ extends ObjetInteractif {
                 Cultures.Tomate, Cultures.Maïs};
         ChoiceDialog<Cultures> cDial = new ChoiceDialog<>(choices[0], choices);
         cDial.setTitle("Choix de la culture");
-        cDial.setHeaderText("Selectionner la culture voulu");
+        cDial.setHeaderText("Sélectionner la culture à planter");
         cDial.setContentText("Culture:");
+        PlayerSon.playSon("Son/CultureAPlanter.wav");
         Optional<Cultures> selection = cDial.showAndWait();
         selection.ifPresent(str -> typeCulture(str));
 

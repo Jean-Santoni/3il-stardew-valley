@@ -43,6 +43,7 @@ public class Coffre extends ObjetInteractif {
         ChoiceDialog<Cultures> cDial = new ChoiceDialog<>(choices[0], choices);
         cDial.setTitle("Marché");
         cDial.setHeaderText("Que voulez-vous vendre ?");
+        PlayerSon.playSon("Son/VendreRessource.wav");
         Optional<Cultures> selection = cDial.showAndWait();
         selection.ifPresent(str -> vendre(str));
     }

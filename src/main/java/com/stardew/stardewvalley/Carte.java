@@ -201,6 +201,7 @@ public class Carte extends GridPane {
         dialogC.setTitle("Voulez-vous quitter le jeu");
         dialogC.setHeaderText(null);
         dialogC.setContentText("Voulez-vous quitter le jeu ?");
+        PlayerSon.playSon("Son/QuitterJeu.wav");
         Optional<ButtonType> answer = dialogC.showAndWait();
 
         if (answer.isPresent() && answer.get() == ButtonType.OK) {
