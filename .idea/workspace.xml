@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b143f2f1-d7ed-4b23-ab9d-e94571a5451b" name="Changes" comment="Nouveau son" />
+    <list default="true" id="b143f2f1-d7ed-4b23-ab9d-e94571a5451b" name="Changes" comment="Rajout son Play/Menu">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Ble.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Caillou.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/CasserPierre.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Champs.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Coffre.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Exit.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Herbes.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Houblon.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Mais.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Mur.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/PlanterCulture.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Play.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Play.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Son/Play.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/PommeDeTerre.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Porte.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/RecolterCulture.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Son/Tomate.mp3" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -237,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680032036782</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Rajout son Play/Menu">
+      <created>1680032534692</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1680032534692</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -264,6 +290,7 @@
     <MESSAGE value="Choix du Coffre" />
     <MESSAGE value="Test Unitaire MaisonInterieurTest" />
     <MESSAGE value="Nouveau son" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nouveau son" />
+    <MESSAGE value="Rajout son Play/Menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rajout son Play/Menu" />
   </component>
 </project>
