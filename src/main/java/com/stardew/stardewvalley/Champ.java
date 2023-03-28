@@ -124,7 +124,7 @@ public class Champ extends ObjetInteractif {
 
     /**
      * Modifie l'image du champ en fonction du type de culture
-     * @param s le type de champ
+     * @param c le type de champ
      */
     public void typeCulture(Cultures c) {
         switch (c) {
