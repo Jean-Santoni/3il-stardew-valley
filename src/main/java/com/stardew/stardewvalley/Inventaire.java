@@ -32,19 +32,29 @@ public class Inventaire {
     public static void retirer(Cultivations retirer) {
         switch (retirer){
             case Houblon:
-                nbHoublon --;
+                if(nbHoublon > 0){
+                    nbHoublon --;
+                }
                 break;
             case Blé:
-                nbBle --;
+                if(nbBle >0){
+                    nbBle --;
+                }
                 break;
             case PommeDeTerre:
-                nbPommeDeTerre --;
+                if(nbPommeDeTerre >0){
+                    nbPommeDeTerre --;
+                }
                 break;
             case Tomate:
-                nbTomate --;
+                if(nbTomate >0){
+                    nbTomate --;
+                }
                 break;
             case Maïs:
-                nbMais --;
+                if(nbMais >0){
+                    nbMais --;
+                }
                 break;
             default:
                 break;
