@@ -6,12 +6,9 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
 
 /**
@@ -114,12 +111,14 @@ public class MenuController {
 
         grid.getColumnConstraints().clear();
         grid.getRowConstraints().clear();
+
         for (int c = 0; c <= MAX_WIDTH; c++) {
             ColumnConstraints column = new ColumnConstraints();
             column.setMaxWidth(1366/(MAX_WIDTH+1));
             column.setMinWidth(1366/(MAX_WIDTH+1));
             grid.getColumnConstraints().add(column);
         }
+
         for (int r = 0; r <= MAX_HEIGHT; r++) {
             RowConstraints row = new RowConstraints();
             row.setMaxHeight(768/(MAX_HEIGHT+1));

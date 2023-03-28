@@ -11,6 +11,9 @@ import javafx.scene.layout.*;
  */
 public class Menu extends AnchorPane{
 
+    /**
+     * Constructeur de Menu
+     */
     public Menu() {
         super();
         this.setBackground(new Background(new BackgroundImage(new Image("file:Images/Fond_menu.png"),

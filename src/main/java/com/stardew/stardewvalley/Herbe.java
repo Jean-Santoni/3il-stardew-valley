@@ -36,4 +36,5 @@ public class Herbe extends ObjetInteractif {
         setMarchable(true);
         PlayerSon.playSon("Son/MauvaiseHerbeAraché.wav");
     }
+
 }

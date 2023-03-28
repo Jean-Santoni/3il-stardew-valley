@@ -45,6 +45,7 @@ public class Champ extends ObjetInteractif {
      * @param pfEstCultive si le champ est cultivé ou non
      */
     public void setEstCultive(boolean pfEstCultive) {
+
         if(!this.estCultive) {
             validationCulture(pfEstCultive);
         } else {
@@ -55,6 +56,7 @@ public class Champ extends ObjetInteractif {
                 PlayerSon.playSon("Son/CulturePlanté.wav");
             }
         }
+
     }
 
     /**
@@ -65,8 +67,6 @@ public class Champ extends ObjetInteractif {
         super.interraction();
         setEstCultive(true);
     }
-
-
 
     /**
      * Permet de cultiver ou non un champ
@@ -150,6 +150,7 @@ public class Champ extends ObjetInteractif {
             default:
                 break;
         }
+
         this.cultive = c;
         this.estPlante = true;
 

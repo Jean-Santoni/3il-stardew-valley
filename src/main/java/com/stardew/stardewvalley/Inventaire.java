@@ -1,6 +1,10 @@
 package com.stardew.stardewvalley;
 
+/**
+ * Inventaire du Joueur
+ */
 public class Inventaire {
+
     private static int nbHoublon;
     private static int nbBle;
     private static int nbPommeDeTerre;
@@ -8,6 +12,10 @@ public class Inventaire {
     private static int nbMais;
     private static int argent;
 
+    /**
+     * Permet d'ajouter une culture à l'inventaire
+     * @param ajout la culture à ajouter
+     */
     public static void ajouter(Cultures ajout) {
         switch (ajout){
             case Houblon:
@@ -29,6 +37,11 @@ public class Inventaire {
                 break;
         }
     }
+
+    /**
+     * Permet de retirer une culture de l'inventaire
+     * @param retirer la culture à retirer
+     */
     public static void retirer(Cultures retirer) {
         switch (retirer){
             case Houblon:
@@ -60,14 +73,33 @@ public class Inventaire {
                 break;
         }
     }
+
+    /**
+     * Permet d'ajouter de l'argent à l'inventaire
+     * @param credit la somme à créditer
+     */
     public static void ajouterArgent(int credit){
         argent += credit;
     }
+
+    /**
+     * Permet de retirer de l'argent à l'inventaire
+     * @param debit la somme à débiter
+     */
     public static void retirerArgent(int debit){
         argent -= debit;
     }
+
+    /**
+     * @return la somme d'argent actuelle du joueur
+     */
     public static int getArgent(){return argent;}
 
+    /**
+     * Retourne le nombre d'une culture dans l'inventaire
+     * @param c la culture à compter dans l'inventaire
+     * @return le nombre de culture c dans l'inventaire
+     */
     public static int getNbCulture(Cultures c) {
         int result = 0;
         switch (c){
@@ -89,14 +121,21 @@ public class Inventaire {
             default:
                 break;
         }
+
         return result;
+
     }
+
+    /**
+     * Permet d'initialiser l'inventaire
+     */
     public static void initialiseInventaire(){
-      nbHoublon= 0;
-      nbBle= 0;
-      nbPommeDeTerre= 0;
-      nbTomate= 0;
-      nbMais = 0;
-      argent = 0;
+        nbHoublon= 0;
+        nbBle= 0;
+        nbPommeDeTerre= 0;
+        nbTomate= 0;
+        nbMais = 0;
+        argent = 0;
     }
+
 }

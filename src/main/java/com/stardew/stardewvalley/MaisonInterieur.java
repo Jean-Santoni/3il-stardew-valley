@@ -6,7 +6,11 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 
+/**
+ * Interface de l'intérieur de la Maison
+ */
 public class MaisonInterieur extends Carte {
+
     private final int MAX_WIDTH = 20;
     private final int MAX_HEIGHT = 10;
     private KeyEvent deplacementPrecedent;
@@ -24,9 +28,6 @@ public class MaisonInterieur extends Carte {
         this.setOnKeyPressed(new Clavier(this));
         initialiserCarte();
 
-       // this.personnage = new Personnage();
-        //this.personnage.setFitHeight(100);
-        //this.personnage.setFitWidth(70);
         super.personnage.setPreserveRatio(true);
         super.personnage.setFitHeight(100);
         this.getChildren().remove(super.personnage);
@@ -37,7 +38,6 @@ public class MaisonInterieur extends Carte {
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-        //adapterObjets();
     }
 
     /**
@@ -50,7 +50,6 @@ public class MaisonInterieur extends Carte {
 
         for (int c = 0; c <= MAX_WIDTH; c++) {
             ColumnConstraints column = new ColumnConstraints();
-            //column.setPercentWidth(100.0 / 2);
             column.setMaxWidth(1366/(MAX_WIDTH+1));
             column.setMinWidth(1366/(MAX_WIDTH+1));
             column.setHalignment(HPos.CENTER);
@@ -59,7 +58,6 @@ public class MaisonInterieur extends Carte {
 
         for (int r = 0; r <= MAX_HEIGHT; r++) {
             RowConstraints row = new RowConstraints();
-            //row.setPercentHeight(100.0 / 4);
             row.setMaxHeight(768/(MAX_HEIGHT+1));
             row.setMinHeight(768/(MAX_HEIGHT+1));
             row.setValignment(VPos.BOTTOM);

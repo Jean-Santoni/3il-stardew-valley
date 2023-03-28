@@ -73,8 +73,6 @@ public class Carte extends GridPane {
             this.getRowConstraints().add(row);
         }
 
-       // this.setGridLinesVisible(true);
-
     }
 
     /**
@@ -89,7 +87,6 @@ public class Carte extends GridPane {
             this.personnage.setPosX(this.personnage.getPosX() +i1);
             this.personnage.setPosY(this.personnage.getPosY() +i);
             this.add(this.personnage,this.personnage.getPosX(),this.personnage.getPosY());
-
         }
     }
 
@@ -105,7 +102,7 @@ public class Carte extends GridPane {
 
         boolean result = true;
 
-        if(i<0||i1<0||i>MAX_HEIGHT||i1>MAX_WIDTH) {
+        if(i < 0 || i1 < 0 || i > MAX_HEIGHT || i1 > MAX_WIDTH) {
             result = false;
         }
 
@@ -210,6 +207,7 @@ public class Carte extends GridPane {
             System.exit(0);
         }
     }
+
     public Personnage getPersonnage(){
         return this.personnage;
     }

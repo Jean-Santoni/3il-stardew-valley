@@ -115,7 +115,7 @@ public class AccessibleValleyController {
         listePierres.add(new Pierre(4,2));
         listePierres.add(new Pierre(5,2));
 
-        for(index=0  ; index< listePierres.size();index++) {
+        for(index=0 ; index< listePierres.size() ; index++) {
             listePierres.get(index).setFitWidth(carte.getCellWidth());
             listePierres.get(index).setFitHeight(carte.getCellHeight());
 
@@ -162,35 +162,35 @@ public class AccessibleValleyController {
      */
     private void initializeMaison(Carte carte) {
         int index = 0;
+
         //Premier champ
         for (int i = 0 ; i<3;i++){
             for (int j = 0 ; j<3;j++){
 
-                    if (i == 2 && j == 1) {
-                        listeMaison.add(new Maison(18 + j, 0 + i,true,true));
-                    }
-                    else{
-                        listeMaison.add(new Maison(18 + j, 0 + i,false,true));
+                if (i == 2 && j == 1) {
+                    listeMaison.add(new Maison(18 + j, 0 + i,true,true));
+                } else{
+                    listeMaison.add(new Maison(18 + j, 0 + i,false,true));
                 }
 
             }
         }
 
-        for(index=0  ; index< listeMaison.size();index++){
+        for(index=0 ; index< listeMaison.size() ; index++) {
             listeMaison.get(index).setFitWidth(carte.getCellWidth());
             listeMaison.get(index).setFitHeight(carte.getCellHeight());
 
             carte.add( listeMaison.get(index),  listeMaison.get(index).getPosX(),  listeMaison.get(index).getPosY());
         }
     }
+
     /**
      * Positionne le coffre sur la carte
      *
-     * @param
+     * @param carte
      */
-
     private void initializeCoffre(Carte carte){
-        int index =0;
+        int index = 0;
 
         listeCoffre.add(new Coffre(17,2));
 

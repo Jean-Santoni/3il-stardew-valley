@@ -6,19 +6,38 @@ import javafx.scene.image.Image;
 import java.io.IOException;
 import java.util.Optional;
 
+/**
+ * Classe Coffre héritant d'ObjetInteractif
+ */
 public class Coffre extends ObjetInteractif {
+
+    /**
+     * Constructeur d'Herbe
+     *
+     * @param pfPosX la position du coffre sur les abscisses
+     * @param pfPosY la position du coffre sur les ordonnées
+     */
     public Coffre(int pfPosX, int pfPosY) {
         super(pfPosX, pfPosY, false);
         Image image = new Image("file:Images/Chest.png");
         setImage(image);
     }
-        @Override
-        public void interraction() throws IOException {
-            super.interraction();
-            validationVendre(true);
 
-        }
-        public void validationVendre(boolean b) {
+    /**
+     * Gère l'interaction du joueur avec la le coffre
+     */
+    @Override
+    public void interraction() throws IOException {
+        super.interraction();
+        validationVendre(true);
+
+    }
+
+    /**
+     * Permet de valider ou non la vente
+     * @param b true pour valider, sinon false
+     */
+    public void validationVendre(boolean b) {
         Cultures[] choices = {Cultures.Houblon, Cultures.Blé, Cultures.PommeDeTerre,
                 Cultures.Tomate, Cultures.Maïs};
         ChoiceDialog<Cultures> cDial = new ChoiceDialog<>(choices[0], choices);
@@ -27,6 +46,11 @@ public class Coffre extends ObjetInteractif {
         Optional<Cultures> selection = cDial.showAndWait();
         selection.ifPresent(str -> vendre(str));
     }
+
+    /**
+     * Permet de vendre au coffre
+     * @param c la culture à vendre
+     */
     private void vendre(Cultures c){
         int prix = 0;
         switch (c){
@@ -48,7 +72,8 @@ public class Coffre extends ObjetInteractif {
             default:
                 break;
         }
-        for(int i=0; i<Inventaire.getNbCulture(c);i++){
+
+        for(int i=0 ; i<Inventaire.getNbCulture(c) ; i++){
             Inventaire.retirer(c);
             Inventaire.ajouterArgent(prix);
         }

@@ -1,11 +1,8 @@
 package com.stardew.stardewvalley;
 
 import javafx.fxml.FXML;
-import javafx.scene.image.Image;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 /**
@@ -36,31 +33,33 @@ public class MaisonController {
             initializeMaison(this.maison);
             this.clavier = new Clavier(this.maison);
             this.interieur.setOnKeyPressed(this.clavier);
-            System.out.println("Clavier :"+this.clavier);
         }
 
     }
+
+    /**
+     * Permet de paramétrer l'interface de la maison
+     * @param m l'intérieur de la maison
+     */
     private void initializeMaison(MaisonInterieur m) {
         int index = 0;
         //Premier champ
-        for (int i = 0 ; i<9;i++){
-            for (int j = 0 ; j<9;j++){
+        for (int i = 0 ; i<9 ; i++) {
+            for (int j = 0 ; j<9;j++) {
 
                 if (i==2||i==8 || j==0||j==8) {
-                    if(i==8 && j==2){
-                    listeMaison.add(new Maison(6 + j, 1 + i,true,false));
-                    }else{
+                    if(i==8 && j==2) {
+                        listeMaison.add(new Maison(6 + j, 1 + i,true,false));
+                    } else {
                         listeMaison.add(new Maison(6 + j, 1 + i,false,false));
                     }
-
                 }
             }
         }
 
-        for(index=0  ; index< listeMaison.size();index++){
+        for(index=0  ; index< listeMaison.size();index++) {
             listeMaison.get(index).setFitWidth(m.getCellWidth());
             listeMaison.get(index).setFitHeight(m.getCellHeight());
-
 
             m.add( listeMaison.get(index),  listeMaison.get(index).getPosX(),  listeMaison.get(index).getPosY());
         }

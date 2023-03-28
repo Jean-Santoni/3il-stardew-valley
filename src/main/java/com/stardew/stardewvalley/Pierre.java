@@ -1,10 +1,7 @@
 package com.stardew.stardewvalley;
 
 import javafx.scene.image.Image;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 
-import java.io.File;
 import java.io.IOException;
 
 /**

@@ -19,26 +19,44 @@ public class Maison extends ObjetInteractif {
 
     private boolean porte;
     private Stage stage;
-     private BorderPane root ;
+    private BorderPane root ;
     private boolean exterieur;
 
-    public Maison(int pfPosX, int pfPosY,boolean porte,boolean exterieur) {
+    /**
+     * Constructeur Maison
+     *
+     * @param pfPosX la position de la maison sur les abscisses
+     * @param pfPosY la position de la maison d'herbe sur les ordonnées
+     * @param porte
+     * @param exterieur
+     */
+    public Maison(int pfPosX, int pfPosY, boolean porte, boolean exterieur) {
         super(pfPosX, pfPosY, false);
         this.porte=porte;
         this.exterieur=exterieur;
     }
 
+    /**
+     * Gère l'interaction du joueur avec la maison
+     *
+     * @throws IOException
+     */
     @Override
     public void interraction() throws IOException {
-        if(this.porte){
-           if(this.exterieur){
-               entrerMaison();
-           }else {
-               sortirMaison();
-           }
-           PlayerSon.playSon("Son/DOOR.wav");
+        if(this.porte) {
+            if(this.exterieur){
+                entrerMaison();
+            } else {
+                sortirMaison();
+            }
+            PlayerSon.playSon("Son/DOOR.wav");
         }
     }
+
+    /**
+     * Permet d'entrer dans la maison depuis la Carte
+     * @throws IOException
+     */
     public void entrerMaison() throws IOException {
         if(this.stage == null){
             this.stage = new Stage();
@@ -54,7 +72,12 @@ public class Maison extends ObjetInteractif {
         }
         stage.show();
     }
-    public void sortirMaison() throws IOException {
+
+    /**
+     * Permet de sortir de la maison et revenir sur la Carte
+     * @throws IOException
+     */
+    public void sortirMaison() {
         ((Stage)this.getScene().getWindow()).close();
     }
 
