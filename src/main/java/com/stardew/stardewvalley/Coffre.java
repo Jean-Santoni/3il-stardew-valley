@@ -52,5 +52,7 @@ public class Coffre extends ObjetInteractif {
             Inventaire.retirer(c);
             Inventaire.ajouterArgent(prix);
         }
+
+        PlayerSon.playSon("Son/venteEffectuee.wav");
     }
 }
