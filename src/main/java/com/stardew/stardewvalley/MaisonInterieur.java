@@ -43,7 +43,7 @@ public class MaisonInterieur extends Carte {
     /**
      * Permet d'initialiser la Carte
      */
-    private void initialiserCarte() {
+    public void initialiserCarte() {
 
         this.getColumnConstraints().clear();
         this.getRowConstraints().clear();

@@ -6,10 +6,12 @@ import javafx.scene.media.MediaPlayer;
 import java.io.File;
 
 public class PlayerSon {
+    private static MediaPlayer m;
     public static void playSon(String str){
+
         File f = new File(str);
         Media a = new Media(f.toURI().toString());
-        MediaPlayer m = new MediaPlayer(a);
+         m = new MediaPlayer(a);
         m.play();
     }
 }

@@ -43,6 +43,7 @@ public class AccessibleValleyController {
             initializeMaison(this.carte);
             initializeCoffre(this.carte);
             this.borderPanel.setOnKeyPressed(this.clavier);
+            PlayerSon.playSon("Son/fenetreDeJeu.wav");
         }
 
     }

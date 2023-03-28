@@ -23,7 +23,7 @@ public class Carte extends GridPane {
 
     private final int MAX_WIDTH = 20;
     private final int MAX_HEIGHT = 10;
-    private KeyEvent deplacementPrecedent;
+    KeyEvent deplacementPrecedent;
     private Image fondCarte = new Image("file:Images/RPG-Maper-Maison.png");
 
     protected Personnage personnage;
@@ -52,7 +52,7 @@ public class Carte extends GridPane {
     /**
      * Permet d'initialiser la Carte
      */
-    private void initialiserCarte() {
+    void initialiserCarte() {
 
         this.getColumnConstraints().clear();
         this.getRowConstraints().clear();
@@ -101,7 +101,7 @@ public class Carte extends GridPane {
      *
      * @return true si le joueur peut se déplacer sur cette case, sinon false
      */
-    private boolean joueurDeplacable(int i, int i1) {
+    boolean joueurDeplacable(int i, int i1) {
 
         boolean result = true;
 

@@ -74,6 +74,7 @@ public class MenuController {
 
         Exit.setFitWidth(1366/(MAX_WIDTH+1));
         Exit.setFitHeight(768/(MAX_HEIGHT+1));
+        PlayerSon.playSon("Son/Menu.wav");
     }
     @FXML
     BorderPane borderPanel;

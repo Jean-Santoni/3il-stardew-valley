@@ -52,6 +52,7 @@ public class Champ extends ObjetInteractif {
                 validationRecolte(false);
             } else {
                 choixCulture();
+                PlayerSon.playSon("Son/CulturePlanté.wav");
             }
         }
     }
@@ -82,6 +83,7 @@ public class Champ extends ObjetInteractif {
         if (answer.isPresent() && answer.get() == ButtonType.OK) {
             this.estCultive = b;
             this.setImage(new Image("file:Images/champ_cultive.png"));
+            PlayerSon.playSon("Son/ChampsCultivé.wav");
         }
 
     }
@@ -99,10 +101,12 @@ public class Champ extends ObjetInteractif {
         Optional<ButtonType> answer = dialogC.showAndWait();
 
         if (answer.isPresent() && answer.get() == ButtonType.OK) {
+            PlayerSon.playSon("Son/CultureRecolte.wav");
             this.estPlante = b;
             Inventaire.ajouter(this.cultive);
             this.setImage(new Image("file:Images/champ_cultive.png"));
             this.cultive = Cultures.Vide;
+
         }
 
     }
@@ -150,5 +154,6 @@ public class Champ extends ObjetInteractif {
         this.estPlante = true;
 
     }
+    public boolean getEstPlante(){return this.estPlante;}
 
 }
