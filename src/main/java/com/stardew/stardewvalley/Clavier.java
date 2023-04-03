@@ -14,6 +14,7 @@ import java.io.IOException;
 public class Clavier implements EventHandler<KeyEvent> {
 
     private Carte carte;
+    private MenuInventaire menuInventaire;
 
     /**
      * Constructeur de Clavier
@@ -56,6 +57,10 @@ public class Clavier implements EventHandler<KeyEvent> {
                 break;
             case ESCAPE:
                 this.carte.quitterJeu();
+                break;
+            case SPACE:
+                this.menuInventaire=new MenuInventaire();
+                this.menuInventaire.affichageInventaire();
                 break;
             default:
                 break;

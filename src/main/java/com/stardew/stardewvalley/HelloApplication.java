@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,7 +19,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         try {
-            AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("Menu.fxml"));
+            AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("Menu.fxml"));
             Scene scene = new Scene(root,1366,768);
             stage.setResizable(false);
             scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
@@ -32,6 +33,7 @@ public class HelloApplication extends Application {
             e.printStackTrace();
         }
     }
+
 
     /**
      * Main function
