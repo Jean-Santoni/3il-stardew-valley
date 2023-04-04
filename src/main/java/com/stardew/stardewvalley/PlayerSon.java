@@ -5,16 +5,18 @@ import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 
-/**
- * Permet de lire un fichier son .waw
- */
 public class PlayerSon {
-    static MediaPlayer m;
-    public static void playSon(String str){
+    private static boolean estActive = true;
 
-        File f = new File(str);
-        Media a = new Media(f.toURI().toString());
-        m = new MediaPlayer(a);
-        m.play();
+    public static void activerDesactiverSon(){
+        PlayerSon.estActive = !PlayerSon.estActive;
+    }
+    public static void playSon(String str){
+        if (estActive){
+            File f = new File(str);
+            Media a = new Media(f.toURI().toString());
+            MediaPlayer m = new MediaPlayer(a);
+            m.play();
+        }
     }
 }

@@ -59,8 +59,16 @@ public class Clavier implements EventHandler<KeyEvent> {
                 this.carte.quitterJeu();
                 break;
             case SPACE:
-                this.menuInventaire=new MenuInventaire();
+                if(this.menuInventaire == null){
+                    this.menuInventaire=new MenuInventaire();
+                }
                 this.menuInventaire.affichageInventaire();
+                break;
+            case A:
+                PlayerSon.activerDesactiverSon();
+                break;
+            case P:
+
                 break;
             default:
                 break;
