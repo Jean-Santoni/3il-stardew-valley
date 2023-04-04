@@ -1,5 +1,7 @@
 package com.stardew.stardewvalley;
 
+import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
@@ -7,11 +9,20 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class MenuInventaire extends GridPane {
     private final int MAX_WIDTH = 20;
     private final int MAX_HEIGHT = 10;
+    private Stage stage;
+    private BorderPane root ;
+
+
+    private static boolean estAffiche = false;
+
+    @FXML
+    private BorderPane carte;
     KeyEvent deplacementPrecedent;
     private Image fondCarte = new Image("file:Images/FondInventaire.png");
     public MenuInventaire() {
@@ -48,21 +59,33 @@ public class MenuInventaire extends GridPane {
 
     }
     public void affichageInventaire(){
-        try {
-            Stage stage = new Stage();
-            BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("MenuInventaire.fxml"));
-            Scene scene = new Scene(root,1366,768);
-            stage.setResizable(false);
-            scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-            scene.onKeyPressedProperty().bind(root.onKeyPressedProperty());
-            stage.getIcons().add(new Image("file:Images/Logo.png"));
-            stage.setScene(scene);
-            stage.setTitle("AccessibleValley");
-            stage.show();
+            try {
+                if(this.carte == null){
+                     this.carte = (BorderPane)FXMLLoader.load(getClass().getResource("AccessibleValley.fxml"));
+                }
+                this.stage = new Stage();
+                this.root = (BorderPane) FXMLLoader.load(getClass().getResource("MenuInventaire.fxml"));
+                Scene scene = new Scene(root,1366,768);
+                stage.setResizable(false);
+                scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+                //scene.onKeyPressedProperty().bind(carte.onKeyPressedProperty());
+                stage.getIcons().add(new Image("file:Images/Logo.png"));
+                stage.setScene(scene);
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.setTitle("AccessibleValley");
+                estAffiche = true;
+                stage.show();
 
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+
+    }
+    public void fermerInventaire(){
+        //Fermer Inv
+    }
+    public static boolean estAffiche() {
+        return estAffiche;
     }
 
 

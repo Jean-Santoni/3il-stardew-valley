@@ -62,6 +62,12 @@ public class Clavier implements EventHandler<KeyEvent> {
                 if(this.menuInventaire == null){
                     this.menuInventaire=new MenuInventaire();
                 }
+                /*
+                if(MenuInventaire.estAffiche()){
+                    this.menuInventaire.fermerInventaire();
+                }else{
+                    this.menuInventaire.affichageInventaire();
+                }*/
                 this.menuInventaire.affichageInventaire();
                 break;
             case A:
