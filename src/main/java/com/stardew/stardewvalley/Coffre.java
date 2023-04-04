@@ -53,22 +53,22 @@ public class Coffre extends ObjetInteractif {
      * @param c la culture à vendre
      */
     private void vendre(Cultures c){
-        int prix = 0;
+        int prixVente = Inventaire.getNbCulture(c);
         switch (c){
             case Houblon:
-                prix = 10;
+                prixVente *= 10;
                 break;
             case Blé:
-                prix = 100;
+                prixVente *= 100;
                 break;
             case PommeDeTerre:
-                prix = 1000;
+                prixVente *= 1000;
                 break;
             case Tomate:
-                prix = 10000;
+                prixVente *= 10000;
                 break;
             case Maïs:
-                prix = 100000;
+                prixVente *= 100000;
                 break;
             default:
                 break;
@@ -76,7 +76,7 @@ public class Coffre extends ObjetInteractif {
 
         for(int i=0 ; i<Inventaire.getNbCulture(c) ; i++){
             Inventaire.retirer(c);
-            Inventaire.ajouterArgent(prix);
+            Inventaire.ajouterArgent(prixVente);
         }
 
         PlayerSon.playSon("Son/venteEffectuee.wav");

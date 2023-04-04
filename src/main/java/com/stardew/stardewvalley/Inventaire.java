@@ -46,27 +46,27 @@ public class Inventaire {
         switch (retirer){
             case Houblon:
                 if(nbHoublon > 0){
-                    nbHoublon --;
+                    nbHoublon = 0;
                 }
                 break;
             case Blé:
                 if(nbBle >0){
-                    nbBle --;
+                    nbBle = 0;
                 }
                 break;
             case PommeDeTerre:
                 if(nbPommeDeTerre >0){
-                    nbPommeDeTerre --;
+                    nbPommeDeTerre = 0;
                 }
                 break;
             case Tomate:
                 if(nbTomate >0){
-                    nbTomate --;
+                    nbTomate = 0;
                 }
                 break;
             case Maïs:
                 if(nbMais >0){
-                    nbMais --;
+                    nbMais = 0;
                 }
                 break;
             default:
