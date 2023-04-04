@@ -68,7 +68,12 @@ public class Clavier implements EventHandler<KeyEvent> {
                 PlayerSon.activerDesactiverSon();
                 break;
             case P:
-
+                Personnage p = this.carte.getPersonnage();
+                //play son Vous etes à la position
+                PlayerSon.nombreVersSon(p.getPosX());
+                //play son En X et
+                PlayerSon.nombreVersSon(p.getPosY());
+                //play son En Y
                 break;
             default:
                 break;
