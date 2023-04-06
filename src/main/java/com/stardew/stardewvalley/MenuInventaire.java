@@ -58,6 +58,15 @@ public class MenuInventaire extends GridPane {
         }
 
     }
+   /**
+    Cette méthode affiche l'inventaire dans une nouvelle fenêtre en chargeant
+    le fichier FXML correspondant.
+    Si la carte n'est pas encore initialisée, elle est également initialisée.
+    La méthode charge également le fichier CSS "application.css" et définit le titre
+    de la fenêtre comme "AccessibleValley".
+
+    @exception Exception En cas d'une erreur lors du chargement des fichiers FXML ou CSS.
+            */
     public void affichageInventaire(){
             try {
                 if(this.carte == null){

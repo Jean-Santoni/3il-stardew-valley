@@ -13,6 +13,12 @@ public class PlayerSon {
     public static void activerDesactiverSon(){
         PlayerSon.estActive = !PlayerSon.estActive;
     }
+
+    /**
+
+     Joue le fichier son si le son est actif.
+     @param str Chemin d'accès au fichier son à lire.
+     */
     public static void playSon(String str){
         if (estActive){
             File f = new File(str);
@@ -21,7 +27,12 @@ public class PlayerSon {
             m.play();
         }
     }
+    /**
 
+     Convertit le nombre donné en son et le joue.
+
+     @param i Le nombre à convertir en son.
+     */
     public static void nombreVersSon(int i){
         String nombre = String.valueOf(i);
 

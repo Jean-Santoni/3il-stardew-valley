@@ -64,4 +64,5 @@ public class MaisonController {
             m.add( listeMaison.get(index),  listeMaison.get(index).getPosX(),  listeMaison.get(index).getPosY());
         }
     }
+
 }

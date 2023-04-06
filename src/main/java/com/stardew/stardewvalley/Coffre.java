@@ -12,7 +12,7 @@ import java.util.Optional;
 public class Coffre extends ObjetInteractif {
 
     /**
-     * Constructeur d'Herbe
+     * Constructeur Coffre
      *
      * @param pfPosX la position du coffre sur les abscisses
      * @param pfPosY la position du coffre sur les ordonnées
