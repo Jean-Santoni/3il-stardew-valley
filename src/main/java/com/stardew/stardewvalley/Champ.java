@@ -85,6 +85,7 @@ public class Champ extends ObjetInteractif {
             this.estCultive = b;
             this.setImage(new Image("file:Images/champ_cultive.png"));
             PlayerSon.playSon("Son/ChampsCultivé.wav");
+            SousTitres.setTexte("*Bruit de houe*");
         }
 
     }
@@ -104,6 +105,7 @@ public class Champ extends ObjetInteractif {
 
         if (answer.isPresent() && answer.get() == ButtonType.OK) {
             PlayerSon.playSon("Son/CultureRecolte.wav");
+            SousTitres.setTexte("*Bruit de houe*");
             this.estPlante = b;
             Inventaire.ajouter(this.cultive);
             this.setImage(new Image("file:Images/champ_cultive.png"));

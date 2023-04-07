@@ -29,6 +29,7 @@ public class Coffre extends ObjetInteractif {
     @Override
     public void interraction() throws IOException {
         super.interraction();
+        SousTitres.setTexte("*Ouverture de coffre*");
         validationVendre(true);
 
     }
@@ -80,5 +81,6 @@ public class Coffre extends ObjetInteractif {
         }
 
         PlayerSon.playSon("Son/venteEffectuee.wav");
+        SousTitres.setTexte("*Fermeture de coffre*");
     }
 }

@@ -84,8 +84,10 @@ public class Clavier implements EventHandler<KeyEvent> {
                 PlayerSon.activerDesactiverSon();
                 break;
             case S:
-                this.sousTitres.activerDesactiverSousTitres();
-                this.carte.initialiserCarte(this.sousTitres.estActive());
+                if (this.sousTitres != null) {
+                    this.sousTitres.activerDesactiverSousTitres();
+                    this.carte.initialiserCarte(this.sousTitres.estActive());
+                }
                 break;
             case P:
                 Personnage p = this.carte.getPersonnage();

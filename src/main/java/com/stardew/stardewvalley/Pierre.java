@@ -33,5 +33,6 @@ public class Pierre extends ObjetInteractif {
         setImage(null);
         setMarchable(true);
         PlayerSon.playSon("Son/CasserPierre.wav");
+        SousTitres.setTexte("*Explosion de caillou*");
     }
 }
