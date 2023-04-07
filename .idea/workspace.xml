@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b143f2f1-d7ed-4b23-ab9d-e94571a5451b" name="Changes" comment="Rajout son pour l'inventaire">
+    <list default="true" id="b143f2f1-d7ed-4b23-ab9d-e94571a5451b" name="Changes" comment="Correction des problèmes de son pour l'inventaire">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Inventaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Inventaire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/InventaireController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/InventaireController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/stardew/stardewvalley/AccessibleValley.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/stardew/stardewvalley/AccessibleValley.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680880067604</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Correction des problèmes de son pour l'inventaire">
+      <created>1680881122981</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1680881122981</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -294,7 +301,8 @@
     <MESSAGE value="Rajout son Play/Menu" />
     <MESSAGE value="Rajout son pour le positionnement" />
     <MESSAGE value="Rajout son pour l'inventaire" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rajout son pour l'inventaire" />
+    <MESSAGE value="Correction des problèmes de son pour l'inventaire" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction des problèmes de son pour l'inventaire" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Java3ilv2$PierreTest.ic" NAME="PierreTest Coverage Results" MODIFIED="1680021785656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

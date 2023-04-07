@@ -19,7 +19,8 @@ public class InventaireController {
     private BorderPane inventaire;
 
     /**
-     * Initialise la Maison, la hauteur, la largeur, la position
+
+     Initialise la fenetre de l'inventaire et les son qui seront joué
      */
     @FXML
     private void initialize()  {
@@ -63,6 +64,10 @@ public class InventaireController {
         }
 
     }
+    /**
+
+     Initialise les Images présentes sur la fenetre d'inentaire
+     */
 
     private void intitInventaire(){
 
@@ -85,6 +90,11 @@ public class InventaireController {
         this.menuI.add(i5,11,5);
         this.menuI.add(i6,11,6);
     }
+    /**
+
+     Initialise les valeurs numériques présentes sur la fenetre d'inentaire
+     */
+
     public void initValues(){
         Label nbH = createLabel(Cultures.Houblon);
         Label nbB = createLabel(Cultures.Blé);
@@ -98,6 +108,11 @@ public class InventaireController {
 
         addLabelsToMenu(this.menuI, nbH, nbB, nbT, nbP, nbM, nbC);
     }
+    /**
+
+     Creer un Label en fonction de la culture donnée
+     @param cultures culture choisit
+     */
 
     public Label createLabel(Cultures cultures) {
         Label label = new Label();
@@ -105,7 +120,12 @@ public class InventaireController {
         label.setFont(new Font(32));
         return label;
     }
+    /**
 
+     Ajoute les différents Labels au menu
+     @param labels liste des différents labels
+     @param menu menu sur lequel les labels seront affiché
+     */
     public void addLabelsToMenu(MenuInventaire menu, Label... labels) {
         int index = 0;
         int[] columns = {9, 12};
@@ -115,6 +135,11 @@ public class InventaireController {
             index++;
         }
     }
+    /**
+
+     Joue l'audio correspondant à la culture et a son nombre dans l'inventaire
+     @param cultures culture choisit
+     */
     public void audioInventaire(Cultures cultures) {
 
            PlayerSon.playSon("Son/NombreCulture.wav");
