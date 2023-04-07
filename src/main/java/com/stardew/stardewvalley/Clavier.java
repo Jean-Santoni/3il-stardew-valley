@@ -1,9 +1,13 @@
 package com.stardew.stardewvalley;
 
+import javafx.animation.PauseTransition;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
+import javafx.util.Duration;
 
 import java.io.IOException;
+
+import static java.lang.Thread.sleep;
 
 /**
  * Classe Clavier permettant de capturer la touche enfoncée par le joueur, et de déclencher les actions correspondantes
@@ -76,9 +80,19 @@ public class Clavier implements EventHandler<KeyEvent> {
             case P:
                 Personnage p = this.carte.getPersonnage();
                 //play son Vous etes à la position
-                PlayerSon.nombreVersSon(p.getPosX());
+
+                    PlayerSon.nombreVersSon(p.getPosX());
+                    PauseTransition pause = new PauseTransition(Duration.seconds(1));
+                    pause.setOnFinished(event2 -> {
+
+                            PlayerSon.nombreVersSon(p.getPosY());
+
+                    });
+                    pause.play();
+
+
                 //play son En X et
-                PlayerSon.nombreVersSon(p.getPosY());
+
                 //play son En Y
                 break;
             default:

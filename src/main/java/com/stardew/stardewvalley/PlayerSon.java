@@ -4,11 +4,14 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
+import java.util.Timer;
 
 import static java.lang.Thread.sleep;
 
 public class PlayerSon {
     private static boolean estActive = true;
+    private static MediaPlayer m;
+
 
     public static void activerDesactiverSon(){
         PlayerSon.estActive = !PlayerSon.estActive;
@@ -23,7 +26,7 @@ public class PlayerSon {
         if (estActive){
             File f = new File(str);
             Media a = new Media(f.toURI().toString());
-            MediaPlayer m = new MediaPlayer(a);
+             m = new MediaPlayer(a);
             m.play();
         }
     }
@@ -33,18 +36,10 @@ public class PlayerSon {
 
      @param i Le nombre à convertir en son.
      */
-    public static void nombreVersSon(int i){
-        String nombre = String.valueOf(i);
+    public static void nombreVersSon(int i)  {
 
-        char[] chiffre = nombre.toCharArray();
+            playSon("Son/Chiffre"+i+".wav");
 
-        for(int j = 0; j < chiffre.length; j++) {
-            playSon("Son/Chiffre"+chiffre[j]+".wav");
-            try {
-                sleep(1000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
         }
-    }
+
 }

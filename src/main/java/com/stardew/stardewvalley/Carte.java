@@ -94,7 +94,7 @@ public class Carte extends GridPane {
      * Détermine si le joueur est déplacable aux coordonnées envoyées
      *
      * @param i l'abscisse de la case à tester
-     * @param i1 l'ordonnée de la case à tester
+     * @param i1 l'ordonnée de la case à tester g
      *
      * @return true si le joueur peut se déplacer sur cette case, sinon false
      */

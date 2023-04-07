@@ -4,12 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b143f2f1-d7ed-4b23-ab9d-e94571a5451b" name="Changes" comment="Rajout JAVA doc">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b143f2f1-d7ed-4b23-ab9d-e94571a5451b" name="Changes" comment="Rajout son Play/Menu">
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre0.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre1.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre10.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre11.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre12.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre13.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre14.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre15.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre16.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre17.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre18.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre19.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre2.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre20.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre3.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre4.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre5.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre6.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre7.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre8.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Son/Chiffre9.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Coffre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Coffre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/MaisonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/MaisonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/MenuInventaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/MenuInventaire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Carte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Carte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Clavier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Clavier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/PlayerSon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/PlayerSon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,9 +41,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -52,7 +73,6 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Java3ilv2/Son&quot;,
@@ -64,14 +84,15 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Java3ilv2\Son" />
+      <recent name="D:\Java3ilv2\Images" />
       <recent name="C:\Users\louis\IdeaProjects\3il-stardew-valley\src\main\resources\com\stardew\stardewvalley" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Son" />
+      <recent name="D:\Java3ilv2\Son" />
+      <recent name="D:\Java3ilv2\Images" />
       <recent name="C:\Users\aulas\IdeaProjects\3il-stardew-valley\Son" />
       <recent name="C:\Users\louis\IdeaProjects\3il-stardew-valley\Images" />
       <recent name="C:\Users\louis\IdeaProjects\3il-stardew-valley\src\main\resources\com\stardew\stardewvalley" />
-      <recent name="D:\Java3il\3il-stardew-valley" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -252,14 +273,7 @@
       <option name="project" value="LOCAL" />
       <updated>1680032534692</updated>
     </task>
-    <task id="LOCAL-00014" summary="Ajout JavaDoc, amélioration qualité du code">
-      <created>1680036051984</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1680036051984</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -287,8 +301,23 @@
     <MESSAGE value="Test Unitaire MaisonInterieurTest" />
     <MESSAGE value="Nouveau son" />
     <MESSAGE value="Rajout son Play/Menu" />
-    <MESSAGE value="Ajout JavaDoc, amélioration qualité du code" />
-    <MESSAGE value="Rajout JAVA doc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rajout JAVA doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rajout son Play/Menu" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Java3ilv2$PierreTest.ic" NAME="PierreTest Coverage Results" MODIFIED="1680021785656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.stardew.stardewvalley.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Java3ilv2$com_in_stardew_valley.ic" NAME="com in stardew-valley Coverage Results" MODIFIED="1680036114290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Java3ilv2$HelloApplication.ic" NAME="HelloApplication Coverage Results" MODIFIED="1680026094269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.stardew.stardewvalley.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Java3ilv2$stardewvalley_in_stardew_valley.ic" NAME="stardewvalley in stardew-valley Coverage Results" MODIFIED="1680027033967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Java3ilv2$CarteTest.ic" NAME="CarteTest Coverage Results" MODIFIED="1680026067539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.stardew.stardewvalley.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Java3ilv2$java_in_stardew_valley.ic" NAME="java in stardew-valley Coverage Results" MODIFIED="1680026137936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Java3ilv2$com_stardew_stardewvalley_HelloApplication.ic" NAME="com.stardew.stardewvalley.HelloApplication Coverage Results" MODIFIED="1680020889042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>stardewvalley.*</FILTER>
+    </SUITE>
   </component>
 </project>
