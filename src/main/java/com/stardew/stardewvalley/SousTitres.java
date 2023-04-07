@@ -1,7 +1,9 @@
 package com.stardew.stardewvalley;
 
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.TextAlignment;
 
 public class SousTitres extends Pane {
 
@@ -15,6 +17,8 @@ public class SousTitres extends Pane {
         super();
         texte = new Label();
         texte.setText("");
+        texte.setAlignment(Pos.CENTER);
+        texte.setTextAlignment(TextAlignment.CENTER);
         if(estActive){
             this.getChildren().add(texte);
         }

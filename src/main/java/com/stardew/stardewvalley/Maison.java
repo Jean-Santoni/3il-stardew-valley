@@ -50,6 +50,7 @@ public class Maison extends ObjetInteractif {
                 sortirMaison();
             }
             PlayerSon.playSon("Son/DOOR.wav");
+            SousTitres.setTexte("*Ouverture de porte*");
         }
     }
 
