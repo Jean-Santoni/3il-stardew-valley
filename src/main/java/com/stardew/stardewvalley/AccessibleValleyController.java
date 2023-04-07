@@ -21,6 +21,7 @@ public class AccessibleValleyController {
     private ArrayList<Coffre> listeCoffre = new ArrayList<>();
 
     private Carte carte;
+    private SousTitres description;
 
     @FXML
     BorderPane borderPanel;
@@ -33,10 +34,12 @@ public class AccessibleValleyController {
 
         if(clavier == null) {
             this.carte = new Carte();
+            this.description = new SousTitres();
             this.borderPanel.setMaxHeight(768);
             this.borderPanel.setMaxWidth(1366);
             this.borderPanel.setCenter(this.carte);
-            this.clavier = new Clavier(this.carte);
+            this.borderPanel.setBottom(this.description);
+            this.clavier = new Clavier(this.carte, this.description);
             initializeChamps(this.carte);
             initializePierre(this.carte);
             initializeHerbes(this.carte);

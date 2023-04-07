@@ -18,12 +18,18 @@ import static java.lang.Thread.sleep;
 public class Clavier implements EventHandler<KeyEvent> {
 
     private Carte carte;
+    private SousTitres sousTitres;
     private MenuInventaire menuInventaire;
 
     /**
      * Constructeur de Clavier
      * @param carte la carte chargée dans le jeu
      */
+    public Clavier(Carte carte, SousTitres sousTitres) {
+        super();
+        this.carte = carte;
+        this.sousTitres = sousTitres;
+    }
     public Clavier(Carte carte) {
         super();
         this.carte = carte;
@@ -76,6 +82,10 @@ public class Clavier implements EventHandler<KeyEvent> {
                 break;
             case A:
                 PlayerSon.activerDesactiverSon();
+                break;
+            case S:
+                this.sousTitres.activerDesactiverSousTitres();
+                this.carte.initialiserCarte(this.sousTitres.estActive());
                 break;
             case P:
                 Personnage p = this.carte.getPersonnage();

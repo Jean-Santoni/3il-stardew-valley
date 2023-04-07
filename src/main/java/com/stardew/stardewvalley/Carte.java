@@ -36,7 +36,7 @@ public class Carte extends GridPane {
         super();
 
         this.setOnKeyPressed(new Clavier(this));
-        initialiserCarte();
+        initialiserCarte(true);
         this.personnage = new Personnage();
         this.personnage.setPreserveRatio(true);
         this.personnage.setFitHeight(100);
@@ -52,7 +52,7 @@ public class Carte extends GridPane {
     /**
      * Permet d'initialiser la Carte
      */
-    void initialiserCarte() {
+    public void initialiserCarte(boolean estActive) {
 
         this.getColumnConstraints().clear();
         this.getRowConstraints().clear();
@@ -67,8 +67,13 @@ public class Carte extends GridPane {
 
         for (int r = 0; r <= MAX_HEIGHT; r++) {
             RowConstraints row = new RowConstraints();
-            row.setMaxHeight((double) 768/(MAX_HEIGHT+1));
-            row.setMinHeight((double) 768/(MAX_HEIGHT+1));
+            if (estActive){
+                row.setMaxHeight((double) 740/(MAX_HEIGHT+1));
+                row.setMinHeight((double) 740/(MAX_HEIGHT+1));
+            }else{
+                row.setMaxHeight((double) 766/(MAX_HEIGHT+1));
+                row.setMinHeight((double) 766/(MAX_HEIGHT+1));
+            }
             row.setValignment(VPos.BOTTOM);
             this.getRowConstraints().add(row);
         }
@@ -212,5 +217,4 @@ public class Carte extends GridPane {
     public Personnage getPersonnage(){
         return this.personnage;
     }
-
 }
