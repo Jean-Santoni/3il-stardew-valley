@@ -19,19 +19,29 @@ public class Inventaire {
     public static void ajouter(Cultures ajout) {
         switch (ajout){
             case Houblon:
+                if(nbHoublon<20){
                 nbHoublon ++;
+                }
                 break;
             case Blé:
+                if(nbBle<20){
                 nbBle ++;
+                }
                 break;
             case PommeDeTerre:
-                nbPommeDeTerre ++;
+                if(nbPommeDeTerre<20) {
+                    nbPommeDeTerre++;
+                }
                 break;
             case Tomate:
-                nbTomate ++;
+                if(nbTomate<20) {
+                    nbTomate++;
+                }
                 break;
             case Maïs:
-                nbMais ++;
+                if(nbMais<20) {
+                    nbMais++;
+                }
                 break;
             default:
                 break;

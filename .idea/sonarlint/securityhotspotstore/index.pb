@@ -15,5 +15,3 @@ m
 =src/main/java/com/stardew/stardewvalley/MaisonController.java,d\6\d6748f15bca7d86fdb7343618161ddb8988bdb58
 b
 2src/main/java/com/stardew/stardewvalley/Herbe.java,3\a\3afaebfb8eb743fc1c9d2d485dfab72d7d033df8
-b
-2src/main/java/com/stardew/stardewvalley/Champ.java,c\3\c375b9c786c63c70c46ee33861dcf143b8a1b36e

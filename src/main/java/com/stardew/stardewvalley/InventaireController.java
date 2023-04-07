@@ -34,28 +34,27 @@ public class InventaireController {
             initValues();
             audioInventaire(Cultures.Houblon);
             PauseTransition pause = new PauseTransition(Duration.seconds(6));
-            pause.setOnFinished(event2 -> {
+            pause.setOnFinished(event1 -> {
                 audioInventaire(Cultures.Maïs);
             });
-            pause.play();
-            PauseTransition pause1 = new PauseTransition(Duration.seconds(12));
-            pause.setOnFinished(event2 -> {
-                audioInventaire(Cultures.PommeDeTerre);
-            });
-            pause1.play();
-          /*  PauseTransition pause2 = new PauseTransition(Duration.seconds(18));
-            pause.setOnFinished(event2 -> {
+
+            PauseTransition pause2 = new PauseTransition(Duration.seconds(12));
+            pause2.setOnFinished(event3 -> {
                 audioInventaire(Cultures.Blé);
-            });pause2.play();
-            PauseTransition pause3 = new PauseTransition(Duration.seconds(24));
-            pause.setOnFinished(event2 -> {
+            });
+            PauseTransition pause3 = new PauseTransition(Duration.seconds(18));
+            pause3.setOnFinished(event4 -> {
                 audioInventaire(Cultures.PommeDeTerre);
             });
-            pause3.play();
-            PauseTransition pause4 = new PauseTransition(Duration.seconds(30));
-            pause.setOnFinished(event2 -> {
+
+            PauseTransition pause4 = new PauseTransition(Duration.seconds(24));
+            pause4.setOnFinished(event5 -> {
                 audioInventaire(Cultures.Tomate);
-            });pause4.play();*/
+            });
+            pause.play();
+            pause2.play();
+            pause3.play();
+            pause4.play();
 
 
 
