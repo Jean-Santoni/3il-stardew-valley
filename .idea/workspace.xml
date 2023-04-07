@@ -4,34 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b143f2f1-d7ed-4b23-ab9d-e94571a5451b" name="Changes" comment="Rajout son Play/Menu">
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre0.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre1.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre10.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre11.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre12.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre13.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre14.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre15.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre16.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre17.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre18.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre19.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre20.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre3.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre4.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre5.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre6.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre7.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre8.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Son/Chiffre9.wav" afterDir="false" />
+    <list default="true" id="b143f2f1-d7ed-4b23-ab9d-e94571a5451b" name="Changes" comment="Rajout son pour le positionnement">
+      <change afterPath="$PROJECT_DIR$/Son/NombreCulture.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Carte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Carte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Clavier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/Clavier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/PlayerSon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/PlayerSon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/InventaireController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stardew/stardewvalley/InventaireController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,19 +46,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Java3ilv2/Son&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "D:/Java3ilv2/Son",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Java3ilv2\Son" />
@@ -273,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680032534692</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Rajout son pour le positionnement">
+      <created>1680876413139</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1680876413139</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -301,7 +287,8 @@
     <MESSAGE value="Test Unitaire MaisonInterieurTest" />
     <MESSAGE value="Nouveau son" />
     <MESSAGE value="Rajout son Play/Menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rajout son Play/Menu" />
+    <MESSAGE value="Rajout son pour le positionnement" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rajout son pour le positionnement" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Java3ilv2$PierreTest.ic" NAME="PierreTest Coverage Results" MODIFIED="1680021785656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

@@ -11,8 +11,6 @@ c
 3src/main/java/com/stardew/stardewvalley/Maison.java,2\7\27ead192ee6b11228d0ef4d67412c81e0d29c4c8
 l
 <src/main/java/com/stardew/stardewvalley/MaisonInterieur.java,d\1\d1399ed844b9ae4d72a0a41455c90244611bf3b7
-e
-5src/main/java/com/stardew/stardewvalley/Cultures.java,7\1\71ef9b2947a566dd27178e42116ca527776759ed
 m
 =src/main/java/com/stardew/stardewvalley/MaisonController.java,d\6\d6748f15bca7d86fdb7343618161ddb8988bdb58
 b

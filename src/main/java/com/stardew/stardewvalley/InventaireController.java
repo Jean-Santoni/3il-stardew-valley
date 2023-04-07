@@ -1,5 +1,6 @@
 package com.stardew.stardewvalley;
 
+import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -7,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Font;
+import javafx.util.Duration;
 
 import java.util.ArrayList;
 
@@ -30,6 +32,33 @@ public class InventaireController {
             this.menuI.initialiserCarte();
             intitInventaire();
             initValues();
+            audioInventaire(Cultures.Houblon);
+            PauseTransition pause = new PauseTransition(Duration.seconds(6));
+            pause.setOnFinished(event2 -> {
+                audioInventaire(Cultures.Maïs);
+            });
+            pause.play();
+            PauseTransition pause1 = new PauseTransition(Duration.seconds(12));
+            pause.setOnFinished(event2 -> {
+                audioInventaire(Cultures.PommeDeTerre);
+            });
+            pause1.play();
+          /*  PauseTransition pause2 = new PauseTransition(Duration.seconds(18));
+            pause.setOnFinished(event2 -> {
+                audioInventaire(Cultures.Blé);
+            });pause2.play();
+            PauseTransition pause3 = new PauseTransition(Duration.seconds(24));
+            pause.setOnFinished(event2 -> {
+                audioInventaire(Cultures.PommeDeTerre);
+            });
+            pause3.play();
+            PauseTransition pause4 = new PauseTransition(Duration.seconds(30));
+            pause.setOnFinished(event2 -> {
+                audioInventaire(Cultures.Tomate);
+            });pause4.play();*/
+
+
+
            // this.clavier = new Clavier(this.menuI);
             this.inventaire.setOnKeyPressed(this.clavier);
         }
@@ -86,5 +115,41 @@ public class InventaireController {
             menu.add(label, columns[index % 2], rows[index % 3]);
             index++;
         }
+    }
+    public void audioInventaire(Cultures cultures) {
+
+           PlayerSon.playSon("Son/NombreCulture.wav");
+        PauseTransition pause = new PauseTransition(Duration.seconds(2));
+        pause.setOnFinished(event2 -> {
+
+            switch (cultures){
+                case Houblon :
+                    PlayerSon.playSon("Son/Houblon.wav");
+                    break;
+                case Maïs:
+                    PlayerSon.playSon("Son/Mais.wav");
+                    break;
+                case Blé:
+                    PlayerSon.playSon("Son/Ble.wav");
+                    break;
+                case PommeDeTerre:
+                    PlayerSon.playSon("Son/PommeDeTerre.wav");
+                    break;
+                case Tomate:PlayerSon.playSon("Son/Tomate.wav");
+                    break;
+            }
+
+        });
+        pause.play();
+        PauseTransition pause2 = new PauseTransition(Duration.seconds(3));
+        pause2.setOnFinished(event2 -> {
+            PlayerSon.nombreVersSon(Inventaire.getNbCulture(cultures));
+
+
+        });
+        pause2.play();
+
+
+
     }
 }
